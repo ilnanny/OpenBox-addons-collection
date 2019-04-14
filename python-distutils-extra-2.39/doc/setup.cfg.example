@@ -1,0 +1,8 @@
+[build]
+icons=False
+help=True
+
+[build_i18n]
+domain=update-manager
+desktop_files=[("share/applications", ("data/update-manager.desktop.in",))]
+schemas_files=[("share/gconf/schemas", ("data/update-manager.schemas.in",))]

@@ -1,0 +1,360 @@
+<!--
+
+ vera-plugin-openbox - openbox plugin for vera
+ Copyright (C) 2014  Eugenio "g7" Paolantonio and the Semplice Project
+ 
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+ Authors:
+     Giuseppe "GsCRuL3Z" Corti <giuseppe@infiniteloop.pro>
+
+-->
+
+<!-- vera (compton) -->
+
+<schemalist>
+
+	<schema path="/org/semplicelinux/vera/compton/" id="org.semplicelinux.vera.compton" gettext-domain="vera-plugin-openbox">
+
+		<key name="enable-visual-effects" type="b">
+			<default>false</default>
+			<summary>Visual effects enabled</summary>
+			<description>Self-explanatory.</description>
+		</key>
+		
+		<key name="configuration-file" type="s">
+			<default>"~/.config/vera/compton.conf"</default>
+			<summary>Compton configuration file</summary>
+			<description>The configuration file of compton.</description>
+		</key>
+
+		<key name="shadow" type="b">
+			<default>false</default>
+			<summary>Shadow onoff</summary>
+			<description>Enabled client-side shadows on windows.</description>
+		</key>
+
+		<key name="no-dock-shadow" type="b">
+			<default>true</default>
+			<summary>Dock shadow</summary>
+			<description>Avoid drawing shadows on dock/panel windows.</description>
+		</key>
+
+		<key name="no-dnd-shadow" type="b">
+			<default>true</default>
+			<summary>No DND shadow</summary>
+			<description>Don't draw shadows on DND windows.</description>
+		</key>
+
+		<key name="clear-shadow" type="b">
+			<default>false</default>
+			<summary>Clear shadow</summary>
+			<description>Zero the part of the shadow's mask behind the window. Fix some weirdness with ARGB windows.</description>
+		</key>
+
+		<key name="shadow-radius" type="i">
+			<default>12</default>
+			<summary>Shadow radius</summary>
+			<description>The blur radius for shadows. (default 12)</description>
+		</key>
+
+		<key name="shadow-offset-x" type="i">
+			<default>-15</default>
+			<summary>Shadow offset X</summary>
+			<description>The left offset for shadows. (default -15)</description>
+		</key>
+
+		<key name="shadow-offset-y" type="i">
+			<default>-15</default>
+			<summary>Shadow offset Y</summary>
+			<description>The top offset for shadows. (default -15)</description>
+		</key>
+
+		<key name="shadow-opacity" type="d">
+			<default>0.75</default>
+			<summary>Shadow opacity</summary>
+			<description>The translucency for shadows. (default 0.75)</description>
+		</key>
+
+		<key name="shadow-red" type="d">
+			<range min="0.0" max="1.0"/>
+			<default>0.0</default>
+			<summary>Shadow red</summary>
+			<description>Red color value of shadow. (0.0 - 1.0, defaults to 0)</description>
+		</key>
+
+		<key name="shadow-green" type="d">
+			<range min="0.0" max="1.0"/>
+			<default>0.0</default>
+			<summary>Shadow green</summary>
+			<description>Green color value of shadow. (0.0 - 1.0, defaults to 0)</description>
+		</key>
+
+		<key name="shadow-blue" type="d">
+			<range min="0.0" max="1.0"/>
+			<default>0.0</default>
+			<summary>Shadow blue</summary>
+			<description>Blue color value of shadow. (0.0 - 1.0, defaults to 0)</description>
+		</key>
+
+		<key name="shadow-exclude" type="as">
+			<default>[]</default>
+			<summary>Shadow exclude</summary>
+			<description>Exclude conditions for shadows.</description>
+		</key>
+
+		<key name="shadow-ignore-shaped" type="b">
+			<default>false</default>
+			<summary>Shadow ignore shaped</summary>
+			<description>Avoid drawing shadow on all shaped windows.</description>
+		</key>
+
+		<key name="menu-opacity" type="d">
+			<default>1.0</default>
+			<summary>Menu opacity</summary>
+			<description>The opacity for menus. (default 1.0)</description>
+		</key>
+
+		<key name="inactive-opacity" type="d">
+			<range min="0.0" max="1.0"/>
+			<default>1.0</default>
+			<summary>Inactive opacity</summary>
+			<description>Default opacity of inactive windows. (0.0 - 1.0)</description>
+		</key>
+
+		<key name="active-opacity" type="d">
+			<range min="0.0" max="1.0"/>
+			<default>1.0</default>
+			<summary>Active opacity</summary>
+			<description>Default opacity of Active windows. (0.0 - 1.0)</description>
+		</key>
+
+		<key name="frame-opacity" type="d">
+			<range min="0.0" max="1.0"/>
+			<default>1.0</default>
+			<summary>Frame opacity</summary>
+			<description>Opacity of window titlebars and borders. (0.1 - 1.0)</description>
+		</key>
+
+		<key name="inactive-opacity-override" type="b">
+			<default>false</default>
+			<summary>Frame opacity</summary>
+			<description>Let inactive opacity set by 'inactive-opacity' overrides value of _NET_WM_OPACITY. Bad choice.</description>
+		</key>
+
+		<key name="alpha-step" type="d">
+			<default>0.0</default>
+			<summary>Frame opacity</summary>
+			<description>XRender backend: Step size for alpha pictures. Increasing it may result in less X resource usage, Yet fading may look bad.</description>
+		</key>
+
+		<key name="inactive-dim" type="d">
+			<default>0.0</default>
+			<summary>Inactive dim</summary>
+			<description>Dim inactive windows. (0.0 - 1.0)</description>
+		</key>
+
+		<key name="inactive-dim-fixed" type="b">
+			<default>false</default>
+			<summary>Inactive dim fixed</summary>
+			<description>Do not let dimness adjust based on window opacity.</description>
+		</key>
+
+		<key name="blur-background" type="b">
+			<default>false</default>
+			<summary>Blur background</summary>
+			<description>Blur background of transparent windows. (Bad performance with X Render as backend.)</description>
+		</key>
+
+		<key name="blur-background-frame" type="b">
+			<default>false</default>
+			<summary>Blur background frame</summary>
+			<description>Blur background of opaque windows with transparent frames as well.</description>
+		</key>
+
+		<key name="blur-background-fixed" type="b">
+			<default>false</default>
+			<summary>Blur background fixed</summary>
+			<description>Do not let blur radius adjust based on window opacity.</description>
+		</key>
+
+		<key name="blur-background-exclude" type="as">
+			<default>[]</default>
+			<summary>Blur background exclude</summary>
+			<description>Exclude conditions for background blur.</description>
+		</key>
+
+		<key name="fading" type="b">
+			<default>false</default>
+			<summary>Fading</summary>
+			<description>Fade windows during opacity changes.</description>
+		</key>
+
+		<key name="fade-delta" type="i">
+			<default>10</default>
+			<summary>Fade delta</summary>
+			<description>The time between steps in a fade in milliseconds. (default 10).</description>
+		</key>
+
+		<key name="fade-in-step" type="d">
+			<default>0.028</default>
+			<summary>Fade-in step</summary>
+			<description>Opacity change between steps while fading in. (default 0.028).</description>
+		</key>
+
+		<key name="fade-out-step" type="d">
+			<default>0.03</default>
+			<summary>Fade-out step</summary>
+			<description>Opacity change between steps while fading out. (default 0.03).</description>
+		</key>
+
+		<key name="no-fading-openclose" type="b">
+			<default>true</default>
+			<summary>No fading openclose</summary>
+			<description>Avoid fade windows in/out when opening/closing.</description>
+		</key>
+
+		<key name="fade-exclude" type="as">
+			<default>[]</default>
+			<summary>Fade exclude</summary>
+			<description>Exclude conditions for fading.</description>
+		</key>
+
+		<key name="backend" type="s">
+			<choices>
+				<choice value="glx" />
+				<choice value="xrender" />
+			</choices>
+			<default>"glx"</default>
+			<summary>Fade exclude</summary>
+			<description>Backend to use: 'xrender' or 'glx'. GLX backend is typically much faster but depends on a sane driver.</description>
+		</key>
+
+		<key name="mark-wmwin-focused" type="b">
+			<default>true</default>
+			<summary>Mark wmwin focused</summary>
+			<description>Try to detect WM windows and mark them as active.</description>
+		</key>
+
+		<key name="mark-ovredir-focused" type="b">
+			<default>true</default>
+			<summary>Mark ovredir focused</summary>
+			<description>Mark all non-WM but override-redirect windows active (e.g. menus).</description>
+		</key>
+
+		<key name="use-ewmh-active-win" type="b">
+			<default>false</default>
+			<summary>Use ewmh active win</summary>
+			<description>Use EWMH _NET_WM_ACTIVE_WINDOW to determine which window is focused instead of using FocusIn/Out events. Usually more reliable but depends on a EWMH-compliant WM.</description>
+		</key>
+
+		<key name="detect-rounded-corners" type="b">
+			<default>false</default>
+			<summary>Detect rounded corners</summary>
+			<description>Detect rounded corners and treat them as rectangular when --shadow-ignore- shaped is on.</description>
+		</key>
+
+		<key name="detect-client-opacity" type="b">
+			<default>false</default>
+			<summary>Detect client opacity</summary>
+			<description>Detect _NET_WM_OPACITY on client windows, useful for window managers not passing _NET_WM_OPACITY of client windows to frame windows.</description>
+		</key>
+
+		<key name="vsync" type="s">
+			<choices>
+				<choice value="none" />
+				<choice value="drm" />
+				<choice value="opengl" />
+				<choice value="opengl-oml" />
+				<choice value="opengl-swc" />
+				<choice value="opengl-mswc" />
+			</choices>
+			<default>"none"</default>
+			<summary>Vsync</summary>
+			<description>'none', 'drm', 'opengl', 'opengl-oml', 'opengl-swc', 'opengl-mswc'</description>
+		</key>
+
+		<key name="dbe" type="b">
+			<default>false</default>
+			<summary>DBE</summary>
+			<description>Enable DBE painting mode. Rarely needed.</description>
+		</key>
+
+		<key name="sw-opti" type="b">
+			<default>false</default>
+			<summary>SW opti</summary>
+			<description>Limit compton to repaint at most once every 1 / refresh_rate. Incompatible with certain VSync methods.</description>
+		</key>
+
+		<key name="unredir-if-possible" type="b">
+			<default>false</default>
+			<summary>Unredit if possible</summary>
+			<description>Unredirect all windows if a full-screen opaque window is detected, to maximize performance for full-screen windows.</description>
+		</key>
+
+		<key name="focus-exclude" type="as">
+			<default>[]</default>
+			<summary>Focus exclude</summary>
+			<description>A list of conditions of windows that should always be considered focused.</description>
+		</key>
+
+		<key name="detect-transient" type="b">
+			<default>false</default>
+			<summary>Detect transient</summary>
+			<description>Use WM_TRANSIENT_FOR to group windows, and consider windows in the same group focused at the same time.</description>
+		</key>
+
+		<key name="detect-client-leader" type="b">
+			<default>false</default>
+			<summary>Detect client leader</summary>
+			<description>Use WM_CLIENT_LEADER to group windows.</description>
+		</key>
+
+		<key name="invert-color-include" type="as">
+			<default>[]</default>
+			<summary>Invert color include</summary>
+			<description>Conditions for windows to be painted with inverted color.</description>
+		</key>
+
+		<key name="glx-no-stencil" type="b">
+			<default>true</default>
+			<summary>GLX no stencil</summary>
+			<description>Recommended.</description>
+		</key>
+
+		<key name="glx-copy-from-front" type="b">
+			<default>false</default>
+			<summary>GLX copy from front</summary>
+			<description>Useful with --glx-swap-method.</description>
+		</key>
+
+		<key name="glx-use-copysubbuffermesa" type="b">
+			<default>false</default>
+			<summary>GLX use copysubbufermesa</summary>
+			<description>Recommended if it works. Breaks VSync.</description>
+		</key>
+
+		<key name="glx-no-rebind-pixmap" type="b">
+			<default>false</default>
+			<summary>GLX no rebind pixmap</summary>
+			<description>Recommended if it works.</description>
+		</key>
+
+		<key name="glx-swap-method" type="s">
+			<default>"undefined"</default>
+			<summary>GLX swap method</summary>
+			<description>Default: undefined</description>
+		</key>
+	</schema>
+</schemalist>

@@ -1,0 +1,11 @@
+* How can I update the po files, formerly I used "make update-po"?
+
+- You can call the build_i18n command with the -m (--merge-po) option:
+ ./setup.py build_i18n -m
+
+
+* The domain and further intltool settings from the setup.cfg are not
+  applied correctly.
+
+- Please make sure that there is no Makefile in your po directory.
+  Intltool seems to prefer the values from there.

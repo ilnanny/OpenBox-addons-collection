@@ -1,0 +1,84 @@
+<!-- vera-plugin-desktop -->
+
+<schemalist>
+	<!-- Vera.DesktopPlugin.BackgroundMode enum -->
+	<enum id="org.semplicelinux.vera.desktop.BackgroundMode">
+		<value nick="Color" value="1" />
+		<value nick="Tile" value="2" />
+		<value nick="Stretch" value="3" />
+		<value nick="Screen" value="4" />
+		<value nick="Fit" value="5" />
+		<value nick="Crop" value="6" />
+		<value nick="Center" value="7" />
+	</enum>
+	
+	<schema path="/org/semplicelinux/vera/desktop/" id="org.semplicelinux.vera.desktop" gettext-domain="vera-plugin-desktop">
+		<key name="background-search-paths" type="as">
+			<default>["/usr/share/backgrounds"]</default>
+			<summary>Search paths for the backgrounds</summary>
+			<description>Directories where to search for available backgrounds.</description>
+		</key>
+		<key name="background-include" type="as">
+			<default>[]</default>
+			<summary>Single backgrounds to include</summary>
+			<description>Paths to single backgrounds to include in the backgrounds list.</description>
+		</key>
+		<key name="background-exclude" type="as">
+			<default>[]</default>
+			<summary>Single backgrounds to exclude</summary>
+			<description>Paths to single backgrounds to exclude from the backgrounds list.</description>
+		</key>
+		<key name="background-random-enabled" type="b">
+			<default>false</default>
+			<summary>Randomize backgrounds</summary>
+			<description>If enabled, the background will change every N mins, where N is the background-random-timeout value.</description>
+		</key>
+		<key name="background-random-timeout" type="i">
+			<range min="1" max="86400"/>
+			<default>30</default>
+			<summary>Randomize backgrounds (timeout)</summary>
+			<description>See background-random-enabled.</description>
+		</key>
+		<key name="background-mode" enum="org.semplicelinux.vera.desktop.BackgroundMode">
+			<default>"Crop"</default>
+			<summary>Background Mode</summary>
+			<description>Determines how the wallpaper is rendered.</description>
+		</key>
+		<key name="image-path" type="as">
+			<default>["/usr/share/backgrounds/semplice-numb/semplice-numb_1680x1050.png"]</default>
+			<summary>Image Path</summary>
+			<description>Path to the wallpaper.</description>
+		</key>
+		<key name="background-color" type="s">
+			<default>"#131494"</default>
+			<summary>Background color</summary>
+			<description>Color to display under the image (if it has alpha), or as a replacement for the image (if background-mode is 'Color').</description>
+		</key>
+		<key name="vera-color-enabled" type="b">
+			<default>true</default>
+			<summary>Vera color</summary>
+			<description>If true, the @vera-color property will be exported to the GTK+ theme.</description>
+		</key>
+		<key name="vera-color" type="s">
+			<default>"rgb(14,124,187)"</default>
+			<summary>Vera color</summary>
+			<description>The @vera-color property exported to the GTK+ theme.</description>
+		</key>
+		<key name="vera-color-lock" type="b">
+			<default>false</default>
+			<summary>Vera color lock</summary>
+			<description>If true, the vera-color key will not be changed with the dominant color of the current wallpaper.</description>
+		</key>
+		<key name="show-launcher" type="b">
+			<default>true</default>
+			<summary>Launcher</summary>
+			<description>If true, the launcher will be shown. Note that you need to restart vera after changing the value.</description>
+		</key>
+		<key name="show-tutorial" type="b">
+			<default>true</default>
+			<summary>Tutorial</summary>
+			<description>If true, the tutorial will be shown. Note that you need to restart vera after changing the value.</description>
+		</key>
+	</schema>
+
+</schemalist>

@@ -1,0 +1,146 @@
+# 
+# Translators:
+# g7 <me@medesimo.eu>, 2015
+msgid ""
+msgstr ""
+"Project-Id-Version: vera-plugin-desktop\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2015-04-16 16:38+0000\n"
+"Last-Translator: g7 <me@medesimo.eu>\n"
+"Language-Team: Italian (http://www.transifex.com/projects/p/vera-plugin-desktop/language/it/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: it\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: Tutorial.vala:119
+msgid "To start, right-click anywhere in the desktop."
+msgstr "Per iniziare, fai clic con il tasto destro in un punto qualsiasi della scrivania."
+
+#: Tutorial.vala:133
+msgid ""
+"Great! You have just opened the main Semplice menu.\n"
+"Now write something in the keyboard."
+msgstr "Ottimo! Hai appena aperto il menù principale di Semplice.\nAdesso scrivi qualcosa sulla tastiera."
+
+#: Tutorial.vala:146
+msgid ""
+"From here you can easily open new applications.\n"
+"Press Esc to hide the launcher."
+msgstr "Da qui puoi avviare facilmente nuove applicazioni.\nPremi Esc per nascondere il launcher."
+
+#: Tutorial.vala:158
+msgid "Now you can use Semplice. Enjoy!"
+msgstr "Adesso puoi utilizzare Semplice. Divertiti!"
+
+#: org.semplicelinux.vera.desktop.gschema.xml:18
+msgid "Search paths for the backgrounds"
+msgstr "Percorsi di ricerca per gli sfondi"
+
+#: org.semplicelinux.vera.desktop.gschema.xml:19
+msgid "Directories where to search for available backgrounds."
+msgstr "Cartelle dove cercare gli sfondi."
+
+#: org.semplicelinux.vera.desktop.gschema.xml:23
+msgid "Single backgrounds to include"
+msgstr "Sfondi singoli da includere"
+
+#: org.semplicelinux.vera.desktop.gschema.xml:24
+msgid "Paths to single backgrounds to include in the backgrounds list."
+msgstr "Percorsi di sfondi singoli da includere nella lista degli sfondi."
+
+#: org.semplicelinux.vera.desktop.gschema.xml:28
+msgid "Single backgrounds to exclude"
+msgstr "Sfondi singoli da escludere"
+
+#: org.semplicelinux.vera.desktop.gschema.xml:29
+msgid "Paths to single backgrounds to exclude from the backgrounds list."
+msgstr "Percorsi di sfondi singoli da escludere dalla lista degli sfondi."
+
+#: org.semplicelinux.vera.desktop.gschema.xml:33
+msgid "Randomize backgrounds"
+msgstr "Sfondi casuali"
+
+#: org.semplicelinux.vera.desktop.gschema.xml:34
+msgid ""
+"If enabled, the background will change every N mins, where N is the "
+"background-random-timeout value."
+msgstr "Se abilitato, lo sfondo cambierà ogni N minuti, dove N è il valore di background-random-timeout."
+
+#: org.semplicelinux.vera.desktop.gschema.xml:39
+msgid "Randomize backgrounds (timeout)"
+msgstr "Sfondi casuali (timeout)"
+
+#: org.semplicelinux.vera.desktop.gschema.xml:40
+msgid "See background-random-enabled."
+msgstr "Guardare background-random-enabled."
+
+#: org.semplicelinux.vera.desktop.gschema.xml:44
+msgid "Background Mode"
+msgstr "Modalità di render dello sfondo"
+
+#: org.semplicelinux.vera.desktop.gschema.xml:45
+msgid "Determines how the wallpaper is rendered."
+msgstr "Determina come lo sfondo è renderizzato."
+
+#: org.semplicelinux.vera.desktop.gschema.xml:49
+msgid "Image Path"
+msgstr "Percorso dello sfondo"
+
+#: org.semplicelinux.vera.desktop.gschema.xml:50
+msgid "Path to the wallpaper."
+msgstr "Percorso dello sfondo."
+
+#: org.semplicelinux.vera.desktop.gschema.xml:54
+msgid "Background color"
+msgstr "Colore dello sfondo"
+
+#: org.semplicelinux.vera.desktop.gschema.xml:55
+msgid ""
+"Color to display under the image (if it has alpha), or as a replacement for "
+"the image (if background-mode is 'Color')."
+msgstr "Colore da visualizzare sotto l'immagine (se ha un canale alpha), o come suo rimpiazzo (se background-mode è 'Colore')"
+
+#: org.semplicelinux.vera.desktop.gschema.xml:59
+#: org.semplicelinux.vera.desktop.gschema.xml:64
+msgid "Vera color"
+msgstr "Colore di vera"
+
+#: org.semplicelinux.vera.desktop.gschema.xml:60
+msgid "If true, the @vera-color property will be exported to the GTK+ theme."
+msgstr "Se vero, la propietà @vera-color verrà esportata al tema GTK+."
+
+#: org.semplicelinux.vera.desktop.gschema.xml:65
+msgid "The @vera-color property exported to the GTK+ theme."
+msgstr "La proprietà @vera-color esportata al tema GTK+."
+
+#: org.semplicelinux.vera.desktop.gschema.xml:69
+msgid "Vera color lock"
+msgstr "Blocca il colore di vera"
+
+#: org.semplicelinux.vera.desktop.gschema.xml:70
+msgid ""
+"If true, the vera-color key will not be changed with the dominant color of "
+"the current wallpaper."
+msgstr "Se vero, la chiave vera-color non verrà modificata con il colore dominante dello sfondo attuale."
+
+#: org.semplicelinux.vera.desktop.gschema.xml:74
+msgid "Launcher"
+msgstr ""
+
+#: org.semplicelinux.vera.desktop.gschema.xml:75
+msgid ""
+"If true, the launcher will be shown. Note that you need to restart vera "
+"after changing the value."
+msgstr ""
+
+#: org.semplicelinux.vera.desktop.gschema.xml:79
+msgid "Tutorial"
+msgstr "Tutorial"
+
+#: org.semplicelinux.vera.desktop.gschema.xml:80
+msgid ""
+"If true, the tutorial will be shown. Note that you need to restart vera "
+"after changing the value."
+msgstr "Se vero, il tutorial verrà visualizzato. Si nota che è necessario riavviare vera dopo aver cambiato il valore."

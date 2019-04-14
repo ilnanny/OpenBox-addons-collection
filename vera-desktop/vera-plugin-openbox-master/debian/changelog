@@ -1,0 +1,229 @@
+vera-plugin-openbox (1.10.4-1) unstable; urgency=medium
+
+  * [openbox] Drop gee dependency
+  * [README] Remove gee from the dependency list
+  * [packaging] Replace valac-0.28 dependency with valac
+  * [packaging] Drop libgee-dev dependency
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Wed, 03 Feb 2016 12:10:20 +0100
+
+vera-plugin-openbox (1.10.3-1) unstable; urgency=medium
+
+  * [openbox] Move OpenboxConfiguration object instantiation after initial setup.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Wed, 03 Feb 2016 11:57:56 +0100
+
+vera-plugin-openbox (1.10.2-3) unstable; urgency=medium
+
+  * [packaging] Restore the bake install call.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Thu, 20 Aug 2015 19:06:44 +0200
+
+vera-plugin-openbox (1.10.2-2) unstable; urgency=medium
+
+  * [packaging] Ship the __pycache__ directory and do not +x anymore the .pyc file.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Thu, 20 Aug 2015 18:47:13 +0200
+
+vera-plugin-openbox (1.10.2-1) unstable; urgency=medium
+
+  * [Recipe] Remove the need of the custom vapidir.
+  * [gitignore] Ignore Recipe.conf.
+  * [packaging] Build-depend on libconfig-vapi.
+  * [vera-color] Recipe: enforce python3.
+  * [compton] Estabilish connection with every setting to ensure that their changed() signal is properly fired.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Thu, 20 Aug 2015 18:30:33 +0200
+
+vera-plugin-openbox (1.10.1-1) unstable; urgency=medium
+
+  * [src] Remove XmlFile.vala, as it's in vera core.
+  * [packaging] Build-depend on vera-desktop >= 1.10.1.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Tue, 28 Jul 2015 23:14:32 +0200
+
+vera-plugin-openbox (1.10.0-1) unstable; urgency=medium
+
+  * [packaging] Build-depend on valac-0.28.
+  * [openbox] Export the configuration file to dconf.
+  * [packaging] Depend on vera-desktop >= 1.10.0.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Tue, 28 Jul 2015 22:35:24 +0200
+
+vera-plugin-openbox (0.32.0-1) unstable; urgency=medium
+
+  * compton: put the settings to be changed in a delayed queue.
+  * compton: temporairly disable two-way ComptonConfiguration syncronization (text -> dconf).
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Fri, 13 Feb 2015 17:14:51 +0100
+
+vera-plugin-openbox (0.31.0-1) unstable; urgency=medium
+
+  * vera-color: use the default vera-color specified in the base theme if vera-color-enabled is false.
+  * vera-color: when copying the theme from /usr/share/themes, ensure to symlink the .vera-color-base file.
+  * vera-color (watcher): react on vera-color-enabled changes.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Wed, 11 Feb 2015 20:57:12 +0100
+
+vera-plugin-openbox (0.30.2-1) unstable; urgency=medium
+
+  * vera-color: fallback to generic the Openbox configuration file
+    installed by this very same plugin if there isn't an user-specific
+    configuration file.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Mon, 09 Feb 2015 18:57:46 +0100
+
+vera-plugin-openbox (0.30.1-1) unstable; urgency=medium
+
+  * vera-color: install the python source too.
+  * debian/vera-plugin-openbox-vera-color.install: ship also python source files.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sat, 07 Feb 2015 19:47:35 +0100
+
+vera-plugin-openbox (0.30-1) unstable; urgency=medium
+
+  * vera-color: rebuild the Openbox theme if the session has been started for the first time.
+  * debian/vera-plugin-openbox-vera-color.install: ship etc/skel.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Fri, 06 Feb 2015 18:03:04 +0100
+
+vera-plugin-openbox (0.29.4-1) devel; urgency=medium
+
+  * updated gitignore.
+  * src/vera-color/Recipe: do not symlink with the install-directory.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Tue, 03 Feb 2015 23:45:27 +0100
+
+vera-plugin-openbox (0.29.3-2) devel; urgency=medium
+
+  * debian/rules: use absolute path for install-directory.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Tue, 03 Feb 2015 22:52:30 +0100
+
+vera-plugin-openbox (0.29.3-1) devel; urgency=medium
+
+  * src/vera-color/Recipe: do not chmod the exeutable at all.
+  * debian/rules: chmod +x openbox-vera-color.pyc.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Tue, 03 Feb 2015 22:27:47 +0100
+
+vera-plugin-openbox (0.29.2-1) devel; urgency=medium
+
+  * src/vera-color/Recipe: chmod the target, not the symlink.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Tue, 03 Feb 2015 22:02:02 +0100
+
+vera-plugin-openbox (0.29.1-1) devel; urgency=medium
+
+  * src/vera-color/Recipe: take into consideration the install-directory when manually creating the links.
+  * Revert "debian/rules: configure resource-directory to avoid build failures."
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Tue, 03 Feb 2015 21:08:31 +0100
+
+vera-plugin-openbox (0.29-3) devel; urgency=medium
+
+  * debian/rules: configure resource-directory to avoid build failures.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Tue, 03 Feb 2015 20:45:07 +0100
+
+vera-plugin-openbox (0.29-2) devel; urgency=medium
+
+  * debian/vera-plugin-openbox-vera-color.install: ship watcher configuration
+  * debian/: do not use pybuild as we use bake.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Tue, 03 Feb 2015 20:28:00 +0100
+
+vera-plugin-openbox (0.29-1) devel; urgency=medium
+
+  * Support vera-color in Openbox themes by using the newly introduced openbox-vera-color script.
+  * debian/: added new vera-plugin-openbox-vera-color package
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Tue, 03 Feb 2015 20:25:23 +0100
+
+vera-plugin-openbox (0.28-1) devel; urgency=medium
+
+  * data/rc.xml: font size changes
+  * Wait an half second after spawning openbox.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Fri, 21 Nov 2014 19:39:45 +0100
+
+vera-plugin-openbox (0.27-1) devel; urgency=medium
+
+  * rc.xml: adapted the keybindings for pragha.
+  * rc.xml: style changes in preparation for numb-preview
+  * debian/control: switch to valac-0.26.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Fri, 07 Nov 2014 20:35:34 +0100
+
+vera-plugin-openbox (0.26-1) devel; urgency=medium
+
+  * Actually reload compton if we can't update its configuration on-the-fly
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sat, 30 Aug 2014 20:30:34 +0200
+
+vera-plugin-openbox (0.25-2) devel; urgency=medium
+
+  * Build-depend on libconfig-dev.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Wed, 06 Aug 2014 00:49:46 +0200
+
+vera-plugin-openbox (0.25-1) devel; urgency=medium
+
+  * ComptonConfiguration: switched to libconfig as a configuration backend.
+  * compton: added write support.
+  * compton: added initial compton.conf set-up from the dconf schema's
+    default values.
+  * schemas: change default configuration-file path to ~/.config/vera/compton.conf.
+  * compton: added compton autostart, with support for on-the-fly
+    activation/deactivation.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Tue, 05 Aug 2014 23:26:10 +0200
+
+vera-plugin-openbox (0.24-1) devel; urgency=medium
+
+  * rc.xml: switch from semplice-logout and
+    xfce4-screenshooter to vera-command.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Fri, 01 Aug 2014 00:29:20 +0200
+
+vera-plugin-openbox (0.23-1) devel; urgency=medium
+
+  * Added default openbox configurations, directly taken from
+    Semplice heaven.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Mon, 14 Jul 2014 15:05:36 +0200
+
+vera-plugin-openbox (0.22-1) devel; urgency=medium
+
+  * Added shutdown() method (blank).
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Thu, 10 Jul 2014 16:39:50 +0200
+
+vera-plugin-openbox (0.21-2) devel; urgency=medium
+
+  * debian/rules: install to debian/tmp.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Tue, 08 Jul 2014 19:53:31 +0200
+
+vera-plugin-openbox (0.21-1) devel; urgency=medium
+
+  * Added the ComptonConfiguration class, that is our (dirty) interface
+    to compton's main configuration file.
+  * schema: added new keys 'enable-visual-effects' and 'configuration-file'.
+  * compton: create the ComptonConfiguration object using the configuration-file
+    specified in dconf.
+  * src/Recipe: ensure we depend on vera in packages.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Tue, 08 Jul 2014 18:43:36 +0200
+
+vera-plugin-openbox (0.20-2) devel; urgency=medium
+
+  * Build-depend on libvera-vapi.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Tue, 08 Jul 2014 16:49:08 +0200
+
+vera-plugin-openbox (0.20-1) devel; urgency=low
+
+  * Initial release 
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sun, 29 Jun 2014 02:15:44 +0200

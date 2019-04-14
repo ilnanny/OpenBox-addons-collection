@@ -1,0 +1,112 @@
+##  checkmail.py user settings file. edit it and
+##  place it in you home-directory: ~/.checkmailrc.
+##  
+##  as usual for boolean options: 0 means NO; else (1) means YES
+
+#----------------------------------------------------------------------------                
+#
+#   IMAP-server options:
+#
+#----------------------------------------------------------------------------                
+#
+#
+##  set server name ("localhost" or "imap.your.server"), login name and login password:
+##  e.g. for gmail IMAP: server_name = "imap.gmail.com"
+server_name = ""
+user_name = ""
+user_password = ""
+
+##  do we use SSL (e.g. gmail uses it)
+connect_over_ssl = 1
+
+##  user mailbox 
+##  default is INBOX (other are of the form INBOX[.mailboxname]):
+user_mailbox = "INBOX"
+
+##  set mail agent to open mails. if you use gmail or other online mail accounts use your browser:
+mail_agent = "xterm -e mutt"
+#mail_agent = "opera www.gmail.com"
+
+##  browser to open URLs:
+browser = "opera"
+
+##  how many lines of content should be shown in menu:
+content_lines = 50
+
+##  remove empty lines from content: 
+remove_empty_lines = 0
+
+
+#----------------------------------------------------------------------------                
+#
+#   on screen display options:
+#
+#----------------------------------------------------------------------------                
+#
+#
+## turn osd off (set to 0 to disable):
+osd_on = 1
+
+##  display from and subject header of new mail (set 0) or just text (else) when mails arrive:
+just_text = 0
+text = "You got mail !!!"
+
+##  layout:       
+#   1: > [date] :: [from] :: [subject] <
+#   2: > [from] :: [subject] <
+#   3: > [date] :: [from] <
+#   4: > [from] <
+layout = 2
+
+##  how many seconds should the text be displayed:
+delay = 15
+
+##  alignment options: 0 - left or 1 - center or 2 - right
+alignment = 2
+
+##  horizontal offset - alters the number of pixels the display is offset from the right or left
+horizontal_offset = 33
+
+##  position options: 0 - top or 1 - bottom or 2 - center
+position = 0
+
+##  vertical offset - alters the number of pixels the display is offset from the top or bottom
+vertical_offset = 75
+
+##  set the font:
+font = "-misc-fixed-bold-*-*-*-*-130-*-*-*-*-*-*"
+#font = "-*-helvetica-*-r-*-*-*-100-*-*-*-*-*-*"
+#font = "-*-lucida-bold-r-*-sans-12-*-75-75-p-*-iso10646-1"
+
+##  set the colour:
+#   orange 
+#colour = "#ce5c00"
+#   blue
+#colour = "#0a717d"
+#   brown
+#colour = "#100800"
+#   DarkOliveGreen
+#colour = "#556B2F"
+#   DarkSlateGray
+colour = "#2F4F4F"
+#   green
+#colour = "#267726"
+#   SteelBlue
+#colour = "#4682B4"
+
+##  font shadow:
+shadow = 0
+
+##  shadow offset:
+shadow_offset = 1
+
+##  font shadow colour:
+#shadow_colour = "#100800"
+#   orange 
+#shadow_colour = "#ce5c00"
+#   blue
+shadow_colour = "#0a717d"
+
+#----------------------------------------------------------------------------                
+#   EOF checkmailrc
+#----------------------------------------------------------------------------                

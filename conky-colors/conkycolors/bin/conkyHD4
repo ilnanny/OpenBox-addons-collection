@@ -1,0 +1,7 @@
+#! /bin/sh
+DIR=$(conky-colors --finddir=scripts/conkyHD4.py)
+pythoncmd="$DIR/scripts/conkyHD4.py $@"
+
+cmd="/usr/bin/python $pythoncmd"
+
+exec $cmd

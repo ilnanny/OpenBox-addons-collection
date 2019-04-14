@@ -1,0 +1,7 @@
+[Desktop Entry]
+Version=1.0
+Name=Openbox vera-color (first-time)
+Comment=Openbox theme generation for first time users
+Exec=/usr/bin/openbox-vera-color
+X-Vera-Autostart-Phase=Initialization
+X-Vera-Launch-Sync=true

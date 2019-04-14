@@ -1,0 +1,9 @@
+[main]
+host = https://www.transifex.com
+
+[vera-plugin-desktop.main]
+file_filter = po/vera-plugin-desktop/<lang>.po
+source_file = po/vera-plugin-desktop/vera-plugin-desktop-upload.pot
+source_lang = en
+type = PO
+

@@ -1,0 +1,20 @@
+[Desktop Entry]
+Type=Action
+ToolbarLabel[en_US]=Copy To Folder
+ToolbarLabel[en]=Copy To Folder
+ToolbarLabel[C]=Copy To Folder
+Name[en_US]=Copy To Folder
+Name[en]=Copy To Folder
+Name[C]=Copy To Folder
+Profiles=profile-zero;
+
+Icon[en_US]=cab_extract
+Icon[en]=cab_extract
+Icon[C]=cab_extract
+
+[X-Action-Profile profile-zero]
+Exec=/opt/madebits-pca_1.0.0/copy2folder.sh %F
+Name[en_US]=Default profile
+Name[en]=Default profile
+Name[C]=Default profile
+

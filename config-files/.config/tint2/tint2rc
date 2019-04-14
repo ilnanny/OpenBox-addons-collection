@@ -1,0 +1,112 @@
+#---------------------------------------------
+# TINT2 CONFIG FILE
+#---------------------------------------------
+
+#---------------------------------------------
+# BACKGROUND AND BORDER
+#---------------------------------------------
+rounded = 7
+border_width = 1
+background_color = #000000 0
+border_color = #ffffff 0
+
+rounded = 5
+border_width = 0
+background_color = #ffffff 40
+border_color = #ffffff 50
+
+rounded = 5
+border_width = 0
+background_color = #ffffff 18
+border_color = #ffffff 70
+
+#---------------------------------------------
+# PANEL
+#---------------------------------------------
+panel_monitor = all
+panel_position = top center
+panel_size = 99% 24
+panel_margin = 0 0
+panel_padding = 7 0
+font_shadow = 0
+panel_background_id = 1
+wm_menu = 0
+panel_dock = 0
+panel_layer = bottom
+
+#---------------------------------------------
+# TASKBAR
+#---------------------------------------------
+#taskbar_mode = multi_desktop
+taskbar_mode = single_desktop
+taskbar_padding = 2 3 2
+taskbar_background_id = 0
+#taskbar_active_background_id = 0
+
+#---------------------------------------------
+# TASKS
+#---------------------------------------------
+task_icon = 1
+task_text = 1
+task_maximum_size = 140 35
+task_centered = 1
+task_padding = 6 3
+task_font = snap 7
+task_font_color = #ffffff 70
+task_background_id = 3
+task_icon_asb = 100 0 0
+# replace STATUS by 'urgent', 'active' or 'iconfied'
+#task_STATUS_background_id = 2
+#task_STATUS_font_color = #ffffff 85
+#task_STATUS_icon_asb = 100 0 0
+# example:
+task_active_background_id = 2
+task_active_font_color = #ffffff 85
+task_active_icon_asb = 100 0 0
+urgent_nb_of_blink = 8
+
+#---------------------------------------------
+# SYSTRAYBAR
+#---------------------------------------------
+systray = 1
+systray_padding = 0 4 5
+systray_background_id = 0
+systray_sort = left2right
+systray_icon_size = 0
+systray_icon_asb = 100 0 0
+
+#---------------------------------------------
+# CLOCK
+#---------------------------------------------
+time1_format = %H:%M
+time1_font = snap 7
+time2_format = %a %d %b
+time2_font = snap 7
+clock_font_color = #ffffff 76
+clock_padding = 1 0
+clock_background_id = 0
+#clock_lclick_command = xclock
+clock_rclick_command = orage
+#clock_tooltip = %A %d %B
+#time1_timezone = :US/Hawaii
+#time2_timezone = :Europe/Berlin
+#clock_tooltip_timezone = :/usr/share/zoneinfo/Europe/Paris
+
+#---------------------------------------------
+# TOOLTIP
+#---------------------------------------------
+tooltip = 1
+tooltip_padding = 1 3
+tooltip_show_timeout = 0.3
+tooltip_hide_timeout = 0.3
+tooltip_background_id = 4
+tooltip_font_color = #FFFFFF 100
+tooltip_font = sans 7
+
+#---------------------------------------------
+# MOUSE ACTION ON TASK
+#---------------------------------------------
+mouse_middle = close
+mouse_right = none
+mouse_scroll_up = toggle
+mouse_scroll_down = iconify

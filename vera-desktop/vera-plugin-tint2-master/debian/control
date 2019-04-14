@@ -1,0 +1,16 @@
+Source: vera-plugin-tint2
+Section: x11
+Priority: optional
+Maintainer: Eugenio Paolantonio (g7) <me@medesimo.eu>
+Build-Depends: debhelper (>= 8.0.0), build-essential, bake, libvera-dev,
+ libvera-vapi, libpeas-dev, valac
+Standards-Version: 3.9.5
+Homepage: https://semplice-linux.org/
+Vcs-Git: https://github.com/vera-desktop/vera-plugin-tint2.git
+Vcs-Browser: https://github.com/vera-desktop/vera-plugin-tint2
+
+Package: vera-plugin-tint2
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, tint2 (>= 0.12.5), vera-desktop
+Description: vera tint2 plugin
+ vera-plugin-tint2 manages the tint2 panel in Vera.

@@ -1,0 +1,120 @@
+<?xml version="1.0" ?>
+<openbox_pipe_menu>
+	<menu id="0-a" label="0-a">
+		<item label="00 Sueltos">
+			<action name="Execute">
+				<execute>
+					accion: 00 Sueltos
+				</execute>
+			</action>
+		</item>
+		<item label="01 listas">
+			<action name="Execute">
+				<execute>
+					accion: 01 listas
+				</execute>
+			</action>
+		</item>
+		<item label="03 Videos">
+			<action name="Execute">
+				<execute>
+					accion: 03 Videos
+				</execute>
+			</action>
+		</item>
+		<item label="ACDC - Back in Black">
+			<action name="Execute">
+				<execute>
+					accion: ACDC - Back in Black
+				</execute>
+			</action>
+		</item>
+		<item label="ACDC - Ballbreaker">
+			<action name="Execute">
+				<execute>
+					accion: ACDC - Ballbreaker
+				</execute>
+			</action>
+		</item>
+		<item label="ACDC - Highway to Hell">
+			<action name="Execute">
+				<execute>
+					accion: ACDC - Highway to Hell
+				</execute>
+			</action>
+		</item>
+		<item label="Aerosmith-Pump (1989)">
+			<action name="Execute">
+				<execute>
+					accion: Aerosmith-Pump (1989)
+				</execute>
+			</action>
+		</item>
+		<item label="Anthrax - The Greater Of Two Evils (2004)">
+			<action name="Execute">
+				<execute>
+					accion: Anthrax - The Greater Of Two Evils (2004)
+				</execute>
+			</action>
+		</item>
+		<item label="Anthrax_(State_of_Euphria)">
+			<action name="Execute">
+				<execute>
+					accion: Anthrax_(State_of_Euphria)
+				</execute>
+			</action>
+		</item>
+		<item label="Anthrax_-_Music_of_Mass_Destruction_2004">
+			<action name="Execute">
+				<execute>
+					accion: Anthrax_-_Music_of_Mass_Destruction_2004
+				</execute>
+			</action>
+		</item>
+	</menu>
+	<menu id="b-f" label="b-f">
+		<item label="BSO Full Metal Jacket">
+			<action name="Execute">
+				<execute>
+					accion: BSO Full Metal Jacket
+				</execute>
+			</action>
+		</item>
+	</menu>
+	<menu id="g-j" label="g-j">
+		<item label="GTA San Andreas  complete  soundtrack (10 CDs) - RELEASE - by GaGGiU">
+			<action name="Execute">
+				<execute>
+					accion: GTA San Andreas  complete  soundtrack (10 CDs) - RELEASE - by GaGGiU
+				</execute>
+			</action>
+		</item>
+	</menu>
+	<menu id="k-m" label="k-m">
+		<item label="KoRn - Follow The Leader">
+			<action name="Execute">
+				<execute>
+					accion: KoRn - Follow The Leader
+				</execute>
+			</action>
+		</item>
+	</menu>
+	<menu id="n-r" label="n-r">
+		<item label="NOFX - (1999) The Decline">
+			<action name="Execute">
+				<execute>
+					accion: NOFX - (1999) The Decline
+				</execute>
+			</action>
+		</item>
+	</menu>
+	<menu id="s-t" label="s-t">
+		<item label="Screaming Headless Torsos - 2005">
+			<action name="Execute">
+				<execute>
+					accion: Screaming Headless Torsos - 2005
+				</execute>
+			</action>
+		</item>
+	</menu>
+</openbox_pipe_menu>

@@ -1,0 +1,228 @@
+vera-plugin-desktop (1.10.2-1) unstable; urgency=medium
+
+  * [applicationlauncher] DesktopLauncher: hide the revealer by default
+  * [vera-plugin-desktop] Do not try to get size details for offline monitors
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sun, 29 May 2016 22:36:30 +0200
+
+vera-plugin-desktop (1.10.1-1) unstable; urgency=medium
+
+  * [background] BackgroundTools: Check for pixbuf existence before trying to determine its size
+  * [background] DesktopBackground: Paint the background to the parent_window (workarounds GTK+ 3.20 breakage)
+  * [applicationlauncher] Wrap the SearchBar into a Revealer
+  * [vera-plugin-desktop] Bump version
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Fri, 06 May 2016 23:53:37 +0200
+
+vera-plugin-desktop (1.10.0-1) unstable; urgency=medium
+
+  * [gitignore] Ignore Recipe.conf.
+  * [desktop] Properly react to screen size changes.
+  * [packaging] Split the vera-color modules in separate packages.
+  * [vera-plugin-desktop] Enforce (options.resource-directory)/lib as the vera plugin installation path.
+  * [packaging] Enable multi-arch
+  * [packaging] control: build-depend on valac instead of valac-0.28
+  * [packaging] control: build-depend on libgee-0.8-dev
+  * [Recipe, packaging] Removed libgee dependency.
+  * [packaging] Bump debhelper build-depenendency to be compilant with the Multi-Arch spec
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sun, 11 Oct 2015 17:17:00 +0200
+
+vera-plugin-desktop (1.0.5-1) unstable; urgency=medium
+
+  * [gtkmodules] Make both modules resident.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sun, 14 Jun 2015 17:12:24 +0200
+
+vera-plugin-desktop (1.0.4-2) unstable; urgency=medium
+
+  * React to monitor number changes.
+  * 1.0.4
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sun, 17 May 2015 22:43:05 +0200
+
+vera-plugin-desktop (1.0.3-1) unstable; urgency=medium
+
+  * desktop: ensure the wallpaper is set as the WindowBackgroundPixmap
+  * 1.0.3
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sat, 02 May 2015 22:39:00 +0200
+
+vera-plugin-desktop (1.0.2-2) unstable; urgency=medium
+
+  * Migration to current.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Thu, 16 Apr 2015 20:28:46 +0200
+
+vera-plugin-desktop (1.0.2-1) devel; urgency=medium
+
+  * DesktopWindow: make the launcher optional.
+  * Updated translations.
+  * 1.0.2
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Thu, 16 Apr 2015 18:40:20 +0200
+
+vera-plugin-desktop (1.0.1-1) unstable; urgency=medium
+
+  * DesktopLauncher: force the icon size when loading the icons.
+  * 1.0.1
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sat, 04 Apr 2015 23:50:34 +0200
+
+vera-plugin-desktop (1.0.0-1) unstable; urgency=medium
+
+  * Strip unwanted messages previously used to debug things around.
+  * vera-plugin-desktop 1.0.0.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sat, 04 Apr 2015 20:19:00 +0200
+
+vera-plugin-desktop (0.34-2) unstable; urgency=medium
+
+  * debian/vera-plugin-desktop.install: install translations.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Thu, 02 Apr 2015 17:56:12 +0200
+
+vera-plugin-desktop (0.34-1) unstable; urgency=medium
+
+  * Translation support.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Thu, 02 Apr 2015 16:07:12 +0200
+
+vera-plugin-desktop (0.31.3-1) unstable; urgency=medium
+
+  * src/Recipe: fixup the libvera-color.so (gtk2) symlink.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Fri, 20 Feb 2015 18:04:44 +0100
+
+vera-plugin-desktop (0.31.2-1) unstable; urgency=medium
+
+  * src/Recipe: create the gtk-2.0 modules directory when creating the symlink
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Fri, 20 Feb 2015 16:11:02 +0100
+
+vera-plugin-desktop (0.31.1-1) unstable; urgency=medium
+
+  * vera-color-gtk2: do not initialize the unused GdkColor struct.
+  * debian/rules: specify the installation directory using the absolute path.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Fri, 20 Feb 2015 15:32:48 +0100
+
+vera-plugin-desktop (0.31.0-1) unstable; urgency=medium
+
+  * Added vera-color-gtk2 module.
+  * debian/: ship vera-color-gtk2.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Fri, 20 Feb 2015 13:51:43 +0100
+
+vera-plugin-desktop (0.30.0-1) unstable; urgency=medium
+
+  * DesktopLauncher: remove eventual file/url placeholders from the command to execute
+  * DesktopWindow: delay the 'end' TutorialPage to take in account the launcher closure animation.
+  * desktop: darken the average wallpaper color if it's too bright.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Tue, 17 Feb 2015 17:13:08 +0100
+
+vera-plugin-desktop (0.29.0-1) unstable; urgency=medium
+
+  * schema: change image-path and vera-color to match the default numb wallpaper.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Wed, 11 Feb 2015 20:28:51 +0100
+
+vera-plugin-desktop (0.28.0-1) devel; urgency=medium
+
+  * Allow empty strings in the image-path array.
+  * Do not try to set the background when the image-path array is empty or the chosen background is the first one and it's an empty string.
+  * Fix typo in empty string check
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Thu, 05 Feb 2015 18:57:12 +0100
+
+vera-plugin-desktop (0.27.0-1) devel; urgency=medium
+
+  * Share only the GMenu tree between monitors.
+  * DesktopLauncher: made the page handling and search with the same start_text more robust.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Fri, 30 Jan 2015 21:59:41 +0100
+
+vera-plugin-desktop (0.26.0-1) devel; urgency=medium
+
+  * ApplicationLauncher: do not reset the SEARCH_ID while iterating on TreeDirectories.
+  * LauncherWidgets: simplify the button logic by always recreating the buttons on the update_page_number call.
+  * DesktopLauncher: get the activated item from the filtered list.
+  * LauncherWidgets: add new widgets: ArrowButton and PageHandler.
+  * DesktopLauncher: switch to ArrowButton and PageHandler.
+  * DesktopLauncher: remove the current_item column from the main ListStore as it's not needed anymore.
+  * DesktopLauncher: drop DesktopLauncher.searching global state variable.
+  * DesktopLauncher: reset the current_item before actually calling the search process.
+  * ApplicationLauncher: reject null DesktopAppInfos on item_matches_keyword() method.
+  * ApplicationLauncher: emit search_finished event when the entire search has been completed.
+  * LauncherWidgets: store the ArrowButtons in a new public HashTable in the PageHandler() class.
+  * DesktopLauncher: disable sensitiveness of the LEFT/RIGHT ArrowButtons as needed.
+  * DesktopLauncher: ensure that the last_page count is of *at least* 1.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Thu, 29 Jan 2015 16:14:02 +0100
+
+vera-plugin-desktop (0.25.0-1) devel; urgency=medium
+
+  * Set a black background before rendering
+  * DesktopLauncher: comment the redundant entries
+    inserted before to debug things up
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Thu, 20 Nov 2014 16:49:27 +0100
+
+vera-plugin-desktop (0.24.0-2) devel; urgency=medium
+
+  * debian/control: compile using vala-0.26
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Thu, 30 Oct 2014 17:27:14 +0100
+
+vera-plugin-desktop (0.24.0-1) devel; urgency=medium
+
+  * schema: changed defaults in preparation for the 7-preview.
+  * desktop.vala: refactored on_settings_changed().
+  * desktop.vala: reset the eventual random timeout if the wallpaper has been changed.
+  * debian/control: depend on libgnome-menu-3-dev.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Thu, 30 Oct 2014 16:07:06 +0100
+
+vera-plugin-desktop (0.23.0-1) devel; urgency=medium
+
+  * Refactored the background management.
+  * Background: added settings for wallpaper randomization.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Wed, 29 Oct 2014 19:58:49 +0100
+
+vera-plugin-desktop (0.22.0-1) devel; urgency=medium
+
+  * desktop: recalculate the set wallpaper default color when disabling vera-control-lock.
+  * Launcher: added a preliminary version.
+  * schema: added background-search-paths, background-include and background-exclude settings.
+  * tutorial: set top and bottom margin on the tutorial.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Thu, 16 Oct 2014 13:16:33 +0200
+
+vera-plugin-desktop (0.21.0-1) devel; urgency=medium
+
+  * Tutorial: finally fixed the 'grey background' issue.
+  * Implemented the vera-color property that will be exported to the current running GTK+ theme.
+  * Added 'vera-color' gtkmodule.
+  * debian/vera-plugin-desktop.install: ship gtk module.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sat, 16 Aug 2014 23:56:25 +0200
+
+vera-plugin-desktop (0.20.1-2) devel; urgency=medium
+
+  * Build-depend on libgee-dev
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Mon, 28 Jul 2014 16:48:54 +0200
+
+vera-plugin-desktop (0.20.1-1) devel; urgency=medium
+
+  * Depend on gee (until the dependency is dropped in vera)
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Mon, 28 Jul 2014 12:52:31 +0200
+
+vera-plugin-desktop (0.20-1) devel; urgency=medium
+
+  * Initial release.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Mon, 28 Jul 2014 12:27:17 +0200

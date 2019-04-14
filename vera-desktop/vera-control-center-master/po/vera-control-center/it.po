@@ -1,0 +1,966 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# g7 <me@medesimo.eu>, 2015
+# g7 <me@medesimo.eu>, 2015
+msgid ""
+msgstr ""
+"Project-Id-Version: vera-control-center\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-27 13:58+0200\n"
+"PO-Revision-Date: 2015-08-27 12:05+0000\n"
+"Last-Translator: g7 <me@medesimo.eu>\n"
+"Language-Team: Italian (http://www.transifex.com/semplice/vera-control-center/language/it/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: it\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: vera-control-center.py:54
+msgid "Personal"
+msgstr "Personale"
+
+#: vera-control-center.py:55
+msgid "System"
+msgstr "Sistema"
+
+#: vera-control-center.py:56
+msgid "Network"
+msgstr "Rete"
+
+#: vera-control-center.py:57
+msgid "Hardware"
+msgstr "Hardware"
+
+#: vera-control-center.py:101 controlcenterui.glade.h:1
+msgid "Settings"
+msgstr "Impostazioni"
+
+#: veracc/widgets/RebootDialog.py:32
+#, python-format
+msgid "_Reboot now (in %ds)"
+msgstr "_Riavvia ora (in %ds)"
+
+#: veracc/widgets/RebootDialog.py:108 modules/shortcuts/shortcuts.glade.h:3
+#: modules/power/power.glade.h:3
+msgid "Reboot"
+msgstr "Riavvia"
+
+#: veracc/widgets/RebootDialog.py:111
+msgid "Reboot required"
+msgstr "Riavvio richiesto"
+
+#: veracc/widgets/RebootDialog.py:114
+msgid ""
+"In order to apply the changes, a reboot is required.\n"
+"\n"
+"Please save your work and press \"Reboot now\" to reboot or press \"Cancel\" to reboot later."
+msgstr "Per applicare i cambiamenti è necessario riavviare.\n\nSi prega di salvare il proprio lavoro e di premere \"Riavvia ora\" per riavviare oppure \"Annulla\" per riavviare successivamente."
+
+#: veracc/widgets/RebootDialog.py:121
+#: veracc/widgets/ApplicationSelectionDialog.py:201
+#: modules/autostart/autostart.py:519 modules/desktop/desktop.py:557
+#: modules/usersadmin/usersadmin.py:397
+msgid "_Cancel"
+msgstr "_Annulla"
+
+#: veracc/widgets/RebootDialog.py:126
+msgid "_Reboot now"
+msgstr "_Riavvia ora"
+
+#: veracc/widgets/UnlockBar.py:113
+msgid "You need additional privileges to modify these settings."
+msgstr "Sono necessari dei privilegi addizionali per poter modificare queste impostazioni."
+
+#: veracc/widgets/UnlockBar.py:118
+msgid "Press the <i>Lock</i> button to lock these settings."
+msgstr "Premere il pulsante <i>Blocca</i> per bloccare queste impostazioni."
+
+#: veracc/widgets/UnlockBar.py:122
+msgid "_Unlock"
+msgstr "_Sblocca"
+
+#: veracc/widgets/UnlockBar.py:123
+msgid "_Lock"
+msgstr "_Blocca"
+
+#: veracc/widgets/UnlockBar.py:219
+#, python-format
+msgid "Error checking authorization: %s"
+msgstr "Errore nel controllare l'autenticazione: %s"
+
+#: veracc/widgets/ApplicationSelectionDialog.py:187
+msgid "Select an application"
+msgstr "Seleziona una applicazione"
+
+#: veracc/widgets/ApplicationSelectionDialog.py:202
+msgid "_Select"
+msgstr "_Seleziona"
+
+#: modules/autostart/autostart.py:169
+#, python-format
+msgid "You don't have enough permissions to edit or remove «%s»"
+msgstr "Non si dispone di abbastanza permessi per modificare o rimuovere «%s»"
+
+#: modules/autostart/autostart.py:176
+#, python-format
+msgid "Edit or remove «%s»"
+msgstr "Modifica o rimuovi «%s»"
+
+#: modules/autostart/autostart.py:301
+msgid "Add a new custom command"
+msgstr "Aggiungi un comando personalizzato"
+
+#: modules/autostart/autostart.py:321
+msgid "Edit application"
+msgstr "Modifica applicazione"
+
+#: modules/autostart/autostart.py:492
+msgid "Select..."
+msgstr "Seleziona..."
+
+#: modules/autostart/autostart.py:496
+msgid "Use a custom command"
+msgstr "Utilizza un comando personalizzato "
+
+#: modules/autostart/autostart.py:518
+msgid "_Remove"
+msgstr "_Rimuovi"
+
+#: modules/autostart/autostart.py:520
+msgid "_Save"
+msgstr "_Salva"
+
+#: modules/desktop/desktop.py:482
+msgid "All monitors"
+msgstr "Tutti i monitor"
+
+#: modules/desktop/desktop.py:484
+#, python-format
+msgid "Monitor %d"
+msgstr "Monitor %d"
+
+#: modules/desktop/desktop.py:559
+msgid "_Open"
+msgstr "_Apri"
+
+#: modules/desktop/desktop.py:562
+msgid "All Files"
+msgstr "Tutti i file"
+
+#: modules/desktop/desktop.py:563
+msgid "Images"
+msgstr "Immagini"
+
+#: modules/desktop/desktop.py:569 modules/usersadmin/usersadmin.py:412
+msgid "_Close"
+msgstr "_Chiudi"
+
+#: modules/power/power.py:32
+msgid "Unknown"
+msgstr "Sconosciuto"
+
+#: modules/power/power.py:33
+msgid "Charging"
+msgstr "In carica"
+
+#: modules/power/power.py:34
+msgid "Discharging"
+msgstr "In scaricamento"
+
+#: modules/power/power.py:35
+msgid "Empty"
+msgstr "Vuoto"
+
+#: modules/power/power.py:36
+msgid "Fully charged"
+msgstr "Carica completata"
+
+#: modules/power/power.py:37
+msgid "Pending charge"
+msgstr "Carica attesa"
+
+#: modules/power/power.py:38
+msgid "Pending discharge"
+msgstr "Scaricamento in attesa"
+
+#: modules/power/power.py:39
+msgid "Last"
+msgstr "Ultimo"
+
+#: modules/usersadmin/widgets.py:39
+msgid "Add a new user"
+msgstr "Aggiungi un nuovo utente"
+
+#: modules/usersadmin/usersadmin.py:37
+msgid "<i>Click the edit button to set the full name</i>"
+msgstr "<i>Cliccare il pulsante di modifica per impostare il nome completo</i>"
+
+#: modules/usersadmin/usersadmin.py:399
+msgid "_Delete user"
+msgstr "_Rimuovi utente"
+
+#: modules/theme/theme.py:57 modules/theme/pages/gtktheme.py:111
+#: modules/theme/pages/gtktheme.py:273
+msgid "Theme"
+msgstr "Tema"
+
+#: modules/theme/theme.py:58
+msgid "Effects"
+msgstr "Effetti"
+
+#: modules/theme/theme.py:59
+msgid "Fonts"
+msgstr "Caratteri"
+
+#: modules/theme/pages/paranoid.py:41
+msgid "General"
+msgstr "Generale"
+
+#: modules/theme/pages/paranoid.py:51
+msgid "Enable animations in applications"
+msgstr "Abilita le animazioni nelle applicazioni"
+
+#: modules/theme/pages/paranoid.py:59
+msgid "Enable window effects"
+msgstr "Abilita gli effetti grafici sulle finestre"
+
+#: modules/theme/pages/paranoid.py:120
+msgid "Shadows"
+msgstr "Ombre"
+
+#: modules/theme/pages/paranoid.py:133
+msgid "Enable shadows"
+msgstr "Abilita le ombre"
+
+#: modules/theme/pages/paranoid.py:141
+msgid "Display shadows in the panel"
+msgstr "Mostra le ombre sul pannello"
+
+#: modules/theme/pages/paranoid.py:152
+msgid "Shadow color"
+msgstr "Colore dell'ombra"
+
+#: modules/theme/pages/paranoid.py:221
+msgid "Fading"
+msgstr "Dissolvenze"
+
+#: modules/theme/pages/paranoid.py:234
+msgid "Enable fading"
+msgstr "Abilita la dissolvenza"
+
+#: modules/theme/pages/paranoid.py:242
+msgid "Fade windows when they're opening/closing"
+msgstr "Dissolvi le finestre quando si stanno aprendo/chiudendo"
+
+#: modules/theme/pages/paranoid.py:315
+msgid "Transparency"
+msgstr "Trasparenza"
+
+#: modules/theme/pages/paranoid.py:329
+msgid "Menu opacity"
+msgstr "Opacità del menù"
+
+#: modules/theme/pages/paranoid.py:349
+msgid "Inactive opacity"
+msgstr "Opacità delle finestre inattive"
+
+#: modules/theme/pages/paranoid.py:369
+msgid "Border opacity"
+msgstr "Opacità del bordo"
+
+#: modules/theme/pages/paranoid.py:417
+msgid "Advanced"
+msgstr "Avanzate"
+
+#: modules/theme/pages/paranoid.py:428
+msgid "Backend"
+msgstr "Backend"
+
+#: modules/theme/pages/paranoid.py:452 modules/theme/pages/font.py:99
+#: modules/theme/pages/font.py:127
+msgid "None"
+msgstr "Nessuno"
+
+#: modules/theme/pages/gtktheme.py:99 modules/theme/pages/font.py:53
+msgid "Widgets"
+msgstr "Widget"
+
+#: modules/theme/pages/gtktheme.py:121
+msgid "Show images in buttons"
+msgstr "Mostra immagini nei bottoni"
+
+#: modules/theme/pages/gtktheme.py:129
+msgid "Show images in menus"
+msgstr "Mostra immagini nei menù"
+
+#: modules/theme/pages/gtktheme.py:137
+msgid "Use custom color for selected items (when supported)"
+msgstr "Utilizza un colore personalizzato per gli oggetti selezionati (se supportato)"
+
+#: modules/theme/pages/gtktheme.py:153
+msgid "Pick color from the current wallpaper"
+msgstr "Prendere il colore dallo sfondo attuale"
+
+#: modules/theme/pages/gtktheme.py:164
+msgid "Use this color"
+msgstr "Usa questo colore"
+
+#: modules/theme/pages/gtktheme.py:258 modules/theme/pages/font.py:191
+msgid "Windows"
+msgstr "Finestre"
+
+#: modules/theme/pages/gtktheme.py:280
+msgid "Show the window icon"
+msgstr "Mostra l'icona della finestra"
+
+#: modules/theme/pages/gtktheme.py:358
+msgid "Icons"
+msgstr "Icone"
+
+#: modules/theme/pages/gtktheme.py:369
+msgid "Icon theme"
+msgstr "Tema delle icone"
+
+#: modules/theme/pages/gtktheme.py:460
+msgid "Cursor"
+msgstr "Cursore"
+
+#: modules/theme/pages/gtktheme.py:472
+msgid "Cursor theme"
+msgstr "Tema del cursore"
+
+#: modules/theme/pages/gtktheme.py:480 modules/shortcuts/shortcuts.glade.h:14
+msgid "You need to logout to apply the changes."
+msgstr "È necessario disconnettersi per applicare le modifiche."
+
+#: modules/theme/pages/font.py:63
+msgid "Font"
+msgstr "Carattere"
+
+#: modules/theme/pages/font.py:75
+msgid "Enable antialiasing"
+msgstr "Abilita l'antialiasing"
+
+#: modules/theme/pages/font.py:85
+msgid "Enable hinting"
+msgstr "Abilita hinting"
+
+#: modules/theme/pages/font.py:96
+msgid "Hint style"
+msgstr "Stile di hint"
+
+#: modules/theme/pages/font.py:100
+msgid "Slight"
+msgstr "Leggero"
+
+#: modules/theme/pages/font.py:101
+msgid "Medium"
+msgstr "Medio"
+
+#: modules/theme/pages/font.py:102
+msgid "Full"
+msgstr "Pieno"
+
+#: modules/theme/pages/font.py:124
+msgid "Subpixel rendering"
+msgstr "Rendering subpixel"
+
+#: modules/theme/pages/font.py:205
+msgid "Active window font"
+msgstr "Carattere per la finestra attiva"
+
+#: modules/theme/pages/font.py:218
+msgid "Inactive window font"
+msgstr "Carattere per la finestra inattiva"
+
+#: modules/theme/pages/font.py:231
+msgid "Main menu font"
+msgstr "Carattere per il menù principale"
+
+#: modules/theme/pages/font.py:246
+msgid "On-screen display font"
+msgstr "Carattere per l'on-screen display"
+
+#: modules/autostart/autostart.desktop:3
+msgid "Autostart;Session"
+msgstr "Avvio automatico;Sessione"
+
+#: modules/autostart/autostart.desktop:4
+msgid "preferences-system-session"
+msgstr "prefences-system-session"
+
+#: modules/autostart/autostart.desktop:10
+msgid "Manage the applications to autostart"
+msgstr "Gestisci le applicazioni da avviare automaticamente"
+
+#: modules/autostart/autostart.desktop:16
+msgid "Autostart"
+msgstr "Avvio automatico"
+
+#: modules/tint2/tint2.desktop:3 modules/tint2/tint2.desktop:16
+msgid "Panel"
+msgstr "Pannello"
+
+#: modules/tint2/tint2.desktop:4
+msgid "panel"
+msgstr "pannello"
+
+#: modules/tint2/tint2.desktop:10
+msgid "Configure the Panel"
+msgstr "Configura il pannello"
+
+#: modules/desktop/desktop.desktop:3 modules/desktop/desktop.desktop:16
+msgid "Desktop"
+msgstr "Scrivania"
+
+#: modules/desktop/desktop.desktop:4
+msgid "preferences-desktop-wallpaper"
+msgstr "preferences-desktop-wallpaper"
+
+#: modules/desktop/desktop.desktop:10
+msgid "Desktop preferences"
+msgstr "Preferenze della scrivania"
+
+#: modules/shortcuts/shortcuts.desktop:3
+msgid "Shortcuts;"
+msgstr "Scorciatoie;"
+
+#: modules/shortcuts/shortcuts.desktop:4
+msgid "preferences-desktop-keyboard-shortcuts"
+msgstr "preferences-desktop-keyboard-shortcuts"
+
+#: modules/shortcuts/shortcuts.desktop:10
+#: modules/shortcuts/shortcuts.desktop:16
+msgid "Shortcuts"
+msgstr "Scorciatoie"
+
+#: modules/networkmanager/networkmanager.desktop:12
+msgid "Manage and change your network connection settings"
+msgstr "Gestisci e modifica le impostazioni delle connessioni di rete"
+
+#: modules/networkmanager/networkmanager.desktop:89
+msgid "preferences-system-network"
+msgstr "preferences-system-network"
+
+#: modules/networkmanager/networkmanager.desktop:103
+msgid "Network Connections"
+msgstr "Connessioni di rete"
+
+#: modules/networkmanager/networkmanager.desktop:127
+msgid "Network;Connections;"
+msgstr "Rete;Connessioni"
+
+#: modules/locale/locale.desktop:3
+msgid "Language"
+msgstr "Lingua"
+
+#: modules/locale/locale.desktop:4
+msgid "preferences-desktop-locale"
+msgstr "preferences-desktop-locale"
+
+#: modules/locale/locale.desktop:10
+msgid "Change the default language and region"
+msgstr "Modifica la lingua e la regione predefinita"
+
+#: modules/locale/locale.desktop:16
+msgid "Region & language"
+msgstr "Regione e lingua"
+
+#: modules/keyboard/keyboard.desktop:3 modules/keyboard/keyboard.desktop:16
+msgid "Keyboard"
+msgstr "Tastiera"
+
+#: modules/keyboard/keyboard.desktop:4
+msgid "preferences-desktop-keyboard"
+msgstr "preferences-desktop-keyboard"
+
+#: modules/keyboard/keyboard.desktop:10
+msgid "Keyboard settings"
+msgstr "Impostazioni della tastiera"
+
+#: modules/timedate/timedate.desktop:3
+msgid "Time;Date"
+msgstr "Ora;Data"
+
+#: modules/timedate/timedate.desktop:4
+msgid "preferences-system-time"
+msgstr "preferences-system-time"
+
+#: modules/timedate/timedate.desktop:10
+msgid "Configures the time and the date"
+msgstr "Configura l'ora e la data"
+
+#: modules/timedate/timedate.desktop:16
+msgid "Time & Date"
+msgstr "Ora e data"
+
+#: modules/power/power.desktop:3
+msgid "Power;Batteries;Battery;"
+msgstr "Alimentazione;Batterie;Batteria;"
+
+#: modules/power/power.desktop:4
+msgid "preferences-system-power"
+msgstr "preferences-system-power"
+
+#: modules/power/power.desktop:10
+msgid "Power settings"
+msgstr "Impostazioni dell'alimentazione"
+
+#: modules/power/power.desktop:16
+msgid "Power"
+msgstr "Alimentazione"
+
+#: modules/usersadmin/usersadmin.desktop:3
+msgid "Users;Groups;Face"
+msgstr "Utenti;Gruppi;Face"
+
+#: modules/usersadmin/usersadmin.desktop:4
+msgid "system-config-users"
+msgstr "system-config-users"
+
+#: modules/usersadmin/usersadmin.desktop:10
+msgid "Add, edit, remove users and groups"
+msgstr "Aggiungi, modifica e rimuovi utenti e gruppi"
+
+#: modules/usersadmin/usersadmin.desktop:16
+msgid "Users & Groups"
+msgstr "Utenti e gruppi"
+
+#: modules/theme/theme.desktop:3
+msgid "Themes"
+msgstr "Temi"
+
+#: modules/theme/theme.desktop:4
+msgid "preferences-desktop-theme"
+msgstr "preferences-desktop-theme"
+
+#: modules/theme/theme.desktop:10
+msgid "Themes."
+msgstr "Temi."
+
+#: modules/theme/theme.desktop:16
+msgid "Appearance"
+msgstr "Aspetto"
+
+#: modules/about/about.desktop:3
+msgid "Device;Informations;About"
+msgstr "Dispositivo;Informazioni"
+
+#: modules/about/about.desktop:4
+msgid "info"
+msgstr "info"
+
+#: modules/about/about.desktop:10
+msgid "Shows informations on this system"
+msgstr "Mostra informazioni su questo sistema"
+
+#: modules/about/about.desktop:16
+msgid "Device details"
+msgstr "Informazioni sul dispositivo"
+
+#: controlcenterui.glade.h:2
+msgid "Search"
+msgstr "Cerca"
+
+#: modules/autostart/autostart.glade.h:1 modules/desktop/desktop.glade.h:2
+msgid "Name"
+msgstr "Nome"
+
+#: modules/autostart/autostart.glade.h:2
+msgid "Command"
+msgstr "Comando"
+
+#: modules/autostart/autostart.glade.h:3
+msgid "<b>Autostart applications</b>"
+msgstr "<b>Applicazioni da avviare automaticamente</b>"
+
+#: modules/autostart/autostart.glade.h:4
+msgid "Add new"
+msgstr "Aggiungi nuova"
+
+#: modules/tint2/tint2.glade.h:1
+msgid "Top"
+msgstr "Sopra"
+
+#: modules/tint2/tint2.glade.h:2 modules/desktop/desktop.glade.h:14
+msgid "Center"
+msgstr "Centra"
+
+#: modules/tint2/tint2.glade.h:3
+msgid "Bottom"
+msgstr "In fondo"
+
+#: modules/tint2/tint2.glade.h:4
+msgid "Panel settings"
+msgstr "Impostazioni del pannello"
+
+#: modules/tint2/tint2.glade.h:5
+msgid "Enable launchers"
+msgstr "Abilita i lanciatori"
+
+#: modules/tint2/tint2.glade.h:6
+msgid "<b>Launchers</b>"
+msgstr "<b>Lanciatori</b>"
+
+#: modules/tint2/tint2.glade.h:7
+msgid "Use AM/PM format for the clock"
+msgstr "Utilizza il formato AM/PM per l'orologio"
+
+#: modules/tint2/tint2.glade.h:8
+msgid "Auto-hide panel"
+msgstr "Nascondi il pannello automaticamente"
+
+#: modules/tint2/tint2.glade.h:9
+msgid "Invert mouse scroll actions"
+msgstr "Inverti le azioni di scroll del mouse"
+
+#: modules/tint2/tint2.glade.h:10
+msgid "Panel position"
+msgstr "Posizione del pannello"
+
+#: modules/tint2/tint2.glade.h:11 modules/desktop/desktop.glade.h:24
+#: modules/locale/locale.glade.h:4
+msgid "<b>Other</b>"
+msgstr "<b>Altro</b>"
+
+#: modules/desktop/desktop.glade.h:1
+msgid "Background informations"
+msgstr "Informazioni sullo sfondo"
+
+#: modules/desktop/desktop.glade.h:3
+msgid "Description"
+msgstr "Descrizione"
+
+#: modules/desktop/desktop.glade.h:4
+msgid "Author"
+msgstr "Autore"
+
+#: modules/desktop/desktop.glade.h:5
+msgid "License"
+msgstr "Licenza"
+
+#: modules/desktop/desktop.glade.h:6
+msgid "button"
+msgstr "bottone"
+
+#: modules/desktop/desktop.glade.h:7
+msgid "label"
+msgstr "label"
+
+#: modules/desktop/desktop.glade.h:8
+msgid "Color"
+msgstr "Colore"
+
+#: modules/desktop/desktop.glade.h:9
+msgid "Tile"
+msgstr "Piastrella"
+
+#: modules/desktop/desktop.glade.h:10
+msgid "Stretch"
+msgstr "Distendi"
+
+#: modules/desktop/desktop.glade.h:11
+msgid "Screen"
+msgstr "Schermo"
+
+#: modules/desktop/desktop.glade.h:12
+msgid "Fit"
+msgstr "Adatta"
+
+#: modules/desktop/desktop.glade.h:13
+msgid "Crop"
+msgstr "Taglia"
+
+#: modules/desktop/desktop.glade.h:15
+msgid "Select entire directories"
+msgstr "Seleziona cartelle intere"
+
+#: modules/desktop/desktop.glade.h:16
+msgid "Add background"
+msgstr "Aggiungi uno sfondo"
+
+#: modules/desktop/desktop.glade.h:17
+msgid "Remove background"
+msgstr "Rimuovi sfondo"
+
+#: modules/desktop/desktop.glade.h:18
+msgid "Informations on this wallpaper"
+msgstr "Informazioni su questo sfondo"
+
+#: modules/desktop/desktop.glade.h:19
+msgid "About this wallpaper"
+msgstr "Informazioni su questo sfondo"
+
+#: modules/desktop/desktop.glade.h:20
+msgid "Change background every"
+msgstr "Cambia sfondo ogni"
+
+#: modules/desktop/desktop.glade.h:21
+msgid "1"
+msgstr "1"
+
+#: modules/desktop/desktop.glade.h:22
+msgid "minutes"
+msgstr "minuti"
+
+#: modules/desktop/desktop.glade.h:23
+msgid "Number of virtual desktops"
+msgstr "Numero di desktop virtuali"
+
+#: modules/desktop/desktop.glade.h:25
+msgid "Add a new background"
+msgstr "Aggiungi un nuovo sfondo"
+
+#: modules/shortcuts/shortcuts.glade.h:1
+msgid "Last action"
+msgstr "Ultima azione"
+
+#: modules/shortcuts/shortcuts.glade.h:2
+msgid "Power Off"
+msgstr "Spegni"
+
+#: modules/shortcuts/shortcuts.glade.h:4 modules/power/power.glade.h:4
+msgid "Suspend"
+msgstr "Sospendi"
+
+#: modules/shortcuts/shortcuts.glade.h:5
+msgid "Logout"
+msgstr "Disconnetti"
+
+#: modules/shortcuts/shortcuts.glade.h:6
+msgid "Lock"
+msgstr "Blocca"
+
+#: modules/shortcuts/shortcuts.glade.h:7 modules/power/power.glade.h:5
+msgid "Hibernate"
+msgstr "Iberna"
+
+#: modules/shortcuts/shortcuts.glade.h:8
+msgid "Switch user"
+msgstr "Cambia utente"
+
+#: modules/shortcuts/shortcuts.glade.h:9
+msgid "Do not show confirmation window"
+msgstr "Non mostrare la finestra di conferma"
+
+#: modules/shortcuts/shortcuts.glade.h:10
+msgid "Execute action after pressing Ctrl+Alt+Space"
+msgstr "Esegui l'azione dopo aver premuto Ctrl+Alt+Spazio"
+
+#: modules/shortcuts/shortcuts.glade.h:11
+msgid "Action to execute"
+msgstr "Azione da eseguire"
+
+#: modules/shortcuts/shortcuts.glade.h:12
+msgid "<b>Exit actions</b>"
+msgstr "<b>Azioni di uscita</b>"
+
+#: modules/shortcuts/shortcuts.glade.h:13
+msgid "Enable launcher"
+msgstr "Abilita il lanciatore"
+
+#: modules/shortcuts/shortcuts.glade.h:15
+msgid "<b>Desktop</b>"
+msgstr "<b>Scrivania</b>"
+
+#: modules/locale/locale.glade.h:1
+msgid "Display all available locales"
+msgstr "Mostra tutte le localizzazioni disponibili"
+
+#: modules/locale/locale.glade.h:2
+msgid "<b>Region and language</b>"
+msgstr "<b>Regione e lingua</b>"
+
+#: modules/locale/locale.glade.h:3
+msgid "Save space by installing only translations of the selected language"
+msgstr "Installa solo le traduzioni della lingua selezionata per risparmiare spazio"
+
+#: modules/locale/locale.glade.h:5
+msgid "Warning"
+msgstr "Attenzione"
+
+#: modules/locale/locale.glade.h:6
+msgid "<big><b>Some translations may haven't be installed!</b></big>"
+msgstr "<big><b>Qualche traduzione può non essere installata!</b></big>"
+
+#: modules/locale/locale.glade.h:7
+msgid ""
+"As you have previously used the 'Save space' feature, translations of the newly selected locale may have not been installed.\n"
+"\n"
+"Do you want to continue?"
+msgstr "Le traduzioni della lingua selezionata potrebbero non essere installate a causa di un uso precedente della funzionalità 'Salva spazio'.\n\nSi vuole continuare?"
+
+#: modules/locale/locale.glade.h:10
+msgid "Question"
+msgstr "Domanda"
+
+#: modules/locale/locale.glade.h:11
+msgid "<big><b>Remove already installed translations?</b></big>"
+msgstr "<big><b>Rimuovere le traduzioni già installate?</b></big>"
+
+#: modules/locale/locale.glade.h:12
+msgid ""
+"This feature has effect only on the future installed applications.\n"
+"\n"
+"It's possible to remove already installed translations though. This may take some time.\n"
+"\n"
+"Do you want to continue? (If you press <i>No</i>, the savespace feature will not be retroactive)"
+msgstr "Questa funzionalità ha effetto solamente sulle applicazioni che verranno installate in futuro.\n\nÈ comunque possibile rimuovare le traduzioni già installate. Questo può richiedere del tempo.\n\nSi vuole continuare? (Se viene premuto <i>No</i>, la funzionalità salva spazio non sarà retroattiva)"
+
+#: modules/keyboard/keyboard.glade.h:1
+msgid "<b>Layout</b>"
+msgstr "<b>Layout</b>"
+
+#: modules/keyboard/keyboard.glade.h:2
+msgid "<b>Variant</b>"
+msgstr "<b>Variante</b>"
+
+#: modules/keyboard/keyboard.glade.h:3
+msgid "<b>Model</b>"
+msgstr "<b>Modello</b>"
+
+#: modules/timedate/timedate.glade.h:1
+msgid "0"
+msgstr "0"
+
+#: modules/timedate/timedate.glade.h:2
+msgid ":"
+msgstr ":"
+
+#: modules/timedate/timedate.glade.h:3
+msgid "Keep syncronized with internet services"
+msgstr "Sincronizzare con i servizi internet"
+
+#: modules/timedate/timedate.glade.h:4
+msgid "Select a city"
+msgstr "Seleziona una città"
+
+#: modules/timedate/timedate.glade.h:5
+msgid "Select"
+msgstr "Seleziona"
+
+#: modules/power/power.glade.h:1
+msgid "Do nothing"
+msgstr "Non fare nulla"
+
+#: modules/power/power.glade.h:2
+msgid "Power off"
+msgstr "Spegni"
+
+#: modules/power/power.glade.h:6
+msgid "Lock screen"
+msgstr "Blocca schermo"
+
+#: modules/power/power.glade.h:7
+msgid "<b>Battery</b>"
+msgstr "<b>Batteria</b>"
+
+#: modules/power/power.glade.h:8
+msgid "<b>Display brightness</b>"
+msgstr "<b>Luminosità dello schermo</b>"
+
+#: modules/power/power.glade.h:9
+msgid "When the power button has been pressed"
+msgstr "Quando il pulsante di alimentazione è stato premuto"
+
+#: modules/power/power.glade.h:10
+msgid "When the laptop has been closed"
+msgstr "Quando il laptop è stato chiuso"
+
+#: modules/power/power.glade.h:11
+msgid ""
+"The specified action is triggered only when the device is discharging, and "
+"only if there aren't any external displays connected."
+msgstr "L'azione specificata è eseguita solamente quando il device è alimentato dalla batteria e solamente se non c'è alcun monitor esterno connesso."
+
+#: modules/power/power.glade.h:12
+msgid "<b>Buttons</b>"
+msgstr "<b>Bottoni</b>"
+
+#: modules/usersadmin/usersadmin.glade.h:1
+msgid "Delete user"
+msgstr "Rimuovi utente"
+
+#: modules/usersadmin/usersadmin.glade.h:2
+msgid "<big><b>Do you really want to continue?</b></big>"
+msgstr "<big><b>Si vuole veramente continuare?</b></big>"
+
+#: modules/usersadmin/usersadmin.glade.h:3
+msgid "By continuing, the user will be permanently deleted."
+msgstr "Continuando, l'utente verrà eliminato permanentemente."
+
+#: modules/usersadmin/usersadmin.glade.h:4
+msgid "Remove also personal files (the \"Home directory\")"
+msgstr "Rimuovi anche i file personali (la \"cartella Home\")"
+
+#: modules/usersadmin/usersadmin.glade.h:5
+msgid "Click to edit the full name"
+msgstr "Cliccare per modificare il nome completo"
+
+#: modules/usersadmin/usersadmin.glade.h:6
+msgid "Groups and permissions"
+msgstr "Gruppi e permessi"
+
+#: modules/usersadmin/usersadmin.glade.h:7
+msgid "User Name"
+msgstr "Nome utente "
+
+#: modules/usersadmin/usersadmin.glade.h:8
+msgid "user"
+msgstr "utente"
+
+#: modules/usersadmin/usersadmin.glade.h:9
+msgid "Click to delete this user"
+msgstr "Cliccare per cancellare l'utente"
+
+#: modules/usersadmin/usersadmin.glade.h:10
+msgid "Administrator"
+msgstr "Amministratore"
+
+#: modules/usersadmin/usersadmin.glade.h:11
+msgid "Password"
+msgstr "Password"
+
+#: modules/usersadmin/usersadmin.glade.h:12
+msgid "Autologin"
+msgstr "Login automatico"
+
+#: modules/usersadmin/usersadmin.glade.h:13
+msgid "Click to change"
+msgstr "Cliccare per cambiare"
+
+#: modules/usersadmin/usersadmin.glade.h:14
+msgid "Unable to load the user list."
+msgstr "Impossibile caricare la lista degli utenti."
+
+#: modules/about/about.glade.h:1
+msgid "Semplice"
+msgstr "Semplice"
+
+#: modules/about/about.glade.h:2
+msgid "Device name"
+msgstr "Nome del dispositivo"
+
+#: modules/about/about.glade.h:3
+msgid "System memory"
+msgstr "Memoria del sistema"
+
+#: modules/about/about.glade.h:4
+msgid "CPU"
+msgstr "CPU"
+
+#: modules/about/about.glade.h:5
+msgid "Edition"
+msgstr "Edizione"
+
+#: modules/about/about.glade.h:6
+msgid "Made with ♥ in Italy, enjoyed everywhere."
+msgstr "Creata con il ♥ in Italia, apprezzata ovunque."
+
+#: modules/about/about.glade.h:7
+msgid "Check for updates"
+msgstr "Controlla aggiornamenti"

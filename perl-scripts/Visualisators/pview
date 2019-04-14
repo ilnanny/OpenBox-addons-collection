@@ -1,0 +1,114 @@
+#!/usr/bin/perl
+
+eval 'exec /usr/bin/perl  -S $0 ${1+"$@"}'
+    if 0; # not running under some shell
+
+# Daniel "Trizen" Șuteu
+# License: GPLv3
+# Date: 14 January 2013
+# Latest edit on: 16 July 2015
+# https://github.com/trizen
+
+# Perl source code highlighter.
+
+use 5.018;
+use strict;
+use warnings;
+
+use open IO => ':utf8', ':std';
+
+#use lib qw(../lib);
+use Perl::Tokenizer qw(perl_tokens);
+use Term::ANSIColor qw(color);
+
+my %scheme = (
+              dereference_operator => color('bright_blue'),
+              fat_comma            => color('bright_blue'),
+              comma                => color('bright_blue'),
+              assignment_operator  => color('bright_blue'),
+              operator             => color('bright_blue'),
+              comment              => color('bright_black'),
+              number               => color('bright_red'),
+              binary_number        => color('bright_red'),
+              hex_number           => color('bright_red'),
+              special_keyword      => color('bold blue'),
+              keyword              => color('bold blue'),
+              file_test            => color('bold blue'),
+              substitution         => color('yellow'),
+              transliteration      => color('bright_yellow'),
+              match_regex          => color('bold yellow'),
+              glob_readline        => color('bold white on_black'),
+              curly_bracket_open   => color('bold'),
+              curly_bracket_close  => color('bold'),
+              right_bracket_open   => color('bold green'),
+              right_bracket_close  => color('bold green'),
+              array_sigil          => color('bright_cyan'),
+              scalar_sigil         => color('bright_green'),
+              hash_sigil           => color('bright_yellow'),
+              glob_sigil           => color('bold cyan'),
+              ampersand_sigil      => color('bold red'),
+              heredoc_beg          => color('bold magenta on_black'),
+              heredoc              => color('bold magenta on_black'),
+              semicolon            => color('red'),
+              qq_string            => color('bright_yellow on_black'),
+              q_string             => color('bright_yellow on_black'),
+              compiled_regex       => color('bold blue on_black'),
+              qx_string            => color('bright_magenta on_black'),
+              backtick             => color('bright_magenta on_black'),
+              double_quoted_string => color('bold bright_green on_black'),
+              single_quoted_string => color('green on_black'),
+              qw_string            => color('bright_yellow on_black'),
+              var_name             => color('bold magenta'),
+              special_var_name     => color('bold magenta'),
+              special_fh           => color('bold cyan'),
+              sub_name             => color('bold white'),
+              sub_proto            => color('bright_green on_black'),
+              bare_word            => color('green'),
+              data                 => color('blue on_black'),
+              pod                  => color('bright_blue on_black'),
+              format               => color('magenta on_black'),
+              v_string             => color('green on_black'),
+             );
+
+my $code = (
+    do { local $/; <> }
+      // die "usage: $0 [file]\n"
+);
+
+my $reset_color = color('reset');
+
+perl_tokens {
+    my ($token, $from, $to) = @_;
+    print +(exists($scheme{$token}) ? $scheme{$token} : ''), substr($code, $from, $to - $from), $reset_color;
+}
+$code;
+
+=encoding utf8
+
+=head1 NAME
+
+pl2term - highlights Perl code in terminal
+
+=head1 SYNOPSIS
+
+    pl2term < [script.pl]
+
+=head1 DESCRIPTION
+
+pl2term reads a Perl script and outputs an highlighted terminal version of it.
+
+I<NOTE:> a compatible terminal is required.
+
+=head1 AUTHOR
+
+Daniel "Trizen" Șuteu, E<lt>trizenx@gmail.comE<gt>
+
+=head1 COPYRIGHT AND LICENSE
+
+Copyright (C) 2015
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself, either Perl version 5.22.0 or,
+at your option, any later version of Perl 5 you may have available.
+
+=cut

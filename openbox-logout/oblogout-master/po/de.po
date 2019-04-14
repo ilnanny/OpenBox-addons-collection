@@ -1,0 +1,95 @@
+# German translation for oblogout
+# Copyright (c) 2009 Rosetta Contributors and Canonical Ltd 2009
+# This file is distributed under the same license as the oblogout package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: oblogout\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2009-01-26 23:21+0000\n"
+"PO-Revision-Date: 2009-02-01 02:27+0000\n"
+"Last-Translator: Zaxxon <Unknown>\n"
+"Language-Team: German <de@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2009-02-01 22:36+0000\n"
+"X-Generator: Launchpad (build Unknown)\n"
+
+#: ../ObLogout/oblogout.py:88
+msgid "Openbox Logout"
+msgstr "Openbox Logout"
+
+#: ../ObLogout/oblogout.py:178
+msgid "Unable to determin the module path, exiting..."
+msgstr ""
+"Der Modulpfad konnte nicht gefunden werden. Vorgang wird abgebrochen..."
+
+#: ../ObLogout/oblogout.py:213
+#, python-format
+msgid "Color %s is not a valid color, defaulting to black"
+msgstr ""
+"Die Farbe %s ist keine gültige Farbe. Verwende die Standardfarbe schwarz"
+
+#: ../ObLogout/oblogout.py:235
+msgid "cancel"
+msgstr "Abbrechen"
+
+#: ../ObLogout/oblogout.py:235
+msgid "logout"
+msgstr "Ausloggen"
+
+#: ../ObLogout/oblogout.py:235
+msgid "restart"
+msgstr "Neustart"
+
+#: ../ObLogout/oblogout.py:235
+msgid "shutdown"
+msgstr "Herunterfahren"
+
+#: ../ObLogout/oblogout.py:235
+msgid "suspend"
+msgstr "Stromsparmodus"
+
+#: ../ObLogout/oblogout.py:235
+msgid "hibernate"
+msgstr "Ruhemodus"
+
+#: ../ObLogout/oblogout.py:235
+msgid "safesuspend"
+msgstr "Gesicherter Ruhemodus"
+
+#: ../ObLogout/oblogout.py:235
+msgid "lock"
+msgstr "sperren"
+
+#: ../ObLogout/oblogout.py:235
+msgid "switch"
+msgstr "wechseln"
+
+#: ../ObLogout/oblogout.py:247
+#, python-format
+msgid "Button %s is not a valid button name, removing"
+msgstr "%s ist keine gültige Beschriftung, entferne die Beschriftung"
+
+#: ../ObLogout/oblogout.py:252
+msgid "Can't Suspend, disabling button"
+msgstr ""
+"Kann nicht in den \"Suspend\"-Modus wechseln, diese Funktion wird deaktiviert"
+
+#: ../ObLogout/oblogout.py:256
+msgid "Can't Hibernate, disabling button"
+msgstr "Hibernate ist nicht möglich, diese Funktion wird deaktiviert"
+
+#: ../ObLogout/oblogout.py:260
+msgid "Can't Safe Suspend, disabling button"
+msgstr ""
+"Kann nicht in den \"Safe Suspend\"-Modus wechseln, diese Funktion wird "
+"deaktiviert."
+
+#: ../ObLogout/oblogout.py:264
+msgid "No valid buttons found, resetting to defaults"
+msgstr ""
+"Es wurden keine gültigen Schaltflächen gefunden, setze die Einstellung auf "
+"den Standardwert zurück"

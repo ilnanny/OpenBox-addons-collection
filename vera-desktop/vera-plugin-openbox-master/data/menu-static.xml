@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openbox_menu xmlns="http://openbox.org/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://openbox.org/
+                file:///usr/share/openbox/menu.xsd">
+
+<menu id="root-menu" label="Openbox 3">
+  <separator label="Semplice (static)"></separator>
+  <item label="Terminal emulator">
+    <action name="Execute"><execute>x-terminal-emulator</execute></action>
+  </item>
+  <item label="Web browser">
+    <action name="Execute"><execute>x-www-browser</execute></action>
+  </item>
+  <separator />
+  <menu id="client-list-menu" />
+  <separator />
+  <menu id="appearance" label="Appearance">
+  	<menu id="wallpaper" label="Wallpaper">
+  		<item label="Add">
+  			<action name="Execute"><execute>nitrogen-add-wallpaper</execute></action>
+  		</item>
+  		<item label="Manage">
+  			<action name="Execute"><execute>nitrogen</execute></action>
+  		</item>
+  	</menu>
+    <separator />
+  	<item label="Appearance settings">
+  		<action name="Execute"><execute>lxappearance</execute></action>
+  	</item>
+  </menu>
+  <separator />
+  <item label="About Semplice...">
+    <action name="Execute"><execute>semplice-about</execute></action>
+  </item>
+  <separator />
+  <menu id="exit" label="End Session">
+  	<item label="Lock Screen">
+  		<action name="Execute"><execute>semplice-logout --lock</execute></action>
+  	</item>
+  	<item label="Logout">
+  		<action name="Execute"><execute>semplice-logout --logout</execute></action>
+  	</item>
+   	<item label="Switch User">
+  		<action name="Execute"><execute>semplice-logout --switch-user</execute></action>
+  	</item>
+  	<separator />
+  	<item label="Suspend">
+  		<action name="Execute"><execute>semplice-logout --suspend</execute></action>
+  	</item>
+  	<item label="Hibernate">
+		<action name="Execute"><execute>semplice-logout --hibernate</execute></action>
+  	</item>
+  	<separator />
+  	<item label="Shutdown">
+  		<action name="Execute"><execute>semplice-logout --shutdown</execute></action>
+  	</item>
+   	<item label="Reboot">
+  		<action name="Execute"><execute>semplice-logout --reboot</execute></action>
+  	</item>
+  </menu>
+  <separator />
+  <item label="Uh oh. We were unable to load the full menu.">
+    <action name="Execute">
+        <prompt>You are running Semplice's fallback menu. This means that for some reason the system has been unable to enable the normal menu.
+We are sorry for that. Do you want to open the Semplice forums to get help?</prompt>
+        <execute>x-www-browser http://semplice-linux.org/community</execute></action>
+  </item>
+</menu>
+
+</openbox_menu>
+

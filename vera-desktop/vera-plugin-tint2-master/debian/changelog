@@ -1,0 +1,66 @@
+vera-plugin-tint2 (1.0.2-1) unstable; urgency=medium
+
+  * [tint2rc] Launcher: open applications that require a terminal with x-terminal-emulator
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Tue, 26 Jan 2016 01:23:46 +0100
+
+vera-plugin-tint2 (1.0.1-3) unstable; urgency=medium
+
+  * Version bump
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Mon, 25 Jan 2016 18:35:38 +0100
+
+vera-plugin-tint2 (1.0.1-2) unstable; urgency=medium
+
+  * [packaging] Remove libgee build-dependency
+  * [packaging] Build-depend on valac instead of valac-0.26
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Mon, 25 Jan 2016 13:21:34 +0100
+
+vera-plugin-tint2 (1.0.1-1) unstable; urgency=medium
+
+  * [tint2rc] panel: enable mouse effects
+  * [packaging] Depend on tint2 >= 0.12.5
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Mon, 25 Jan 2016 13:08:09 +0100
+
+vera-plugin-tint2 (1.0.0-1) unstable; urgency=medium
+
+  * Increase panel load delay to 5 seconds when on live.
+  * vera-plugin-tint2 1.0.0.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sat, 04 Apr 2015 20:27:43 +0200
+
+vera-plugin-tint2 (0.24-1) unstable; urgency=medium
+
+  * Delay tint2 startup if the system is in Live mode.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sun, 22 Feb 2015 12:32:58 +0100
+
+vera-plugin-tint2 (0.23-1) devel; urgency=medium
+
+  * tint2rc: style changes
+  * debian/control: switch to valac-0.26.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Fri, 07 Nov 2014 21:43:36 +0100
+
+vera-plugin-tint2 (0.22-1) devel; urgency=medium
+
+  * Enforce the panel visibility on every desktop.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Wed, 27 Aug 2014 23:43:51 +0200
+
+vera-plugin-tint2 (0.21-1) devel; urgency=medium
+
+  * Check for the existance of the configuration file,
+    and use a fallback if it doesn't exist.
+  * debian/vera-plugin-tint2.install: install the tint2
+    configuration file.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Mon, 21 Jul 2014 16:25:48 +0200
+
+vera-plugin-tint2 (0.20-1) devel; urgency=medium
+
+  * Initial release.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sat, 19 Jul 2014 16:37:04 +0200

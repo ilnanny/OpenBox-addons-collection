@@ -1,0 +1,8 @@
+[distutils.commands]
+build = DistUtilsExtra.command.build_extra:build
+build_help = DistUtilsExtra.command.build_help:build_help
+build_i18n = DistUtilsExtra.command.build_i18n:build_i18n
+build_icons = DistUtilsExtra.command.build_icons:build_icons
+clean_i18n = DistUtilsExtra.command.clean_i18n:clean_i18n
+pylint = DistUtilsExtra.command.pylint:pylint
+

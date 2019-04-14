@@ -1,0 +1,429 @@
+bunsen-pipemenus (8.9.2-1) bunsen-hydrogen; urgency=low
+
+  * bl-x-www-browser-pipemenu: small code optimization.
+
+ -- John Crawley <john@bunsenlabs.org>  Thu, 28 Apr 2016 09:25:05 +0900
+
+bunsen-pipemenus (8.9.1-1) bunsen-hydrogen; urgency=medium
+
+  * bl-x-www-browser-pipemenu: Hide install for google chrome on 32 bit systems.
+
+ -- John Crawley <john@bunsenlabs.org>  Wed, 27 Apr 2016 21:44:03 +0900
+
+bunsen-pipemenus (8.9-1) bunsen-hydrogen; urgency=medium
+
+  * Adjust include paths to match bunsen-common 8.8-1 and bunsen-docs 8.1-1
+
+ -- John Crawley <john@bunsenlabs.org>  Mon, 04 Apr 2016 18:05:54 +0900
+
+bunsen-pipemenus (8.8.4-1) bunsen-hydrogen; urgency=low
+
+  * bl-conky-pipemenu, bl-tint2-pipemenu, bl-kb-pipemenu: 
+    Gracefuly handle absence of bunsen-utilities.
+
+ -- John Crawley <john@bunsenlabs.org>  Thu, 24 Mar 2016 15:38:47 +0900
+
+bunsen-pipemenus (8.8.3-1) bunsen-hydrogen; urgency=high
+
+  * xaos52: bl-remote-desktop-pipemenu: fix bug with installing vino
+
+ -- John Crawley <john@bunsenlabs.org>  Mon, 14 Mar 2016 10:48:20 +0900
+
+bunsen-pipemenus (8.8.2-1) bunsen-hydrogen; urgency=high
+
+  * bl-help-pipemenu: Fix bug in "How to Edit Menu" item.
+
+ -- John Crawley <john@bunsenlabs.org>  Sat, 05 Mar 2016 11:51:13 +0900
+
+bunsen-pipemenus (8.8.1-1) bunsen-hydrogen; urgency=high
+
+  * bl-printing-pipemenu: Fix incorrect install command.
+
+ -- John Crawley <john@bunsenlabs.org>  Mon, 29 Feb 2016 18:10:57 +0900
+
+bunsen-pipemenus (8.8-1) bunsen-hydrogen; urgency=high
+
+  * bl-sshconfig-pipemenu: Correct x-terminal-editor execute command.
+  * bl-remote-desktop-pipemenu: Install dconf-editor, edit "preferences" menu.
+  * bl-dropbox-pipemenu: Use yad functions from bunsen-common.
+  * bl-graphics-pipemenu: Add option to install Gimp extras.
+  * bl-help-pipemenu: Restore missing "Bunsen Help Files" submenu.
+  * debian/control: Remove dependency on scrot.
+  * Add GPL3 headers to all scripts.
+
+ -- John Crawley <john@bunsenlabs.org>  Mon, 29 Feb 2016 16:40:47 +0900
+
+bunsen-pipemenus (8.7.4-1) bunsen-hydrogen; urgency=low
+
+  * README: Add list of scripts.
+  * debian/control: Add dependency on scrot.
+
+ -- John Crawley <john@bunsenlabs.org>  Wed, 17 Feb 2016 14:01:47 +0900
+
+bunsen-pipemenus (8.7.3-1) bunsen-hydrogen; urgency=low
+
+  * bl-dropbox-pipemenu: Small code improvements.
+  * Move dependency on inotify-tools to Recommends.
+
+ -- John Crawley <john@bunsenlabs.org>  Tue, 19 Jan 2016 13:20:50 +0900
+
+bunsen-pipemenus (8.7.2-1) bunsen-hydrogen; urgency=medium
+
+  * bl-compositor: Correct inotifywait bug.
+  * bl-dropbox-pipemenu: Improve yad formatting.
+  * Add inotify-tools as Recommend.
+
+ -- John Crawley <john@bunsenlabs.org>  Mon, 18 Jan 2016 17:29:32 +0900
+
+bunsen-pipemenus (8.7.1-1) bunsen-hydrogen; urgency=low
+
+  * bl-dropbox-pipemenu: Tweak yad arguments.
+
+ -- John Crawley <john@bunsenlabs.org>  Mon, 11 Jan 2016 18:17:29 +0900
+
+bunsen-pipemenus (8.7-1) bunsen-hydrogen; urgency=medium
+
+  * bl-dropbox-pipemenu: Replace zenity with yad.
+  * damo:bl-conky-pipemenu: Replace zenity with yad.
+
+ -- John Crawley <john@bunsenlabs.org>  Mon, 11 Jan 2016 17:25:53 +0900
+
+bunsen-pipemenus (8.6.4-1) bunsen-hydrogen; urgency=medium
+
+  * damo: Add enhancements to keybinds and conky pipemenus.
+
+ -- John Crawley <john@bunsenlabs.org>  Fri, 23 Oct 2015 11:01:59 +0900
+
+bunsen-pipemenus (8.6.3-1) bunsen-hydrogen; urgency=low
+
+  * bl-dropbox-pipemenu: add code to install python-gpgme in terminal.
+
+ -- John Crawley <john@bunsenlabs.org>  Sat, 26 Sep 2015 18:33:20 +0900
+
+bunsen-pipemenus (8.6.2-1) bunsen-hydrogen; urgency=low
+
+  * Refactor and simplify code.
+
+ -- John Crawley <john@bunsenlabs.org>  Tue, 22 Sep 2015 15:41:24 +0900
+
+bunsen-pipemenus (8.6.1-1) bunsen-hydrogen; urgency=low
+
+  * Rearrange bl-libreoffice-pipemenu and bl-graphics-pipemenu.
+
+ -- John Crawley <john@bunsenlabs.org>  Mon, 14 Sep 2015 15:57:15 +0900
+
+bunsen-pipemenus (8.6-1) bunsen-hydrogen; urgency=low
+
+  * bl-multimedia-pipemenu move install options to submenus.
+
+ -- John Crawley <john@bunsenlabs.org>  Tue, 08 Sep 2015 17:08:05 +0900
+
+bunsen-pipemenus (8.5-1) bunsen-hydrogen; urgency=low
+
+  * bl-multimedia-pipemenu remove special treatment for smplayer.
+
+ -- John Crawley <john@bunsenlabs.org>  Sat, 29 Aug 2015 17:36:38 +0900
+
+bunsen-pipemenus (8.4-1) bunsen-hydrogen; urgency=low
+
+  * bl-kb-pipemenu change references to bl-kb.py to bl-kb.
+  * bl-multimedia-pipemenu do not attempt to launch mpv from menu.
+
+ -- John Crawley <john@bunsenlabs.org>  Fri, 28 Aug 2015 17:54:23 +0900
+
+bunsen-pipemenus (8.3-1) bunsen-hydrogen; urgency=low
+
+  * Bugfix in bl-libreoffice-pipemenu.
+
+ -- John Crawley <john@bunsenlabs.org>  Thu, 20 Aug 2015 10:37:01 +0900
+
+bunsen-pipemenus (8.2-3) bunsen-hydrogen; urgency=low
+
+  * Remove curl from dependencies in debian/control.
+
+ -- John Crawley <john@bunsenlabs.org>  Wed, 19 Aug 2015 10:53:24 +0900
+
+bunsen-pipemenus (8.2-2) bunsen-hydrogen; urgency=low
+
+  * Add path to GPL file in debian/copyright.
+  * Move compton from Depends: to Recommends: in debian/control.
+
+ -- John Crawley <john@bunsenlabs.org>  Sat, 15 Aug 2015 11:34:04 +0900
+
+bunsen-pipemenus (8.2-1) bunsen-hydrogen; urgency=medium
+
+  * bl-compositor --restart, do not start compton if not running.
+  * bl-compositor replace option --toggle with --stop.
+
+ -- John Crawley <john@bunsenlabs.org>  Sat, 15 Aug 2015 10:50:10 +0900
+
+bunsen-pipemenus (8.1-2) bunsen-hydrogen; urgency=medium
+
+  * debian/changelog: Fix lintian warning about a wrongly formatted
+    trailer line
+
+ -- Jens John <dev@2ion.de>  Wed, 29 Jul 2015 20:13:29 +0200
+
+bunsen-pipemenus (8.1-1) bunsen-hydrogen; urgency=medium
+
+  * Non-maintainer upload.
+  * bl-graphics-pipemenu, bl-x-www-browser-pipemenu: Correct spelling and
+    wording in menu entries
+
+ -- Jens John <dev@2ion.de>  Wed, 29 Jul 2015 20:04:55 +0200
+
+bunsen-pipemenus (8.0-1) unstable; urgency=low
+
+  * bl-dropbox-pipemenu: fix bug with evocation of apt-get from gksu.
+
+ -- John Crawley <john@bunsenlabs.org>  Thu, 23 Jul 2015 19:12:10 +0900
+
+bunsen-pipemenus (0.15-14) unstable; urgency=low
+
+  * bl-sshconfig-pipemenu: Reflect changes in libparamiko in order to get the
+    defunct script to work again
+
+ -- Jens John <dev@2ion.de>  Mon, 06 Jul 2015 19:06:20 +0200
+
+bunsen-pipemenus (0.15-13) unstable; urgency=low
+
+  * bl-tint2-pipemenu: loadTEditmenu() test for default tint2rc running.
+
+ -- John Crawley <john@bunsenlabs.org>  Mon, 06 Jul 2015 12:43:46 +0900
+
+bunsen-pipemenus (0.15-12) unstable; urgency=low
+
+  * bl-recent-files-pipemenu: Fix typo in variable name preventing the correct
+    detection of recently-used.xbel in XDG_DATA_HOME
+
+ -- Jens John <dev@2ion.de>  Thu, 18 Jun 2015 17:37:51 +0200
+
+bunsen-pipemenus (0.15-11) unstable; urgency=low
+
+  * bl-recent-files-pipemenu: Improve help text
+
+ -- Jens John <dev@2ion.de>  Sat, 13 Jun 2015 13:57:30 +0200
+
+bunsen-pipemenus (0.15-10) unstable; urgency=low
+
+  * bl-tint2-pipemenu: add bugfixes and improvements.
+
+ -- John Crawley <john@bunsenlabs.org>  Wed, 03 Jun 2015 14:24:08 +0900
+
+bunsen-pipemenus (0.15-9) unstable; urgency=low
+
+  * bl-recent-files-pipemenu: Remove unused swap() function
+  * bl-recent-files-pipemenu: Remove superfluous posix.access() call
+
+ -- Jens John <dev@2ion.de>  Thu, 28 May 2015 23:59:39 +0200
+
+bunsen-pipemenus (0.15-8) unstable; urgency=low
+
+  * bl-x-www-browser-pipemenu: Remove superfluous apt-key urls.
+  * bl-dropbox-menu: Rewrite to use dropbox.py frontend script.
+
+ -- John Crawley <john@bunsenlabs.org>  Sun, 17 May 2015 16:44:39 +0900
+
+bunsen-pipemenus (0.15-7) unstable; urgency=low
+
+  * bl-recent-files-pipemenu: Add missing format to printf() call
+
+ -- Jens Oliver John <dev@2ion.de>  Sat, 16 May 2015 13:44:59 +0200
+
+bunsen-pipemenus (0.15-6) unstable; urgency=low
+
+  * Fix bug in bl-recent-files-pipemenu.
+
+ -- John Crawley <john@bunsenlabs.org>  Fri, 15 May 2015 15:39:24 +0900
+
+bunsen-pipemenus (0.15-5) unstable; urgency=low
+
+  * Fix bugs in tint2, conky and recent-files pipemenus.
+
+ -- John Crawley <john@bunsenlabs.org>  Thu, 14 May 2015 10:37:49 +0900
+
+bunsen-pipemenus (0.15-4) unstable; urgency=low
+
+  * Fix bug in bl-x-www-browser pipemenu.
+
+ -- John Crawley <john@bunsenlabs.org>  Mon, 11 May 2015 11:12:42 +0900
+
+bunsen-pipemenus (0.15-3) unstable; urgency=low
+
+  * Remove blank lines from saved-sessions file.
+
+ -- John Crawley <john@bunsenlabs.org>  Thu, 07 May 2015 12:51:57 +0900
+
+bunsen-pipemenus (0.15-2) unstable; urgency=low
+
+  * Add conky and tint2 config editing.
+
+ -- John Crawley <john@bunsenlabs.org>  Wed, 29 Apr 2015 11:41:41 +0900
+
+bunsen-pipemenus (0.15-1) unstable; urgency=low
+
+  * Add many new pipemenus.
+
+ -- John Crawley <john@bunsenlabs.org>  Sat, 25 Apr 2015 16:23:18 +0900
+
+bunsen-pipemenus (0.14-7) unstable; urgency=low
+
+  * Change references to terminator to x-terminal-emulator.
+  * Fix some bugs in bl-x-www-browser-pipemenu.
+
+ -- John Crawley <john@bunsenlabs.org>  Sun, 08 Mar 2015 14:18:22 +0900
+
+bunsen-pipemenus (0.14-6) unstable; urgency=low
+
+  * Move bl-include.cfg to bunsen-common
+  * Rewrite file paths to new location of bl-include.cfg
+  * Add dependency on bunsen-common
+
+ -- John Crawley <john@bunsenlabs.org>  Fri, 06 Mar 2015 22:07:46 +0900
+
+bunsen-pipemenus (0.14-5) unstable; urgency=medium
+
+  * Fix wrong README.md entry in debian/docs
+
+ -- Jens Oliver John <dev@2ion.de>  Thu, 26 Feb 2015 13:44:59 +0100
+
+bunsen-pipemenus (0.14-4) unstable; urgency=medium
+
+  * Adapt current Debian source package format, remove DEBIAN directory
+  * Fix invalid file format in debian/copyright
+  * Fix invalid file format in debian/changelog
+  * Update sections in debian/control
+  * Create README.Debian with old notes split out from debian/copyright
+
+ -- Jens Oliver John <dev@2ion.de>  Sun, 22 Feb 2015 11:33:19 +0100
+
+bunsen-pipemenus (0.14-3) unstable; urgency=low
+
+  * Change references to chromium-browser to chromium.
+
+ -- John Crawley <john@bunsenlabs.org>  Sun, 22 Feb 2015 12:04:20 +0900
+
+bunsen-pipemenus (0.14-2) unstable; urgency=low
+
+  * Import refactored code by Alex Daniel
+
+ -- John Crawley <john@bunsenlabs.org>  Wed, 18 Feb 2015 16:34:00 +0900
+
+bunsen-pipemenus (0.14-1) unstable; urgency=low
+
+  * Adjust dependencies, minor tweaks
+
+ -- John Crawley <john@bunsenlabs.org>  Tue, 17 Feb 2015 23:05:24 +0900
+
+cb-pipemenus (0.14) unstable; urgency=low
+
+  * Update dropbox download urls.
+
+ -- Philip Newborough <corenominal@corenominal.org>  Sun, 08 Dec 2013 21:01:41 +0000
+
+cb-pipemenus (0.13) unstable; urgency=low
+
+  * Remove inotify-tools from depends.
+  * Update standard version.
+
+ -- Philip Newborough <corenominal@corenominal.org>  Fri, 03 May 2013 22:16:20 +0100
+
+cb-pipemenus (0.12) unstable; urgency=low
+
+  * Adjust to use new cb metapackges.
+
+ -- Philip Newborough <corenominal@corenominal.org>  Mon, 14 Jan 2013 22:01:20 +0000
+
+cb-pipemenus (0.11) unstable; urgency=low
+
+  * debian/control:
+    - mesa-utils add to depends.
+  * cb-compositor:
+    - adjust to detect opengl support.
+
+ -- Philip Newborough <corenominal@corenominal.org>  Sun, 04 Nov 2012 11:15:18 +0000
+
+cb-pipemenus (0.10) unstable; urgency=low
+
+  [ John Crawley ]
+  * cb-places-pipemenu:
+    - Portability fix. Now no longer breaks if run on bash instead of dash.
+
+ -- Philip Newborough <corenominal@corenominal.org>  Thu, 27 Sep 2012 17:33:47 +0100
+
+cb-pipemenus (0.09) unstable; urgency=low
+
+  * Update compositing menu to work with new compton config.
+  * Add watch option to compositing menu/script.
+  * Add notify-tools to depends.
+  * Add cb-metapackage to depends.
+  * Update dropbox referal code for Jo.
+  * Update pipemenu syntax, replacing depreciated <execute>'s to <command>.
+
+ -- Philip Newborough <corenominal@corenominal.org>  Wed, 26 Sep 2012 20:50:04 +0100
+
+cb-pipemenus (0.08) unstable; urgency=low
+
+  * Update Dropbox referral code.
+
+ -- Philip Newborough <corenominal@corenominal.org>  Mon, 17 Sep 2012 12:23:16 +0100
+
+cb-pipemenus (0.07) unstable; urgency=low
+
+  [ John Crawley ]
+  * cb-places-pipemenu:
+    - References to scriptname in comments updated to cb-places-pipemenu.
+  * cb-recent-files-pipemenu:
+    - Updated references to recently_opened_menu.sh to cb-recent-files-menu.
+    - Outputs error message in menu if recently-used.xbel cannot be found.
+    - Escape _ to __ in menu labels.
+
+ -- Philip Newborough <corenominal@corenominal.org>  Thu, 26 Jul 2012 08:01:49 +0100
+
+cb-pipemenus (0.06) unstable; urgency=low
+
+  * Add John Crawley's "Places" & "Recent Files" pipemenus.
+
+ -- Philip Newborough <corenominal@corenominal.org>  Wed, 25 Jul 2012 09:11:46 +0100
+
+cb-pipemenus (0.05) unstable; urgency=low
+
+  * Modified 'connectiontest' function to use the reliable wget
+    method instead of unreliable ping.
+  * Moved 'connectiontest' function to a new file (cb-include.cfg),
+    that can be sourced inside any bash script and used to store
+    common variables and functions.
+  * Modified relevant cb-* scripts to reflect this change.
+  * Modified 'cb-x-www-browser-pipemenu' script to use vendor
+    supplied URLs as primary sources of APT keys; but implemented
+    fallback to packages.crunchbang.org if primary sources fail. This
+    concerns Opera and Google Chrome options.
+
+ -- Giorgi Tavkelishvili <gtavkelishvili@linuxpg.org>  Sat, 19 May 2012 14:03:30 +0400
+
+cb-pipemenus (0.04) unstable; urgency=low
+
+  * Add cb-sshconfig-pipemenu
+  * Add python & python-paramiko to depends
+
+ -- Philip Newborough <corenominal@corenominal.org>  Fri, 27 Apr 2012 08:34:48 +0100
+
+cb-pipemenus (0.03) unstable; urgency=low
+
+  * cb-x-www-browser-pipemenu:
+    - add installation routine for Iceweasel
+    - add installation routine for Chromium Browser
+
+ -- Philip Newborough <corenominal@corenominal.org>  Wed, 25 Apr 2012 09:09:38 +0100
+
+cb-pipemenus (0.02) unstable; urgency=low
+
+  * cb-dropbox-pipemenu: get binary files from official site.
+
+ -- Philip Newborough <corenominal@corenominal.org>  Fri, 20 Apr 2012 11:02:16 +0100
+
+cb-pipemenus (0.01) unstable; urgency=low
+
+  * Initial release.
+
+ -- Philip Newborough <corenominal@corenominal.org>  Mon, 16 Apr 2012 11:28:48 +0100

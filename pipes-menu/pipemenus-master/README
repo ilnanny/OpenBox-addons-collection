@@ -1,0 +1,20 @@
+dbbolton's pipemenus
+
+This github repository is a collection of pipemenus that I have created
+for Openbox.
+
+dolphin-bookmarks.pl	duplicates the "bookmarks" set in dolphin, or any
+			program using user-places.xbel
+
+ob-sysinfo.pl		dummy menu that prints user@host, distro, kernel
+			arch, uptime, current load, active memory, current
+			Openbox theme, the date, and the time
+
+thunar-bookmarks.pl	duplicates thunar's bookmarks, or any program using
+			the .gtk-bookmarks file
+
+pcmanfm-bookmarks.pl	works around a quirk that PCManFM writes in the
+			.gtk-bookmarks file
+
+For more info, visit:
+http://openbox.org/wiki/Openbox:Pipemenus

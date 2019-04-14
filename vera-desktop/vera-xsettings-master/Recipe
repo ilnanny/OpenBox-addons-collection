@@ -1,0 +1,30 @@
+project {
+	name = vera-xsettings
+	version = 1.0.2
+	minimum-bake-version = 0.1
+}
+
+libraries.vera-xsettings {
+	so-version = 0
+	sources = \
+		vera-xsettings/xsettings-common.c \
+		vera-xsettings/xsettings-manager.c 
+	headers = \
+		vera-xsettings/xsettings-common.h \
+		vera-xsettings/xsettings-manager.h
+	compile-flags = -O2 -flto
+	link-flags = -flto -Wl,--as-needed,-soname,libvera-xsettings.so.$(libraries.vera-xsettings.so-version)
+	
+	packages = x11
+
+}
+
+data.vapi {
+	files = vera-xsettings.vapi
+	install-directory = /usr/share/vala/vapi
+}
+
+data.pkg-config {
+	files = vera-xsettings.pc
+	install-directory = /usr/share/pkgconfig
+}

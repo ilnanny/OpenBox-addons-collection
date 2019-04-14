@@ -1,0 +1,195 @@
+==========
+obmenux 1.3.0
+==========
+
+obmenux is an Openbox menu editor, written in Python, based on obmenu.
+It allows editing menus in an intuitive way.
+
+REQUIREMENTS:
+
+  Python = 2.7, pygtk, python-glade
+
+INSTALLATION:
+	
+  Download and extract the folder for the version you want.
+  
+  Open that folder in a terminal.
+   
+  Type:
+    sudo python2 setup.py install
+    
+  or, to install without installing the pipe menu commands:
+    sudo python2 minisetup.py install
+    
+  The setup script will show you what it did. Then obmenux should be installed.
+
+USE:
+  
+  Open the editor window by entering:
+    obmenux
+  on any command line if obmenux is installed.
+  
+  (Whether or not it is installed, you may run it when the current directory is
+  the obmenux version folder.)
+  
+  If your openbox menu for a session isn't named menu.xml, specify the file:
+    obmenux $HOME/.config/openbox/session-menu-name.xml
+  
+Pipemenu use:
+  
+  To make an automatically filled menu choose "Add" click on "Pipemenu" and
+  enter a command for one of four different kinds of pipe menus included
+  with obmenux, as follows:
+
+  obmx-dir <directory> <application to open files in the directory>
+
+  obmx-nav <starting directory for menu> <file manager> <terminal emulator>
+
+  obmx-moz -b "<bookmarks file>" -n "<web browser>"
+
+  obmx-xdg <Gnome .menu format file>
+      (If your system has any .menu files, they may be in /etc/xdg/menus)
+
+  < > in those definitions means substitute a filename, command name, or path.
+  The quotes may be omitted if there are no spaces in the name or path.
+
+  The paths to files or directories should be written relative to your home
+  directory or starting with "/" for root.
+  
+  If you get any errors or empty menus, try running those commands in a
+  terminal to see whether they produce as much <XML> as they should, or error
+  messages.
+
+  There are additional options for those pipe menu scripts documented in the
+  file "pipes-help" in this folder.
+  
+  Many other Openbox pipe menus are available.
+  See http://openbox.org/wiki/Openbox:Pipemenus
+
+Details about how installation works:
+
+  "sudo" is necessary just because users don't usually have permission to write
+  to their system's /usr/local/ which is for locally installed software and not
+  for a Linux distribution's standard packages. Although Unix was originally a
+  single-user system, where it might be expected that a user would have such
+  permission, Linux is not Unix, and provides multi-user security instead.
+
+  According to how Python "distutils" works on your system, the installer may
+  write the following files:
+
+    ./build                   -- the build directory in the same folder
+
+    /usr/local/bin/obmenux    -- allows running obmenux from any directory
+
+    /usr/local/lib/python[version]/dist-packages/obxmlx.py
+                              -- a library file for code shared by all the
+                                 commands installed
+
+    /usr/local/lib/python[version]/dist-packages/obmenux[version].egg-info
+                              -- some library management that may differ on
+                                 different systems
+                                 
+    /usr/local/share/obmenux  -- directory where the gfx files are stored
+    
+  and, if the pipe menus are installed:
+    /usr/local/bin/obmx-dir    -- makes a menu from the files in a directory
+    /usr/local/bin/obmx-nav    -- makes a menu to navigate directories
+    /usr/local/bin/obmx-moz    -- makes a menu from a bookmarks.html file
+    /usr/local/bin/obmx-xdg    -- makes a menu from a Gnome .menu file
+    $HOME/.cache/obmenux -- where some pipe menus cache results for speed
+
+  The installation should allow continuing to use other versions of obmenu that
+  are not named obmenux. If obmenux has errors or causes any interference with
+  any other program, that would be an issue to report.
+  
+CHANGELOG:
+
+- 1.3.0 new features:
+    - icon support (shows icons, allows setting icons, including by file
+      browser with preview)
+    - helpful messages in case of any file errors, instead of crashing
+    - cache files for the pipe-menu scripts are placed in $HOME/.cache
+      (instead of directly in $HOME or in $HOME/.local/share) making it
+      obvious that they are cache files that can be deleted harmlessly
+    - any arrangement of menus and their ids can be viewed and edited, even
+      invalid arrangements that would hide menus and links from showing up, so
+      that broken menus can be fixed, and menus with circular references won't
+      crash the menu editor
+    - (sorry, obmenux still has no support for action tags other than
+      <command> or <execute>, such as tags that set startup notification and
+      window locations)
+
+- 1.2.0 new feature: separator labels shown and editable (including potentially
+      by scripts using the obxmlx module, so the addition of that feature is
+      technically sufficient reason for incrementing the semantic version)
+    - Openbox 3.4 to 3.6, Lubuntu, and LXDE compatibility, by <command> tag
+      contents being shown and editable, and <command> tags replacing
+      the deprecated <execute> tags when editing their contents
+    - New Separator shortcut key changed to Shift-Ctrl-S, because Ctrl-S was
+      blocked by already being assigned to Save (a bug since obmenu 1.0)
+    - Delete key on keypad also recognized
+    - clicking on New Menu before selecting anything is fixed to make a new
+      menu as it should (and not make the menu displayed different from the one
+      that would be saved, which it turns out was a bug since obmenu 1.0)
+    - debugging messages reduced to show in terminal only on failures, and
+      other code clean-up
+
+- 1.1.26 looks and acts neat enough to be usable
+           (keeps items visible when moving, when original obmenu 1.0 wouldn't,
+            and opens menus when moving items into them, which obmenu can't,
+            and blanks Action box when there's no selectable Action,
+            unlike obmenu 1.0 which grays the box, freezing mismatched info)
+         
+- 1.1.25 tested pipemenus with patches and better instructions.
+
+- 1.1.24 precise versioning.
+
+- 1.1.1 moves items between menus (or into or out of menus, including
+  moving menus into or out of menus) (deprecated use with Python 2.3 to 2.6)
+
+- Version 1.0-2 has Debian patches to the specific file named obmenu
+    - enabled closing the help window by its "Close" button
+    - enabled creating .config/openbox/menu.xml if it doesn't already exist.
+
+- Automatically reconfigures Openbox when saving a file.
+
+- Creates and modifies pipemenus. Pipemenus are a way of creating menus
+  dynamically. For more info, visit Openbox documentation. (http://openbox.org)
+
+- Creates "link" menus, which are references to other menus by their IDs.
+  That way you can reproduce a sub-menu in several places in a whole menu file.
+
+- Lots of GUI enhancements.
+
+- Multifile support (New, Open, Save, Save As)
+
+CREDITS:
+	
+	SDE 2015
+	
+	some patches copied from patches by Debian maintainers and by GLolol
+	
+	very much based on and with thanks to
+	
+	Manuel Colmenero (c) 2005-2006 GPL2
+	
+	"Thanks to Mikael from the Openbox project, who gave me lots of ideas and
+	tested the program. And thanks to all the helpful guys in the openbox
+	list." - Manuel Colmenero
+
+NOTICE:
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+	

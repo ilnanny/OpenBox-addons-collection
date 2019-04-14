@@ -1,0 +1,7 @@
+# Bake is awesome!
+
+project {
+	name = vera-plugin-autostart
+	version = 0.0.1
+	minimum-bake-version = 0.1
+}

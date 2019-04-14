@@ -1,0 +1,14 @@
+.button.no-borders {
+	background-color: transparent;
+	border: transparent;
+}
+
+.button.no-borders:hover {
+	color: @vera-color;
+}
+
+/*
+GtkIconView.cell.veracc-section:selected {
+	background-color: transparent;
+}
+*/

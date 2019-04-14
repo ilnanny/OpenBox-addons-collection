@@ -1,0 +1,99 @@
+#
+# vera - a simple, lightweight, GTK3 based desktop environment
+# Copyright (C) 2014  Eugenio "g7" Paolantonio and the Semplice Project
+# 
+# This library is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Lesser General Public
+# License as published by the Free Software Foundation; either
+# version 2.1 of the License, or (at your option) any later version.
+# 
+# This library is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# Lesser General Public License for more details.
+# 
+# You should have received a copy of the GNU Lesser General Public
+# License along with this library; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+# 
+# Authors:
+#    Eugenio "g7" Paolantonio <me@medesimo.eu>
+#
+
+libraries.vera {
+	sources = \
+		displays/DisplayInterface.vala \
+		displays/XlibDisplay.vala \
+		autostart/Application.vala \
+		XmlFile.vala \
+		ExitActions.vala \
+		launcher.vala \
+		logindInterface.vala \
+		PluginInterface.vala
+	so-version = 0
+	header-install-directory = $(options.include-directory)/vera
+	compile-flags = -O2 -flto
+	link-flags = -flto -Wl,--as-needed,-soname,libvera.so.$(libraries.vera.so-version)
+
+	vala-packages = gio-2.0 libpeas-1.0 gdk-3.0 gdk-x11-3.0 x11 xscrnsaver
+	packages = libpeas-1.0 gdk-3.0 gdk-x11-3.0 x11 xscrnsaver
+
+}
+
+programs.vera {
+	sources = \
+		PluginManager.vala \
+		settings/xsettings-manager.vala \
+		dbus/DBusService.vala \
+		autostart/AutostartManager.vala \
+		vera.vala
+	compile-flags = -O2 -flto -include config.h
+	libraries = vera (local)
+	link-flags = -lX11 -flto -Wl,--as-needed
+	gettext-domain = vera
+	
+	vala-packages = gio-2.0 gee-0.8 libpeas-1.0 gtk+-3.0 gdk-x11-3.0 gdk-3.0 posix vera-xsettings
+	packages = gee-0.8 gio-2.0 libpeas-1.0 gtk+-3.0 gdk-x11-3.0 gdk-3.0 vera-xsettings
+}
+
+programs.vera-session {
+	sources = vera-session.vala
+}
+
+programs.vera-command {
+	# Include here the launcher.vala source file to avoid linking to
+	# libvera and everything in-between
+	sources = \
+		launcher.vala \ 
+		command/vera-command.vala \
+		VeraInterface.vala
+	
+	vala-packages = gio-2.0
+	packages = gio-2.0
+}
+
+programs.vera-screenshot {
+	sources = \
+		screenshot/screenshot.vala \
+		screenshot/ScreenshotSaveDialog.vala \
+		screenshot/ScreenshotSelectionWindow.vala \
+		screenshot/ScreenshotTakeDialog.vala
+	compile-flags = -O2 -flto -include config.h
+	gettext-domain = vera
+
+	vala-packages = gio-2.0 gtk+-3.0 gdk-3.0 
+	packages = gio-2.0 gtk+-3.0  gdk-3.0
+}
+
+programs.vera-logout {
+	sources = \
+		logout/ExitDialog.vala \
+		logout/vera-logout.vala \
+		VeraInterface.vala \
+		ExitActions.vala
+	compile-flags = -O2 -flto -include config.h
+	gettext-domain = vera
+
+	vala-packages = gio-2.0 gtk+-3.0 gdk-3.0 
+	packages = gio-2.0 gtk+-3.0  gdk-3.0
+}

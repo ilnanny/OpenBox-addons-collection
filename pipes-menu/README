@@ -1,0 +1,30 @@
+#-------------------------------------------------------------------------------
+checkmail.py README file
+#-------------------------------------------------------------------------------
+
+DESCRIPTION:
+This program checks (only one) IMAP4 server for new mails and displays mail headers through pyosd.
+The package contains two files: 
+    checkmailrc     - configuration file
+    checkmail.py    - pipemenu for ob3 with osd notification for new mails (german and english version)
+
+DEPENDENCIES:
+- python
+- python-pyosd (only for osd notification)
+- a mail agent or browser for opening mails 
+- browser to open links
+
+USAGE:
+   1.) First of all you have to copy the checkmailrc to ~/.checkmailrc and edit it. Don´t forget to change its
+       permissions to 600.
+   2.) The "--update" option: use it as cronjob with 
+       "export DISPLAY=:0.0; python ~/.config/openbox/scripts/checkmail.py --update > /dev/null 2>&1"
+   3.) Place this script under ~/.config/openbox/scripts, make it executable and add following to your ~/.config/openbox/menu.xml:
+       "<menu id="mails-menu" label="mails" execute="~/.config/openbox/scripts/checkmail.py" />...
+        <menu id="root-menu" label="Openbox3">
+            ...
+            <menu id="mails-menu" />
+            ...
+        </menu>"
+       Reconfigure openbox.
+

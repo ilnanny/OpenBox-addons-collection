@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Lila-OB-Menu
+Comment=
+Exec=/usr/local/bin/menu/menu.sh
+Icon=/usr/local/bin/menu/menu.svg
+Path=
+Terminal=false
+StartupNotify=false

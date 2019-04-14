@@ -1,0 +1,41 @@
+#!/bin/bash
+# File Name:test_sound
+# Version: 1.0
+# Authors:ilnanny
+
+#################################################################################################################################################
+ICONS=gnome-software.svg
+ED1=leafpad
+TERM=xfce4-terminal
+ 
+export testsound=$(cat <<End_of_Text
+<window title="Test-Sound" window-position="1"  icon-name="menu"> 
+<vbox>         
+<vbox width-request="150" height-request="100">       
+               
+                 <pixmap><height>36</height><width>36</width>
+                 <input file>/usr/share/pixmaps/menu.png</input>
+                 </pixmap>
+                 <text use-markup="true">
+                 <label>"<b>`gettext $" Test Sound"`</b>"</label>
+                 </text>
+                 
+              <hseparator></hseparator>
+     </vbox>
+               
+              <terminal>
+              <input>echo speaker-test --channels 2 --test wav --nloops 3</input>
+              </terminal>                    
+           
+         
+                  <hbox>
+                  <button cancel></button>
+                  </hbox> 
+             
+        
+</vbox>
+</window>
+End_of_Text
+)
+gtkdialog --program=testsound
+unset testsound

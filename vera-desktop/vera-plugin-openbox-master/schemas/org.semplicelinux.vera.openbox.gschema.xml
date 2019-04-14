@@ -1,0 +1,98 @@
+<!--
+
+ vera-plugin-openbox - openbox plugin for vera
+ Copyright (C) 2014-2015  Eugenio "g7" Paolantonio and the Semplice Project
+ 
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+ Authors:
+     Eugenio "g7" Paolantonio <me@medesimo.eu>
+
+-->
+
+<!-- openbox -->
+
+<schemalist>
+
+    <schema path="/org/semplicelinux/vera/openbox/" id="org.semplicelinux.vera.openbox" gettext-domain="vera-plugin-openbox">
+
+	<key name="config-path" type="s">
+	    <default>"~/.config/vera/openbox/rc.xml"</default>
+	    <summary>Openbox configuration file</summary>
+	    <description>The openbox configuration file path. You'll need to restart vera after changing this value.</description>
+	</key>
+
+	<key name="theme-name" type="s">
+	    <default>"Clearlooks"</default>
+	    <summary>Theme name</summary>
+	    <description>The openbox theme name.</description>
+	</key>
+	
+	<key name="title-layout" type="s">
+	    <default>"NLIMC"</default>
+	    <summary>Window title layout</summary>
+	    <description>The window title layout. N: icon, L: label, I: iconify, M: maximize, C: close, S: shade, D: stick</description>
+	</key>
+	
+	<key name="desktops-number" type="i">
+	    <default>4</default>
+	    <summary>Desktops number</summary>
+	    <description>The virtual desktops number.</description>
+	</key>
+	
+	<key name="font-activewindow" type="s">
+	    <default>"Open Sans 11"</default>
+	    <summary>Font for the active window</summary>
+	    <description>The font to use on active windows.</description>
+	</key>
+	
+	<key name="font-inactivewindow" type="s">
+	    <default>"Open Sans 11"</default>
+	    <summary>Font for the inactive window</summary>
+	    <description>The font to use on inactive windows.</description>
+	</key>
+	
+	<key name="font-menuheader" type="s">
+	    <default>"Open Sans 10"</default>
+	    <summary>Font for the menu header</summary>
+	    <description>The font to use on the menu header.</description>
+	</key>
+	
+	<key name="font-menuitem" type="s">
+	    <default>"Open Sans 10"</default>
+	    <summary>Font for the menu item</summary>
+	    <description>The font to use on the menu item.</description>
+	</key>
+	
+	<key name="font-onscreendisplay" type="s">
+	    <default>"Open Sans 10"</default>
+	    <summary>Font for the on screen display</summary>
+	    <description>The font to use on the on screen display.</description>
+	</key>
+	
+	<key name="font-activeonscreendisplay" type="s">
+	    <default>"Open Sans 10"</default>
+	    <summary>Font for the active on screen display</summary>
+	    <description>The font to use on the active on screen display.</description>
+	</key>
+	
+	<key name="font-inactiveonscreendisplay" type="s">
+	    <default>"Open Sans 10"</default>
+	    <summary>Font for the inactive on screen display</summary>
+	    <description>The font to use on the inactive on screen display.</description>
+	</key>
+
+    </schema>
+
+</schemalist>

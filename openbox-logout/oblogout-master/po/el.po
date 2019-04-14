@@ -1,0 +1,88 @@
+# Greek translation for oblogout
+# Copyright (c) 2009 Rosetta Contributors and Canonical Ltd 2009
+# This file is distributed under the same license as the oblogout package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: oblogout\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2009-01-26 23:21+0000\n"
+"PO-Revision-Date: 2009-01-31 05:06+0000\n"
+"Last-Translator: Xaos <Unknown>\n"
+"Language-Team: Greek <el@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2009-02-01 22:36+0000\n"
+"X-Generator: Launchpad (build Unknown)\n"
+
+#: ../ObLogout/oblogout.py:88
+msgid "Openbox Logout"
+msgstr "Openbox Αποσύνδεση"
+
+#: ../ObLogout/oblogout.py:178
+msgid "Unable to determin the module path, exiting..."
+msgstr "Αδύνατον να εντοπιστεί η διεύθυνση της ενότητας. Αποσύνδεση..."
+
+#: ../ObLogout/oblogout.py:213
+#, python-format
+msgid "Color %s is not a valid color, defaulting to black"
+msgstr "Το χρώμα %s δεν είναι έγκυρο χρώμα, επαναφορά σε μαύρο"
+
+#: ../ObLogout/oblogout.py:235
+msgid "cancel"
+msgstr "Άκυρο"
+
+#: ../ObLogout/oblogout.py:235
+msgid "logout"
+msgstr "Αποσύνδεση"
+
+#: ../ObLogout/oblogout.py:235
+msgid "restart"
+msgstr "Επανεκκίνηση"
+
+#: ../ObLogout/oblogout.py:235
+msgid "shutdown"
+msgstr "Τερματισμός"
+
+#: ../ObLogout/oblogout.py:235
+msgid "suspend"
+msgstr "Αναστολή"
+
+#: ../ObLogout/oblogout.py:235
+msgid "hibernate"
+msgstr "Αδρανοποίηση"
+
+#: ../ObLogout/oblogout.py:235
+msgid "safesuspend"
+msgstr "Ασφαλής Αναστολή"
+
+#: ../ObLogout/oblogout.py:235
+msgid "lock"
+msgstr "Κλείδωμα"
+
+#: ../ObLogout/oblogout.py:235
+msgid "switch"
+msgstr "Αλλαγή"
+
+#: ../ObLogout/oblogout.py:247
+#, python-format
+msgid "Button %s is not a valid button name, removing"
+msgstr "Η επιλογή %s δεν είναι έγκυρη επιλογή, διαγραφή επιλογής"
+
+#: ../ObLogout/oblogout.py:252
+msgid "Can't Suspend, disabling button"
+msgstr "Αδύνατο να γίνει Αναστολή, Απενεργοποίηση επιλογής"
+
+#: ../ObLogout/oblogout.py:256
+msgid "Can't Hibernate, disabling button"
+msgstr "Αδύνατο να γίνει Αδρανοποίηση, Απενεργοποίση επιλογής"
+
+#: ../ObLogout/oblogout.py:260
+msgid "Can't Safe Suspend, disabling button"
+msgstr "Αδύνατο να γίνει Αναστολή, Απενεργοποίση επιλογής"
+
+#: ../ObLogout/oblogout.py:264
+msgid "No valid buttons found, resetting to defaults"
+msgstr "Δεν υπάρχουν έγκυρες επιλογές, επαναφορά στις προεπιλογές"

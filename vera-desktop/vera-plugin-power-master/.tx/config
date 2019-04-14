@@ -1,0 +1,9 @@
+[main]
+host = https://www.transifex.com
+
+[vera-plugin-power.main]
+file_filter = po/vera-plugin-power/<lang>.po
+source_file = po/vera-plugin-power/vera-plugin-power-upload.pot
+source_lang = en
+type = PO
+

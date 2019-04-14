@@ -1,0 +1,18 @@
+Source: vera-power-manager
+Section: admin
+Priority: optional
+Maintainer: Eugenio Paolantonio (g7) <me@medesimo.eu>
+Build-Depends: dh-python, python3-all (>= 3.1.2-7~), debhelper (>= 8.0.0)
+X-Python3-Version: >= 3.2
+Standards-Version: 3.9.5
+Homepage: https://github.com/vera-desktop/vera-power-manager
+Vcs-Git: git://github.com/vera-desktop/vera-power-manager.git
+Vcs-Browser: https://github.com/vera-desktop/vera-power-manager
+
+Package: vera-power-manager
+Architecture: all
+Depends: ${misc:Depends}, ${python3:Depends}, python3-gi, gir1.2-glib-2.0,
+ ${python:Depends}, python3-dbus, gir1.2-polkit-1.0, systemd | systemd-shim, tlp, acpid
+Description: DBus interface to power management settings 
+ vera-power-manager provides a simple DBus interface to common power
+ management settings.

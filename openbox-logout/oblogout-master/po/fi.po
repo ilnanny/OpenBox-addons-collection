@@ -1,0 +1,88 @@
+# Finnish translation for oblogout
+# Copyright (c) 2009 Rosetta Contributors and Canonical Ltd 2009
+# This file is distributed under the same license as the oblogout package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: oblogout\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2009-01-26 23:21+0000\n"
+"PO-Revision-Date: 2009-01-26 18:28+0000\n"
+"Last-Translator: Hanna Pietikäinen <hannapie@online.de>\n"
+"Language-Team: Finnish <fi@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2009-02-01 22:36+0000\n"
+"X-Generator: Launchpad (build Unknown)\n"
+
+#: ../ObLogout/oblogout.py:88
+msgid "Openbox Logout"
+msgstr "Openbox Uloskirjautuminen"
+
+#: ../ObLogout/oblogout.py:178
+msgid "Unable to determin the module path, exiting..."
+msgstr ""
+
+#: ../ObLogout/oblogout.py:213
+#, python-format
+msgid "Color %s is not a valid color, defaulting to black"
+msgstr ""
+
+#: ../ObLogout/oblogout.py:235
+msgid "cancel"
+msgstr "Peruuta"
+
+#: ../ObLogout/oblogout.py:235
+msgid "logout"
+msgstr "Kirjaudu ulos"
+
+#: ../ObLogout/oblogout.py:235
+msgid "restart"
+msgstr "Uudelleenkäynnistä"
+
+#: ../ObLogout/oblogout.py:235
+msgid "shutdown"
+msgstr "Sammuta"
+
+#: ../ObLogout/oblogout.py:235
+msgid "suspend"
+msgstr "Keskeytys"
+
+#: ../ObLogout/oblogout.py:235
+msgid "hibernate"
+msgstr "Lepotila"
+
+#: ../ObLogout/oblogout.py:235
+msgid "safesuspend"
+msgstr "Turvakeskeystys"
+
+#: ../ObLogout/oblogout.py:235
+msgid "lock"
+msgstr "Lukitse"
+
+#: ../ObLogout/oblogout.py:235
+msgid "switch"
+msgstr "Vaihda"
+
+#: ../ObLogout/oblogout.py:247
+#, python-format
+msgid "Button %s is not a valid button name, removing"
+msgstr ""
+
+#: ../ObLogout/oblogout.py:252
+msgid "Can't Suspend, disabling button"
+msgstr ""
+
+#: ../ObLogout/oblogout.py:256
+msgid "Can't Hibernate, disabling button"
+msgstr ""
+
+#: ../ObLogout/oblogout.py:260
+msgid "Can't Safe Suspend, disabling button"
+msgstr ""
+
+#: ../ObLogout/oblogout.py:264
+msgid "No valid buttons found, resetting to defaults"
+msgstr ""

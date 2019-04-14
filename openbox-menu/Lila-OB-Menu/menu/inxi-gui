@@ -1,0 +1,139 @@
+#!/bin/bash
+
+# File Name:inxi_gui
+# Purpose: inxi_gui
+# Authors:ilnanny
+# This file is free software; you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+
+#################################################################################
+
+export inxigui=$(cat <<End_of_Text
+<window title="Pc Info" window-position="1" icon-name="gtk-dialog-info" decorated="true">
+<vbox>
+          <frame>
+              <pixmap><height>96</height><width>96</width>
+              <input file>/usr/share/pixmaps/menu.png</input>
+              </pixmap>
+              <text use-markup="true" width-chars="50">
+              <label>"<b>`gettext $"Inxi Gui "`</b>"</label>
+              </text>
+          </frame>
+                <hbox>
+          <frame>
+				<vbox> 
+                    <button>
+                    <variable>CHECKBOX2</variable>
+                    <label>CPU</label>
+                    <action>clear:TERMINAL</action>
+                    <action>echo "inxi -C" > /tmp/inxi</action>
+                    <action type="refresh">TERMINAL</action>
+                    </button>
+     
+                    <button>
+                    <variable>CHECKBOX3</variable>
+                    <label>Graphics</label>
+                    <action>clear:TERMINAL</action>
+                    <action>echo "inxi -G" > /tmp/inxi</action>
+                    <action type="refresh">TERMINAL</action>
+                    </button>
+
+                    <button>
+                    <variable>CHECKBOX1</variable>
+                    <label>Audio</label>
+                    <action>clear:TERMINAL</action>
+                    <action>echo "inxi -A" > /tmp/inxi</action>
+                    <action type="refresh">TERMINAL</action>
+                    </button>  
+
+                    <button>
+                    <variable>CHECKBOX6</variable>
+                    <label>Hard Drive</label>
+                    <action>clear:TERMINAL</action>
+                    <action>echo "inxi -D & inxi -p" > /tmp/inxi</action>
+                    <action type="refresh">TERMINAL</action>
+                    </button>
+
+                    <button>
+                    <variable>CHECKBOX7</variable>
+                    <label>Sensors</label>
+                    <action>clear:TERMINAL</action>
+                    <action>echo "inxi -s" > /tmp/inxi</action>
+                    <action type="refresh">TERMINAL</action>
+                    </button>
+                    
+                    <button>
+                    <variable>CHECKBOX4</variable>
+                    <label>NIC & IP address</label>
+                    <action>clear:TERMINAL</action>
+                    <action>echo "inxi -i" > /tmp/inxi</action>
+                    <action type="refresh">TERMINAL</action>
+                    </button>
+
+                    <button>
+                    <variable>CHECKBOX5</variable>
+                    <label>System & Processes</label>
+                    <action>clear:TERMINAL</action>
+                    <action>echo "inxi -S & inxi -I & inxi -t c10" > /tmp/inxi</action>
+                    <action type="refresh">TERMINAL</action>
+                    </button>
+                  
+                    <button>
+                    <variable>CHECKBOX8</variable>
+                    <label>All </label>
+                    <action>clear:TERMINAL</action>
+                    <action>echo "inxi -F" > /tmp/inxi</action>
+                    <action type="refresh">TERMINAL</action>
+                    </button>
+                    
+                    
+                    <button>
+                    <variable>CHECKBOX9</variable>
+                    <label> Hardware Report</label>
+                    <action> lshw > $HOME/hardware.txt && mousepad $HOME/hardware.txt</action>
+                    <action type="refresh">TERMINAL</action>
+                    </button>
+
+                    
+        </vbox>
+       </frame>
+
+       <frame>
+       <vbox vscrollbar-policy="1" hscrollbar-policy="1" scrollable="true" width="650" height="450">
+          <terminal argv0="/bin/bash">
+            <variable>TERMINAL</variable>
+			<input file>/tmp/inxi</input>
+          </terminal>
+       </vbox>
+       </frame> 
+       </hbox>
+                 <hbox>
+<button>
+      <input file stock="gtk-cancel"></input>
+      <label>Exit</label>
+      <action>EXIT:cancel</action>
+</button>
+</hbox>
+</vbox>
+</window>
+
+End_of_Text
+)
+
+
+gtkdialog --program=inxigui
+sed -i 'd'  > /tmp/inxi
+unset inxigui
+exit
+

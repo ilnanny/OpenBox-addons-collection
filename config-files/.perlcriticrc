@@ -1,0 +1,9 @@
+severity  = 2
+verbose   = 6
+#top       = 50
+theme     = core + more + bangs + tics
+#include   = NamingConventions ClassHierarchies
+exclude   = RegularExpressions::RequireDotMatchAnything RegularExpressions::RequireExtendedFormatting RegularExpressions::ProhibitComplexRegexes RegularExpressions::RequireLineBoundaryMatching Subroutines::RequireArgUnpacking Subroutines::RequireFinalReturn ErrorHandling::RequireCarping Variables::ProhibitPunctuationVars CodeLayout::RequireTidyCode Modules::RequireVersionVar CodeLayout::ProhibitParensWithBuiltins Documentation::RequirePodAtEnd Documentation::RequirePodSections Subroutines::ProhibitSubroutinePrototypes ControlStructures::ProhibitPostfixControls ValuesAndExpressions::ProhibitMagicNumbers Tics::ProhibitLongLines
+color-severity-medium = yellow
+color-severity-low = blue
+color-severity-lowest = green

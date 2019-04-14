@@ -1,0 +1,7 @@
+[Plugin]
+Module=libdesktop.so
+Name=desktop
+Description=Vera desktop plugin
+Authors=Eugenio Paolantonio
+Copyright=Copyright (C) 2014 Eugenio "g7" Paolantonio
+Website=http://semplice-linux.org

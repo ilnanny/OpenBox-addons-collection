@@ -1,0 +1,7 @@
+[Plugin]
+Module=libtint2.so
+Name=tint2
+Description=Vera tint2 plugin
+Authors=Eugenio Paolantonio
+Copyright=Copyright (C) 2014 Eugenio "g7" Paolantonio
+Website=http://semplice-linux.org

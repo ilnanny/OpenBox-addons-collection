@@ -1,0 +1,14 @@
+An Openbox Pipe Menu client for xmms2
+
+http://openbox.org
+http://xmms2.org
+
+How to include the menu:
+http://openbox.org/wiki/Help:Menus#Pipe_menus
+
+<menu execute="~/xmms2-OpenboxMenu.py" id="xmms2-menu" label="xmms2"/>
+
+How to use config presets:
+copy configPresets.ini
+into ~/.config/xmms2/clients/openboxMenu/
+

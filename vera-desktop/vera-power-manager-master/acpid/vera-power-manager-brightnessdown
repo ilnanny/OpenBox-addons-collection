@@ -1,0 +1,4 @@
+# acipd rule for brightnessdown
+
+event=video/brightnessdown
+action=dbus-send --system --print-reply --dest="org.semplicelinux.vera.powermanager" /org/semplicelinux/vera/powermanager org.semplicelinux.vera.powermanager.DecreaseBrightness

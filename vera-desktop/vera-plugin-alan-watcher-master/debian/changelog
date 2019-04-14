@@ -1,0 +1,79 @@
+vera-plugin-alan-watcher (1.0.5-1) unstable; urgency=medium
+
+  * [Recipe] Use gee-0.8 instead of gee-1.0
+  * [packaging] Build-depend on libgee-0.8-dev
+  * [packaging] Build-depend on valac instead of valac-0.28
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sun, 11 Oct 2015 17:14:49 +0200
+
+vera-plugin-alan-watcher (1.0.4-1) unstable; urgency=medium
+
+  * [alan-watcher] Rebuild menus if the locale-changed stamp is found
+  * [alan-watcher] Use valac-0.28.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sat, 11 Jul 2015 00:14:04 +0200
+
+vera-plugin-alan-watcher (1.0.3-2) unstable; urgency=medium
+
+  * Transition to semplice-current.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sat, 04 Apr 2015 20:22:17 +0200
+
+vera-plugin-alan-watcher (1.0.3-1) devel; urgency=medium
+
+  * Added support for custom commands and the capability to not connect to theme changes.
+  * Ensure that the file to load ends with .watcher.
+  * debian/control: switch to valac-0.26
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sat, 29 Nov 2014 18:01:26 +0100
+
+vera-plugin-alan-watcher (1.0.2-1) devel; urgency=medium
+
+  * Added the capability to watch a gsetting domain,
+    or a specific setting.
+  * Watch by default icon-theme-name and theme-name in
+    org.semplicelinux.vera.settings.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Fri, 01 Aug 2014 09:38:40 +0200
+
+vera-plugin-alan-watcher (1.0.1-1) devel; urgency=medium
+
+  * Move the initialization directly in the startup phase.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Tue, 15 Jul 2014 20:31:34 +0200
+
+vera-plugin-alan-watcher (1.0.0-5) devel; urgency=medium
+
+  * Rebuild again.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Tue, 15 Jul 2014 16:05:52 +0200
+
+vera-plugin-alan-watcher (1.0.0-4+b1) devel; urgency=medium
+
+  * Rebuild.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Tue, 15 Jul 2014 15:39:24 +0200
+
+vera-plugin-alan-watcher (1.0.0-4) devel; urgency=medium
+
+  * Removed nala0 dependency, it *should* now be handled automatically.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Tue, 15 Jul 2014 01:45:20 +0200
+
+vera-plugin-alan-watcher (1.0.0-3) devel; urgency=medium
+
+  * Depend on nala0 (FIXME: should really fix this)
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Mon, 14 Jul 2014 23:22:07 +0200
+
+vera-plugin-alan-watcher (1.0.0-2) devel; urgency=medium
+
+  * Fixed build.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Mon, 14 Jul 2014 22:51:39 +0200
+
+vera-plugin-alan-watcher (1.0.0-1) devel; urgency=low
+
+  * Initial release 
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Mon, 14 Jul 2014 19:00:39 +0200

@@ -1,0 +1,23 @@
+ABOUT
+
+update_obmenu is a Perl script that creates and updates your Openbox menu.
+It scans certain directories for desktop files, and adds new application
+entries and submenus, including icons, to your Openbox menu.
+
+INSTALLATION
+
+% mkdir ~/bin
+% cp update_obmenu ~/bin
+% chmod u+x ~/bin/update_obmenu
+
+RECOMMENDATION
+
+Save your ~/.config/openbox/menu.xml, and execute ``update_obmenu -n´´ to
+create a new menu.xml. Finally, add your modifications to this file.
+
+USAGE
+
+Usage: update_obmenu -u|-n
+-u   : Update your Openbox menu.
+-n   : Create a new Openbox menu. Your old menu.xml will be overwritten!
+

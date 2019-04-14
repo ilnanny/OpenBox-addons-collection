@@ -1,0 +1,64 @@
+obmx-dir
+=======
+
+obmx-dir <directory> <command>
+
+This script makes a pipe menu when given as a command in an Openbox menu.
+
+It builds a menu from a directory, alphabetically sorted. Example:
+	obmx-dir "/home/kolme/wallpaper" "fbsetbg"
+
+
+obmx-moz
+=======
+Usage: obmx-moz [options]
+
+Options:
+  -h, --help            show this help message and exit
+  -f, --firefox         Look for Firefox bookmarks
+  -m, --mozilla         Look for Mozilla Suite bookmarks
+  -b FILENAME, --bookmarks=FILENAME
+                        Specify the path to the bookmarks.html file
+  -r ROOT, --root=ROOT  Root folder of the bookmarks
+  -n BROWSER, --navigator=BROWSER
+                        Command to run the web browser.
+
+Translates any mozilla-compatible bookmarks into an openbox menu.
+If no arguments are given, it'll try to find your bookmarks.
+A bookmarks folder can be passed as an argument, It'll try to find it and
+build the menu out of that folder.
+Example:
+	obmx-moz -b "/path/to/bookmarks.html" -r "Bookmarks Toolbar Folder"
+
+
+obmx-nav
+=======
+
+obmx-nav <root> <file-manager> <terminal>
+
+This script makes a pipe menu of file system directories when given as a
+command in an Openbox menu.
+
+It recursively builds a menu to navigate directories. Example:
+	obmx-nav /home/kolme rox aterm
+
+
+
+obmx-xdg
+=======
+usage: obmx-xdg [--import|--replace] [path]
+
+obmx-xdg --import
+  Creates a file called "gnome-menus.xml"
+  
+obmx-xdg --replace
+  Replaces the Openbox menu with the Gnome menus
+  
+obmx-xdg
+  Prints a pipemenu (normal behaviour)
+
+This script makes a pipe menu of menu entries from a desktop environment when
+given as a command in an Openbox menu.
+
+A path to a different GNOME menu can be passed:
+obmx-xdg [options] /path/to/system.menu

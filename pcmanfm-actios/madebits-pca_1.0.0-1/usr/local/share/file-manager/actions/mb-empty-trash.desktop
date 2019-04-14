@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=Action
+Profiles=profile-zero;
+Name[en_US]=Empty Trash
+Name[en]=Empty Trash
+Name[C]=Empty Trash
+
+[X-Action-Profile profile-zero]
+MimeTypes=inode/directory;
+Basenames=trash:///
+Exec=/usr/bin/trash-empty
+Name[en_US]=Empty Trash
+Name[en]=Empty Trash
+Name[C]=Empty Trash

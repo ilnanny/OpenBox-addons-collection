@@ -1,0 +1,395 @@
+vera-control-center (1.0.21-1) unstable; urgency=medium
+
+  * [about] Added os-release parser
+  * [about] Set the codename, name, version and full version (new field) from a suitable os-release file
+  * [power] Switch to the un-pythonic Up.Client.new() when creating the Client object
+  * [vera-control-center] Bump version
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sat, 18 Jun 2016 11:37:31 +0200
+
+vera-control-center (1.0.20-1) unstable; urgency=medium
+
+  * [ApplicationSelectionDialog] Do the cleanup when hiding
+  * [tint2] Construct the ThemedIcon using Gio.ThemedIcon.new()
+  * [about] Remove 'Check for updates' button
+  * [packaging] Removed the channels dependency
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Fri, 18 Dec 2015 00:18:30 +0100
+
+vera-control-center (1.0.19-1) unstable; urgency=medium
+
+  * [tint2] Added new "Invert mouse scroll actions" checkbutton.
+  * [tint2] Pre-set inverted_scroll_actions if the newly selected position is Top.
+  * [tint2] Ensure that the windows can be on top of the panel if the position is Top.
+  * [translations] Updated.
+  * [translations] Dumped translations to desktop entries.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Thu, 27 Aug 2015 15:05:29 +0200
+
+vera-control-center (1.0.18-1) unstable; urgency=medium
+
+  * [desktop] Made the virtual desktops number configurable (requires devel vera-plugin-openbox)
+  * [theme] Supply the openbox Settings object to GtkTheme and Fonts.
+  * [theme] gtktheme: handle Openbox themes.
+  * [theme] font: handle fonts for {Active,Inactive}Windows, OSD and Menu.
+  * [packaging] Depend on vera-plugin-desktop and vera-plugin-openbox (>= 1.10.0).
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Tue, 28 Jul 2015 22:46:17 +0200
+
+vera-control-center (1.0.17-1) unstable; urgency=medium
+
+  * [locale] Create locale-changed stamp for alan2
+  * [packaging] Depend on python3-keeptalking >= 7.0.0.
+  * [locale] Show RebootDialog only if the locale change action succeeded.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Fri, 10 Jul 2015 23:49:36 +0200
+
+vera-control-center (1.0.16-1) unstable; urgency=medium
+
+  * [about] Fix codename retrieval on Semplice for Workstations.
+  * [about] Do not specify the processor_count if it's 1.
+  * [about] Do not use --dist-upgrade-mode if the sid channel is not enabled.
+  * [packaging] Depend on channels.
+  * [timedate] Programmatically set font description attributes
+  * [about] Programmatically set font description attributes
+  * [translations] Updated.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Fri, 10 Jul 2015 15:45:51 +0200
+
+vera-control-center (1.0.15-1) unstable; urgency=medium
+
+  * [vera-control-center] Restore translation binding when returning to home.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Tue, 07 Jul 2015 00:09:11 +0200
+
+vera-control-center (1.0.14-1) unstable; urgency=medium
+
+  * [RebootDialog] Follow org.semplicelinux.vera's exit-window-countdown to set the countdown.
+  * Updated translations.
+  * [packaging] Depend on vera-desktop >= 1.0.5.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Tue, 16 Jun 2015 12:09:28 +0200
+
+vera-control-center (1.0.13-2) unstable; urgency=medium
+
+  * [packaging] Depend on vera-desktop >= 1.0.4.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sun, 14 Jun 2015 19:15:34 +0200
+
+vera-control-center (1.0.13-1) unstable; urgency=medium
+
+  * [autostart] Set an appropriate window title when in add_new_custom_dialog's edit mode.
+  * [RebootDialog] Connect to Vera instead of going straight to logind.
+  * [RebootDialog] Assume ResponseType.OK after 60 seconds.
+  * Updated translations.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sun, 14 Jun 2015 19:12:03 +0200
+
+vera-control-center (1.0.12-1) unstable; urgency=medium
+
+  * [power] Get the new brightness level directly from the BrightnessChanged() signal.
+  * [packaging] debian/control: require vera-power-manager >= 1.0.4.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Wed, 10 Jun 2015 10:43:47 +0200
+
+vera-control-center (1.0.11-1) unstable; urgency=medium
+
+  * [autostart] change add_new_custom_dialog's Select button label to a more generic 'Save'
+  * Updated translations.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sun, 24 May 2015 15:32:55 +0200
+
+vera-control-center (1.0.10-1) unstable; urgency=medium
+
+  * Updated translations.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sun, 24 May 2015 11:59:30 +0200
+
+vera-control-center (1.0.9-1) unstable; urgency=medium
+
+  * [autostart] Made existing autostart entries editable.
+  * [autostart] Increase the add_new_custom_dialog width_request to 400px.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sat, 23 May 2015 17:37:57 +0200
+
+vera-control-center (1.0.8-2) unstable; urgency=medium
+
+  * Merged debian packaging into main master branch.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Tue, 19 May 2015 22:10:06 +0200
+
+vera-control-center (1.0.8-1) unstable; urgency=medium
+
+  * [RebootDialog] Use the SYSTEM DBus bus to search for logind.
+  * 1.0.8
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sun, 17 May 2015 22:58:00 +0200
+
+vera-control-center (1.0.7-1) unstable; urgency=medium
+
+  * [tint2] do not restart compton anymore.
+  * [widgets] Added RebootDialog.
+  * [locale] show a RebootDialog when the locale has been changed.
+  * [RebootDialog] Ensure the dialog's buttons can be activated from a keyboard.
+  * [RebootDialog] Adjusted the secondary text wording a bit
+  * Updated translations.
+  * 1.0.7
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sun, 17 May 2015 22:41:00 +0200
+
+vera-control-center (1.0.6-1) unstable; urgency=medium
+
+  [ Eugenio Paolantonio (g7) ]
+  * Adjust the window size if the display resolution is lower than the control center's size.
+
+  [ wtuuju ]
+  * Update fr.po
+
+  [ Eugenio Paolantonio (g7) ]
+  * Updated translations.
+  * power: add new 'Display brightness' frame.
+  * Updated translations.
+  * Removed create_pot_template.sh as it's deprecated.
+  * Dumped translations to desktop entries.
+  * 1.0.6
+  * debian/control: depend on vera-power-manager >= 1.0.1.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Thu, 07 May 2015 19:55:07 +0200
+
+vera-control-center (1.0.5-1) unstable; urgency=medium
+
+  * shortcuts: finally expose the "Enable launcher" checkbutton.
+  * theme/gtktheme: show the logout notice only when actually changing the current cursor theme.
+  * Updated translations.
+  * 1.0.5.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Thu, 16 Apr 2015 20:30:30 +0200
+
+vera-control-center (1.0.4-1) unstable; urgency=medium
+
+  * autostart: fix image load from a local absolute path.
+  * Updated translations.
+  * 1.0.4
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sat, 11 Apr 2015 16:28:46 +0200
+
+vera-control-center (1.0.3-1) unstable; urgency=medium
+
+  * desktop: wrap into idle_add()s every add_wallpaper_to_list() call to make things more reliable.
+  * 1.0.3
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sat, 04 Apr 2015 23:41:09 +0200
+
+vera-control-center (1.0.2-1) unstable; urgency=medium
+
+  * autostart: idle_add() every ApplicationRow.
+  * autostart: skip non-existent search paths.
+  * Updated translations.
+  * 1.0.2.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sat, 04 Apr 2015 23:19:47 +0200
+
+vera-control-center (1.0.1-1) unstable; urgency=medium
+
+  * SectionFrame: limit iconview columns to 5.
+  * 1.0.1
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Fri, 03 Apr 2015 17:56:44 +0200
+
+vera-control-center (1.0.0-1) unstable; urgency=medium
+
+  * locale: show decorations on pop-up dialogs
+  * desktop: check for file existence when adding a not listed wallpaper
+  * about: ensure that synaptic is in non-interactive mode.
+  * SectionFrame: increment iconview's item-width to 75.
+  * 1.0.0
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Fri, 03 Apr 2015 14:48:27 +0200
+
+vera-control-center (0.35-1) unstable; urgency=medium
+
+  * Added usersadmin module.
+  * usersadmin: group support.
+  * usersadmin: hide the autologin bits for now, as they won't get implemented in this cycle.
+  * usersadmin: enable conveniency permissions for newly-created users.
+  * vera-control-center: added translation support.
+  * autostart: added translation support.
+  * desktop: added translation support.
+  * power: added translation support.
+  * theme: added translation support.
+  * usersadmin: added translation support.
+  * Transifex & support scripts for localization
+  * Do not translate strings that aren't meant to be translated.
+  * setup.py: hook localization management in 'build' and 'install'.
+  * ApplicationSelectionDialog: translation support.
+  * UnlockBar: translation support.
+  * desktop: don't try to set translated values for dconf's background-mode.
+  * theme: translate labels on the StackButtons.
+  * More work on translation support
+  * usersadmin: supply DISPLAY when calling usersd's UI bits.
+  * usersadmin: change polkit policy to authenticate to org.semplicelinux.usersd.manage.
+  * debian/control: depend on usersd.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Thu, 02 Apr 2015 15:54:45 +0200
+
+vera-control-center (0.34-1) devel; urgency=medium
+
+  * about: reconnect to the Bus at every scene call.
+  * timedate: preliminary 12-hour clock support.
+  * timedate: fix window headers in the select_timezone_dialog.
+  * autostart: support the addition of custom commands.
+  * ApplicationSelectionDialog, autostart, tint2: properly handle the ApplicationSelectionDialog's delete-event.
+  * autostart: remove unneeded clean-up calls from on_add_new_custom_dialog_delete_event().
+  * theme: paranoid: make the backend and vsync settings configurable.
+  * controlcenterui: increase window size to 710x590.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sun, 15 Feb 2015 18:13:37 +0100
+
+vera-control-center (0.33-1) devel; urgency=medium
+
+  * desktop: do not add a new wallpaper to the include list if it is already there.
+  * desktop: directly check the wallpapers by mimetypes to have consistency with vera-plugin-desktop.
+  * desktop: fixup include-wallpapers detection
+  * desktop: store the image-path dconf property into new Properties class and bind them together.
+  * desktop: populate and show the monitor chooser if the monitor number > 1
+  * desktop: made the Properties class more automatic, and added new property current-selected-monitor
+  * desktop: preliminary multimonitor support.
+  * desktop: properly set the default monitor_choose item based on current wallpaper configuration.
+  * autostart: create ~/.config/autostart directory if it doesn't exist.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Thu, 05 Feb 2015 18:47:40 +0100
+
+vera-control-center (0.32-2) devel; urgency=medium
+
+  * debian/control: depend on gir1.2-upowerglib-1.0.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Mon, 22 Dec 2014 17:14:59 +0100
+
+vera-control-center (0.32-1) devel; urgency=medium
+
+  * widgets/UnlockBar: added 'lock' glib property.
+  * Added 'power' module.
+  * debian/control: depend on vera-power-manager.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sun, 21 Dec 2014 23:15:14 +0100
+
+vera-control-center (0.31-1) devel; urgency=medium
+
+  * about: launch synaptic via the synaptic-pkexec wrapper.
+  * Added 'autostart' module.
+  * Added ApplicationSelectionDialog, a dialog that lets the user choose an application from the ones installed. This is based on tint2 module's own dialog and it will replace it at some point.
+  * desktop: do not re-populate wallpapers when switching to the module scene after its load.
+  * tint2: switch to the ApplicationSelectionDialog.
+  * tint2: cleanup
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sat, 06 Dec 2014 13:24:06 +0100
+
+vera-control-center (0.30-1) devel; urgency=medium
+
+  * setup.py: ship veracc.css.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Wed, 26 Nov 2014 18:22:43 +0100
+
+vera-control-center (0.29-1) devel; urgency=medium
+
+  * Implement module search.
+  * Make the SceneManager go back when searching from a loaded module.
+  * Focus the searchbox on launch.
+  * Enforce the section order.
+  * Added panel (tint2) configuration module.
+  * SectionFrame: Sort modules by name.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Tue, 25 Nov 2014 15:53:14 +0100
+
+vera-control-center (0.28-1) devel; urgency=medium
+
+  * theme/paranoid: disable the "Enable window effects" checkbutton
+    if compton is not installed
+  * setup.py: ship the shortcuts module.
+  * shortcuts: hide for now the 'Desktop' frame.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Tue, 11 Nov 2014 10:34:30 +0100
+
+vera-control-center (0.27-3) devel; urgency=medium
+
+  * debian/rules: actually do correctly what has been done in the previous commit.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sun, 09 Nov 2014 15:16:01 +0100
+
+vera-control-center (0.27-2) devel; urgency=medium
+
+  * debian/rules: do not guess dependencies from the egg file
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sun, 09 Nov 2014 15:07:27 +0100
+
+vera-control-center (0.27-1) devel; urgency=medium
+
+  * Added shortcuts module.
+  * desktop: added preliminary wallpaper change support.
+  * desktop: added included and excluded wallpapers support.
+  * desktop: made the bottom bar a toolbar,added Add/Remove backgrounds
+    button, made the Remove backgrounds button work.
+  * desktop: if the current wallpaper is not in the list (outside search paths/include),
+    include it anyway.
+  * desktop: react on the image-path setting key changed signal
+  * desktop: bind the color chooser with the background-color key in Settings.
+  * desktop: added 'Add background' FileChooserDialog.
+  * desktop: bind background-mode setting to UI
+  * about: get and show the distribution full codename.
+  * desktop: added wallpaperpacks support.
+  * vera-control-center.py: change window details when loading modules
+  * desktop: added support for background randomization.
+  * theme: gtktheme: use SYNC_CREATE flag when binding properties
+  * theme: paranoid: shadow color bugfix
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sun, 09 Nov 2014 13:48:17 +0100
+
+vera-control-center (0.26-2) devel; urgency=medium
+
+  * debian/control: depend on python3-keeptalking2.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Tue, 26 Aug 2014 00:50:50 +0200
+
+vera-control-center (0.26-1) devel; urgency=medium
+
+  * about: made it actually work :)
+  * Added locale module.
+  * Added keyboard module.
+  * timedate: added Location support.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Mon, 25 Aug 2014 22:39:01 +0200
+
+vera-control-center (0.24-1) devel; urgency=medium
+
+  * modules/desktop: some experiments.
+  * modules/theme: added support for 'vera-color',
+    'vera-color-lock' and 'vera-color-enable'.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sun, 17 Aug 2014 00:57:10 +0200
+
+vera-control-center (0.23-1) devel; urgency=medium
+
+  * theme: added font page.
+  * theme: remove the 'Other' page.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Fri, 01 Aug 2014 23:14:50 +0200
+
+vera-control-center (0.22-1) devel; urgency=medium
+
+  * theme/gtktheme: ensure we do not exit if a directory
+    in the search path doesn't exist.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Tue, 15 Jul 2014 01:29:21 +0200
+
+vera-control-center (0.21-1) devel; urgency=medium
+
+  * vera-control-center.py: obtain the correct path when
+    we are executed from a link.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sun, 13 Jul 2014 13:42:32 +0200
+
+vera-control-center (0.20-1) devel; urgency=low
+
+  * Initial release
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sun, 13 Jul 2014 13:12:24 +0200

@@ -1,0 +1,44 @@
+#
+# vera-plugin-openbox - openbox plugin for vera
+# Copyright (C) 2014  Eugenio "g7" Paolantonio and the Semplice Project
+# 
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+# Authors:
+#     Eugenio "g7" Paolantonio <me@medesimo.eu>
+#
+
+# It seems that Bake's python support is pretty buggy, at least in the
+# snapshot we use (which, I agree, is pretty old).
+# The script is correctly compiled to a .pyc file, but it's copied in
+# the project-data-directory and then a bash-script in /usr/bin calling
+# python on it is created (which doesn't work, as it searches for the .py file).
+#
+# To avoid that, we install the launcher script to /tmp, and then manually
+# link the compiled executable to binary-directory/openbox-vera-color.
+
+programs.vera-color {
+	sources = openbox-vera-color.py
+	python-version = 3
+	# This is workarounded later
+	install-sources = true
+	install-directory = /tmp
+}
+
+%install : vera-color
+	mkdir -p $(options.install-directory)/$(options.binary-directory)
+	ln -sf $(options.project-data-directory)/openbox-vera-color.py $(options.install-directory)/$(options.binary-directory)/openbox-vera-color
+
+%uninstall : vera-color
+	rm $(options.install-directory)/$(options.binary-directory)/openbox-vera-color

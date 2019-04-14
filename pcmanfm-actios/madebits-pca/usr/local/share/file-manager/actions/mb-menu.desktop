@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Menu
+Icon[en_US]=forward
+Icon[en]=forward
+Icon[C]=forward
+Name[en_US]=Custom Actions
+Name[en]=Custom Actions
+Name[C]=Custom Actions
+ItemsList=mb-editor;mb-rename-shortcut;mb-set-as-wallpaper;mb-backup-here;mb-copy-to-folder;mb-createshortcut;

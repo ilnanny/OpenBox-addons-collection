@@ -1,0 +1,19 @@
+[Desktop Entry]
+Type=Action
+ToolbarLabel[en_US]=Create Desktop Shortcut
+ToolbarLabel[en]=Create Desktop Shortcut
+ToolbarLabel[C]=Create Desktop Shortcut
+Name[en_US]=Create Desktop Shortcut
+Name[en]=Create Desktop Shortcut
+Name[C]=Create Desktop Shortcut
+Profiles=profile-zero;
+Icon[en_US]=add
+Icon[en]=add
+Icon[C]=add
+
+[X-Action-Profile profile-zero]
+MimeTypes=all/allfiles;
+Exec=/opt/madebits-pca_1.0.0/createshortcut.sh %f %w
+Name[en_US]=Default profile
+Name[en]=Default profile
+Name[C]=Default profile

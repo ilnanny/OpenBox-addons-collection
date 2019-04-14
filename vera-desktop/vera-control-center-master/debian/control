@@ -1,0 +1,23 @@
+Source: vera-control-center
+Section: x11
+Priority: optional
+Maintainer: Eugenio Paolantonio (g7) <me@medesimo.eu>
+Build-Depends: dh-python, python3, debhelper (>= 8.0.0)
+X-Python3-Version: >= 3.4
+Standards-Version: 3.9.5
+Homepage: http://github.com/vera-desktop/vera-control-center
+Vcs-Git: git://github.com/vera-desktop/vera-control-center.git
+Vcs-Browser: https://github.com/vera-desktop/vera-control-center
+
+Package: vera-control-center
+Architecture: all
+Depends: ${misc:Depends}, ${python3:Depends}, python3-quickstart,
+ python3-gi, gir1.2-gtk-3.0, gir1.2-glib-2.0, gir1.2-polkit-1.0,
+ systemd, python3-xdg, python3-keeptalking2 (>= 7.0.0), gir1.2-upowerglib-1.0,
+ vera-power-manager (>= 1.0.4), vera-desktop (>= 1.0.5), vera-plugin-desktop,
+ vera-plugin-openbox (>= 1.10.0), usersd
+Description: Tool to configure the vera desktop environment.
+ vera-control-center is a fast, simple and modular tool designed
+ to make the configuration of the vera desktop environment easier.
+ .
+ This package also contains the main configuration modules.

@@ -1,0 +1,11 @@
+prefix=/usr
+exec_prefix=${prefix}
+includedir=${prefix}/include
+libdir=${exec_prefix}/lib
+
+Name: vera-xsettings
+Description: Owen Taylor's XSETTINGS specification implementation
+Version: 1.0.1
+Requires: x11
+Cflags: -I${includedir}/vera-xsettings
+Libs: -L${libdir} -lvera-xsettings

@@ -1,0 +1,15 @@
+Changes
+lib/File/DesktopEntry.pm
+Makefile.PL
+MANIFEST			This list of files
+MANIFEST.SKIP
+README.md
+t/01_data.t
+t/02_DesktopEntry.t
+t/03_run.t
+t/04_pod_ok.t
+t/05_pod_cover.t
+t/06_changes.t
+t/applications/foo.desktop
+t/applications/rt65394.desktop
+t/uri_escape.t

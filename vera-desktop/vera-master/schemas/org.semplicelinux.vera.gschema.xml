@@ -1,0 +1,131 @@
+<!-- vera (core) -->
+<!--
+ vera - a simple, lightweight, GTK3 based desktop environment
+ Copyright (C) 2014  Eugenio "g7" Paolantonio and the Semplice Project
+ 
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ 
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ 
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ 
+ Authors:
+    Eugenio "g7" Paolantonio <me@medesimo.eu>
+-->
+
+<schemalist>
+
+	<!-- Vera.LastExitAction enum -->
+	<enum id="org.semplicelinux.vera.LastExitAction">
+		<value nick="PowerOff" value="1" />
+		<value nick="Reboot" value="2" />
+		<value nick="Suspend" value="3" />
+		<value nick="Logout" value="4" />
+		<value nick="Lock" value="5" />
+		<value nick="Hibernate" value="6" />
+		<value nick="Switch User" value="7" />
+	</enum>
+
+	<schema path="/org/semplicelinux/vera/" id="org.semplicelinux.vera" gettext-domain="vera">
+
+		<key name="idle-timeout" type="i">
+			<default>30</default>
+			<summary>Idle timeout (in minutes)</summary>
+			<description>The idle-timeout starts when the system is in idle (no mouse/keyboard input). After the timeout elapses, an idle action is performed.</description>
+		</key>
+		
+		<key name="lock-on-idle" type="b">
+			<default>true</default>
+			<summary>Locks the screen after the idle-timeout elapses.</summary>
+			<description>logind handles the idle action, but will be triggered only when every session are on idle. This setting forces the current session to lock, regardless of the status of other sessions.</description>
+		</key>
+
+		<key name="last-screenshot-directory" type="s">
+			<default>""</default>
+			<summary>Last directory where a screenshot has been saved.</summary>
+			<description>This is used internally to remember the last directory where a screenshot has been saved.</description>
+		</key>
+
+		<key name="last-exit-action" enum="org.semplicelinux.vera.LastExitAction">
+			<default>"Lock"</default>
+			<summary>Last exit action</summary>
+			<description>This setting stores the last exit action used. It can be locked by setting 'lock-last-exit-action' to true.</description>
+		</key>
+		
+		<key name="lock-last-exit-action" type="b">
+			<default>false</default>
+			<summary>Lock the last exit action</summary>
+			<description>If true, locks the last exit action, so that it will not be overwritten.</description>
+		</key>
+		
+		<key name="ninja-shortcut" type="b">
+			<default>true</default>
+			<summary>CTRL+ALT+SPACE shortcut</summary>
+			<description>If enabled, the user can press CTRL+ALT+SPACE to execute the last exit action.</description>
+		</key>
+		
+		<key name="hide-exit-window" type="b">
+			<default>false</default>
+			<summary>Hide exit window</summary>
+			<description>If true, the exit window will not be shown (the exit action will be executed ASAP).</description>
+		</key>
+
+		<key name="exit-window-countdown" type="i">
+			<default>60</default>
+			<summary>Logout dialog countdown</summary>
+			<description>Put to 0 to disable.</description>
+		</key>
+
+		<key name="enable-xsettings" type="b">
+			<default>true</default>
+			<summary>XSETTINGS manager</summary>
+			<description>Enables the XSETTINGS manager for toolkit settings sharing among the applications. Do not disable if you don't know what an XSETTINGS manager is.</description>
+		</key>
+		
+		<key name="enable-autostart" type="b">
+			<default>true</default>
+			<summary>Autostart</summary>
+			<description>Enables the application autostart.</description>
+		</key>
+		
+		<key name="autostart-ignore" type="as">
+			<default>['alan-watcher.desktop', 'alan-reference-watcher.desktop']</default>
+			<summary>Autostart files to ignore</summary>
+			<description>The autostart files to ignore (they will not be started automatically).</description>
+		</key>
+		
+		<key name="enable-plugins" type="b">
+			<default>true</default>
+			<summary>Plugin support</summary>
+			<description>vera would be pretty useless if you disable this setting.</description>
+		</key>
+		
+		<key name="plugin-search-path" type="as">
+			<default>["/usr/lib/vera/plugins"]</default>
+			<summary>Plugin search path</summary>
+			<description>The plugin search path. Touch this only if you know what you're doing.</description>
+		</key>
+		
+		<key name="ignore-plugins" type="as">
+			<default>[]</default>
+			<summary>Plugins to ignore</summary>
+			<description>The plugins to ignore (they will not be started)</description>
+		</key>
+		
+		<key name="reverse-ignore-plugins" type="b">
+			<default>false</default>
+			<summary>Reverse the ignore-plugin setting</summary>
+			<description>If enabled, the ignore-plugins array will be used to whitelist plugins. Every plugin not listed there will not be started. Do not enable unless you know what you're doing.</description>
+		</key>
+		
+	</schema>
+
+</schemalist>

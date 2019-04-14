@@ -1,0 +1,21 @@
+[Desktop Entry]
+Type=Action
+ToolbarLabel[en_US]=Set As Wallpaper
+ToolbarLabel[en]=Set As Wallpaper
+ToolbarLabel[C]=Set As Wallpaper
+Name[en_US]=Set As Wallpaper
+Name[en]=Set As Wallpaper
+Name[C]=Set As Wallpaper
+Profiles=profile-zero;
+
+Icon[en_US]=preferences-desktop-wallpaper
+Icon[en]=preferences-desktop-wallpaper
+Icon[C]=preferences-desktop-wallpaper
+
+[X-Action-Profile profile-zero]
+MimeTypes=image/*;
+Exec=/usr/bin/pcmanfm -w %f
+Name[en_US]=Default profile
+Name[en]=Default profile
+Name[C]=Default profile
+SelectionCount==1

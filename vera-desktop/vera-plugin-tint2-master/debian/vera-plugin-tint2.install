@@ -1,0 +1,4 @@
+usr/lib/vera/plugins/*.so
+usr/lib/vera/plugins/*.plugin
+usr/share/glib-2.0
+etc/

@@ -1,0 +1,146 @@
+# 
+# Translators:
+# Puskas-Kolozsvari Frederic <pkfric@yahoo.com>, 2015
+msgid ""
+msgstr ""
+"Project-Id-Version: vera-plugin-desktop\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2015-04-16 16:38+0000\n"
+"Last-Translator: g7 <me@medesimo.eu>\n"
+"Language-Team: Hungarian (http://www.transifex.com/projects/p/vera-plugin-desktop/language/hu/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: hu\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: Tutorial.vala:119
+msgid "To start, right-click anywhere in the desktop."
+msgstr "A kezdéséhez kattintson jobb gombbal bárhová az asztalon."
+
+#: Tutorial.vala:133
+msgid ""
+"Great! You have just opened the main Semplice menu.\n"
+"Now write something in the keyboard."
+msgstr "Nagyszerű! Ön éppen megnyitotta a Semplice főmenüjét.\nMost írjon valamit a billentyűzeten."
+
+#: Tutorial.vala:146
+msgid ""
+"From here you can easily open new applications.\n"
+"Press Esc to hide the launcher."
+msgstr "Innen könnyen lehet új alkalmazásokat megnyitni.\nNyomja meg az Esc-et az indító elrejtéséhez."
+
+#: Tutorial.vala:158
+msgid "Now you can use Semplice. Enjoy!"
+msgstr "Most már használhatja a Semplicét. Élvezze!"
+
+#: org.semplicelinux.vera.desktop.gschema.xml:18
+msgid "Search paths for the backgrounds"
+msgstr "Keresési útvonalak a hátterekhez"
+
+#: org.semplicelinux.vera.desktop.gschema.xml:19
+msgid "Directories where to search for available backgrounds."
+msgstr "Könyvtárak az elérhető hátterek kereséséhez."
+
+#: org.semplicelinux.vera.desktop.gschema.xml:23
+msgid "Single backgrounds to include"
+msgstr "Egyedi háttérképek betevése"
+
+#: org.semplicelinux.vera.desktop.gschema.xml:24
+msgid "Paths to single backgrounds to include in the backgrounds list."
+msgstr "Elérési útvonalak egyedi háttérképek betevésére a hátterek listájára."
+
+#: org.semplicelinux.vera.desktop.gschema.xml:28
+msgid "Single backgrounds to exclude"
+msgstr "Egyedi hátterek kihagyása"
+
+#: org.semplicelinux.vera.desktop.gschema.xml:29
+msgid "Paths to single backgrounds to exclude from the backgrounds list."
+msgstr "Elérési útvonalak egyedi háttérképek kihagyására a hátterek listájáról."
+
+#: org.semplicelinux.vera.desktop.gschema.xml:33
+msgid "Randomize backgrounds"
+msgstr "Véletlenszerű háttérképek"
+
+#: org.semplicelinux.vera.desktop.gschema.xml:34
+msgid ""
+"If enabled, the background will change every N mins, where N is the "
+"background-random-timeout value."
+msgstr "Ha engedélyezett, a háttér minden N percben változni fog, ahol N a háttér véletlenszerű lejárati idejének értéke."
+
+#: org.semplicelinux.vera.desktop.gschema.xml:39
+msgid "Randomize backgrounds (timeout)"
+msgstr "Véletlenszerű háttérképek (lejárati idő)"
+
+#: org.semplicelinux.vera.desktop.gschema.xml:40
+msgid "See background-random-enabled."
+msgstr "Lásd véletlenszerű háttér engedélyezése."
+
+#: org.semplicelinux.vera.desktop.gschema.xml:44
+msgid "Background Mode"
+msgstr "Háttér Üzemmód"
+
+#: org.semplicelinux.vera.desktop.gschema.xml:45
+msgid "Determines how the wallpaper is rendered."
+msgstr "Meghatározza, hogyan kerül a háttérkép megjelenítésre."
+
+#: org.semplicelinux.vera.desktop.gschema.xml:49
+msgid "Image Path"
+msgstr "Kép Útvonal"
+
+#: org.semplicelinux.vera.desktop.gschema.xml:50
+msgid "Path to the wallpaper."
+msgstr "Elérési út a háttérképhez."
+
+#: org.semplicelinux.vera.desktop.gschema.xml:54
+msgid "Background color"
+msgstr "Háttér szín"
+
+#: org.semplicelinux.vera.desktop.gschema.xml:55
+msgid ""
+"Color to display under the image (if it has alpha), or as a replacement for "
+"the image (if background-mode is 'Color')."
+msgstr "Szín megjelenítése a kép alatt (ha van alfája), vagy a kép helyett (ha háttér-üzemmód \"Szín\"-re van állítva)."
+
+#: org.semplicelinux.vera.desktop.gschema.xml:59
+#: org.semplicelinux.vera.desktop.gschema.xml:64
+msgid "Vera color"
+msgstr "Vera szín"
+
+#: org.semplicelinux.vera.desktop.gschema.xml:60
+msgid "If true, the @vera-color property will be exported to the GTK+ theme."
+msgstr "Ha ki van választva, a @vera-color tulajdonság exportálásra kerül a GTK+ témába."
+
+#: org.semplicelinux.vera.desktop.gschema.xml:65
+msgid "The @vera-color property exported to the GTK+ theme."
+msgstr "A GTK+ témába exportált @vera-color tulajdonság."
+
+#: org.semplicelinux.vera.desktop.gschema.xml:69
+msgid "Vera color lock"
+msgstr "Vera szín lezárás"
+
+#: org.semplicelinux.vera.desktop.gschema.xml:70
+msgid ""
+"If true, the vera-color key will not be changed with the dominant color of "
+"the current wallpaper."
+msgstr "Ha ki van választva, a vera-color színkód nem cserélődik le az aktuális háttérkép domináns színére."
+
+#: org.semplicelinux.vera.desktop.gschema.xml:74
+msgid "Launcher"
+msgstr ""
+
+#: org.semplicelinux.vera.desktop.gschema.xml:75
+msgid ""
+"If true, the launcher will be shown. Note that you need to restart vera "
+"after changing the value."
+msgstr ""
+
+#: org.semplicelinux.vera.desktop.gschema.xml:79
+msgid "Tutorial"
+msgstr "Bemutató"
+
+#: org.semplicelinux.vera.desktop.gschema.xml:80
+msgid ""
+"If true, the tutorial will be shown. Note that you need to restart vera "
+"after changing the value."
+msgstr "Ha ki van választva, a bemutató lesz látható. Jegyezze meg, hogy az érték megváltoztatásához szükség lesz a vera újraindítására ."

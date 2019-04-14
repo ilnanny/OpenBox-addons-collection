@@ -1,0 +1,966 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Moo, 2015
+# Moo, 2015
+msgid ""
+msgstr ""
+"Project-Id-Version: vera-control-center\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-27 13:58+0200\n"
+"PO-Revision-Date: 2015-08-27 11:58+0000\n"
+"Last-Translator: g7 <me@medesimo.eu>\n"
+"Language-Team: Lithuanian (http://www.transifex.com/semplice/vera-control-center/language/lt/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: lt\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: vera-control-center.py:54
+msgid "Personal"
+msgstr "Asmeniniai"
+
+#: vera-control-center.py:55
+msgid "System"
+msgstr "Sistema"
+
+#: vera-control-center.py:56
+msgid "Network"
+msgstr "Tinklas"
+
+#: vera-control-center.py:57
+msgid "Hardware"
+msgstr "Aparatinė Įranga"
+
+#: vera-control-center.py:101 controlcenterui.glade.h:1
+msgid "Settings"
+msgstr "Nustatymai"
+
+#: veracc/widgets/RebootDialog.py:32
+#, python-format
+msgid "_Reboot now (in %ds)"
+msgstr "_Paleisti iš naujo dabar (po %ds)"
+
+#: veracc/widgets/RebootDialog.py:108 modules/shortcuts/shortcuts.glade.h:3
+#: modules/power/power.glade.h:3
+msgid "Reboot"
+msgstr "Paleisti iš naujo"
+
+#: veracc/widgets/RebootDialog.py:111
+msgid "Reboot required"
+msgstr "Reikalingas paleidimas iš naujo"
+
+#: veracc/widgets/RebootDialog.py:114
+msgid ""
+"In order to apply the changes, a reboot is required.\n"
+"\n"
+"Please save your work and press \"Reboot now\" to reboot or press \"Cancel\" to reboot later."
+msgstr "Norint pritaikyti pakeitimus, reikalingas paleidimas iš naujo.\n\nPrašome įrašyti savo darbą ir spausti \"Paleisti iš naujo dabar\", kad paleistumėte iš naujo arba \"Atšaukti\", kad paleistumėte iš naujo vėliau."
+
+#: veracc/widgets/RebootDialog.py:121
+#: veracc/widgets/ApplicationSelectionDialog.py:201
+#: modules/autostart/autostart.py:519 modules/desktop/desktop.py:557
+#: modules/usersadmin/usersadmin.py:397
+msgid "_Cancel"
+msgstr "_Atšaukti"
+
+#: veracc/widgets/RebootDialog.py:126
+msgid "_Reboot now"
+msgstr "_Paleisti iš naujo dabar"
+
+#: veracc/widgets/UnlockBar.py:113
+msgid "You need additional privileges to modify these settings."
+msgstr "Norint keisti šiuos nustatymus, reikalingos papildomos teisės."
+
+#: veracc/widgets/UnlockBar.py:118
+msgid "Press the <i>Lock</i> button to lock these settings."
+msgstr "Spauskite mygtuką <i>Užrakinti</i>, norėdami užrakinti šiuos nustatymus."
+
+#: veracc/widgets/UnlockBar.py:122
+msgid "_Unlock"
+msgstr "_Atrakinti"
+
+#: veracc/widgets/UnlockBar.py:123
+msgid "_Lock"
+msgstr "_Užrakinti"
+
+#: veracc/widgets/UnlockBar.py:219
+#, python-format
+msgid "Error checking authorization: %s"
+msgstr "Tapatybės nustatymo tikrinimo klaida: %s"
+
+#: veracc/widgets/ApplicationSelectionDialog.py:187
+msgid "Select an application"
+msgstr "Pasirinkite programą"
+
+#: veracc/widgets/ApplicationSelectionDialog.py:202
+msgid "_Select"
+msgstr "_Pasirinkti"
+
+#: modules/autostart/autostart.py:169
+#, python-format
+msgid "You don't have enough permissions to edit or remove «%s»"
+msgstr "Jūs neturite pakankamai leidimų, kad galėtumėte redaguoti ar šalinti «%s»"
+
+#: modules/autostart/autostart.py:176
+#, python-format
+msgid "Edit or remove «%s»"
+msgstr "Redaguoti ar šalinti «%s»"
+
+#: modules/autostart/autostart.py:301
+msgid "Add a new custom command"
+msgstr "Pridėti naują pasirinktinę komandą"
+
+#: modules/autostart/autostart.py:321
+msgid "Edit application"
+msgstr "Redaguoti programą"
+
+#: modules/autostart/autostart.py:492
+msgid "Select..."
+msgstr "Pasirinkti..."
+
+#: modules/autostart/autostart.py:496
+msgid "Use a custom command"
+msgstr "Naudoti pasirinktinę komandą"
+
+#: modules/autostart/autostart.py:518
+msgid "_Remove"
+msgstr "Ša_linti"
+
+#: modules/autostart/autostart.py:520
+msgid "_Save"
+msgstr "Įr_ašyti"
+
+#: modules/desktop/desktop.py:482
+msgid "All monitors"
+msgstr "Visi monitoriai"
+
+#: modules/desktop/desktop.py:484
+#, python-format
+msgid "Monitor %d"
+msgstr "Monitorius %d"
+
+#: modules/desktop/desktop.py:559
+msgid "_Open"
+msgstr "_Atidaryti"
+
+#: modules/desktop/desktop.py:562
+msgid "All Files"
+msgstr "Visi Failai"
+
+#: modules/desktop/desktop.py:563
+msgid "Images"
+msgstr "Paveikslai"
+
+#: modules/desktop/desktop.py:569 modules/usersadmin/usersadmin.py:412
+msgid "_Close"
+msgstr "_Uždaryti"
+
+#: modules/power/power.py:32
+msgid "Unknown"
+msgstr "Nežinoma"
+
+#: modules/power/power.py:33
+msgid "Charging"
+msgstr "Įkraunama"
+
+#: modules/power/power.py:34
+msgid "Discharging"
+msgstr "Išsikrauna"
+
+#: modules/power/power.py:35
+msgid "Empty"
+msgstr "Tuščia"
+
+#: modules/power/power.py:36
+msgid "Fully charged"
+msgstr "Pilnai įkrauta"
+
+#: modules/power/power.py:37
+msgid "Pending charge"
+msgstr "Laukiama įkrovimo"
+
+#: modules/power/power.py:38
+msgid "Pending discharge"
+msgstr "Laukiama iškrovimo"
+
+#: modules/power/power.py:39
+msgid "Last"
+msgstr ""
+
+#: modules/usersadmin/widgets.py:39
+msgid "Add a new user"
+msgstr "Pridėti naują naudotoją"
+
+#: modules/usersadmin/usersadmin.py:37
+msgid "<i>Click the edit button to set the full name</i>"
+msgstr "<i>Norėdami nustatyti pilną vardą, spauskite redagavimo mygtuką</i>"
+
+#: modules/usersadmin/usersadmin.py:399
+msgid "_Delete user"
+msgstr "_Ištrinti naudotoją"
+
+#: modules/theme/theme.py:57 modules/theme/pages/gtktheme.py:111
+#: modules/theme/pages/gtktheme.py:273
+msgid "Theme"
+msgstr "Tema"
+
+#: modules/theme/theme.py:58
+msgid "Effects"
+msgstr "Efektai"
+
+#: modules/theme/theme.py:59
+msgid "Fonts"
+msgstr "Šriftai"
+
+#: modules/theme/pages/paranoid.py:41
+msgid "General"
+msgstr "Bendra"
+
+#: modules/theme/pages/paranoid.py:51
+msgid "Enable animations in applications"
+msgstr "Įjungti programų animacijas"
+
+#: modules/theme/pages/paranoid.py:59
+msgid "Enable window effects"
+msgstr "Įjungti langų efektus"
+
+#: modules/theme/pages/paranoid.py:120
+msgid "Shadows"
+msgstr "Šešėliai"
+
+#: modules/theme/pages/paranoid.py:133
+msgid "Enable shadows"
+msgstr "Įjungti šešėlius"
+
+#: modules/theme/pages/paranoid.py:141
+msgid "Display shadows in the panel"
+msgstr "Rodyti šešėlius skydelyje"
+
+#: modules/theme/pages/paranoid.py:152
+msgid "Shadow color"
+msgstr "Šešėlių spalva"
+
+#: modules/theme/pages/paranoid.py:221
+msgid "Fading"
+msgstr "Blankimas"
+
+#: modules/theme/pages/paranoid.py:234
+msgid "Enable fading"
+msgstr "Įjungti blankimą"
+
+#: modules/theme/pages/paranoid.py:242
+msgid "Fade windows when they're opening/closing"
+msgstr "Blankinti langus juos atveriant/užveriant"
+
+#: modules/theme/pages/paranoid.py:315
+msgid "Transparency"
+msgstr "Permatomumas"
+
+#: modules/theme/pages/paranoid.py:329
+msgid "Menu opacity"
+msgstr "Meniu dengiamumas"
+
+#: modules/theme/pages/paranoid.py:349
+msgid "Inactive opacity"
+msgstr "Neaktyvių langų dengiamumas"
+
+#: modules/theme/pages/paranoid.py:369
+msgid "Border opacity"
+msgstr "Rėmelio dengiamumas"
+
+#: modules/theme/pages/paranoid.py:417
+msgid "Advanced"
+msgstr "Išplėstiniai"
+
+#: modules/theme/pages/paranoid.py:428
+msgid "Backend"
+msgstr "Vidinė Sąsaja"
+
+#: modules/theme/pages/paranoid.py:452 modules/theme/pages/font.py:99
+#: modules/theme/pages/font.py:127
+msgid "None"
+msgstr "Jokio"
+
+#: modules/theme/pages/gtktheme.py:99 modules/theme/pages/font.py:53
+msgid "Widgets"
+msgstr "Valdikliai"
+
+#: modules/theme/pages/gtktheme.py:121
+msgid "Show images in buttons"
+msgstr "Rodyti paveikslus mygtukuose"
+
+#: modules/theme/pages/gtktheme.py:129
+msgid "Show images in menus"
+msgstr "Rodyti paveikslus meniu"
+
+#: modules/theme/pages/gtktheme.py:137
+msgid "Use custom color for selected items (when supported)"
+msgstr "Pasirinktiems elementams naudoti pasirinktiną spalvą (kuomet palaikoma)"
+
+#: modules/theme/pages/gtktheme.py:153
+msgid "Pick color from the current wallpaper"
+msgstr "Pasirinkti spalvą iš esamo darbastalio"
+
+#: modules/theme/pages/gtktheme.py:164
+msgid "Use this color"
+msgstr "Naudoti šią spalvą"
+
+#: modules/theme/pages/gtktheme.py:258 modules/theme/pages/font.py:191
+msgid "Windows"
+msgstr ""
+
+#: modules/theme/pages/gtktheme.py:280
+msgid "Show the window icon"
+msgstr ""
+
+#: modules/theme/pages/gtktheme.py:358
+msgid "Icons"
+msgstr "Piktogramos"
+
+#: modules/theme/pages/gtktheme.py:369
+msgid "Icon theme"
+msgstr "Piktogramų tema"
+
+#: modules/theme/pages/gtktheme.py:460
+msgid "Cursor"
+msgstr "Žymeklis"
+
+#: modules/theme/pages/gtktheme.py:472
+msgid "Cursor theme"
+msgstr "Žymeklio tema"
+
+#: modules/theme/pages/gtktheme.py:480 modules/shortcuts/shortcuts.glade.h:14
+msgid "You need to logout to apply the changes."
+msgstr "Jūs turite atsijungti, kad pakeitimai būtų pritaikyti."
+
+#: modules/theme/pages/font.py:63
+msgid "Font"
+msgstr "Šriftas"
+
+#: modules/theme/pages/font.py:75
+msgid "Enable antialiasing"
+msgstr "Įjungti glodinimą"
+
+#: modules/theme/pages/font.py:85
+msgid "Enable hinting"
+msgstr "Įjungti taškinę korekciją"
+
+#: modules/theme/pages/font.py:96
+msgid "Hint style"
+msgstr ""
+
+#: modules/theme/pages/font.py:100
+msgid "Slight"
+msgstr "Nežymus"
+
+#: modules/theme/pages/font.py:101
+msgid "Medium"
+msgstr "Vidutinis"
+
+#: modules/theme/pages/font.py:102
+msgid "Full"
+msgstr "Pilnas"
+
+#: modules/theme/pages/font.py:124
+msgid "Subpixel rendering"
+msgstr "Subpikselinis atvaizdavimas"
+
+#: modules/theme/pages/font.py:205
+msgid "Active window font"
+msgstr ""
+
+#: modules/theme/pages/font.py:218
+msgid "Inactive window font"
+msgstr ""
+
+#: modules/theme/pages/font.py:231
+msgid "Main menu font"
+msgstr ""
+
+#: modules/theme/pages/font.py:246
+msgid "On-screen display font"
+msgstr ""
+
+#: modules/autostart/autostart.desktop:3
+msgid "Autostart;Session"
+msgstr "Automatinis paleidimas;Seansas"
+
+#: modules/autostart/autostart.desktop:4
+msgid "preferences-system-session"
+msgstr "preferences-system-session"
+
+#: modules/autostart/autostart.desktop:10
+msgid "Manage the applications to autostart"
+msgstr "Tvarkyti automatinį programų paleidimą"
+
+#: modules/autostart/autostart.desktop:16
+msgid "Autostart"
+msgstr "Automatinis Paleidimas"
+
+#: modules/tint2/tint2.desktop:3 modules/tint2/tint2.desktop:16
+msgid "Panel"
+msgstr "Skydelis"
+
+#: modules/tint2/tint2.desktop:4
+msgid "panel"
+msgstr "skydelis"
+
+#: modules/tint2/tint2.desktop:10
+msgid "Configure the Panel"
+msgstr "Konfigūruoti Skydelį"
+
+#: modules/desktop/desktop.desktop:3 modules/desktop/desktop.desktop:16
+msgid "Desktop"
+msgstr "Darbastalis"
+
+#: modules/desktop/desktop.desktop:4
+msgid "preferences-desktop-wallpaper"
+msgstr "preferences-desktop-wallpaper"
+
+#: modules/desktop/desktop.desktop:10
+msgid "Desktop preferences"
+msgstr "Darbastalio nuostatos"
+
+#: modules/shortcuts/shortcuts.desktop:3
+msgid "Shortcuts;"
+msgstr "Spartieji klavišai;"
+
+#: modules/shortcuts/shortcuts.desktop:4
+msgid "preferences-desktop-keyboard-shortcuts"
+msgstr "preferences-desktop-keyboard-shortcuts"
+
+#: modules/shortcuts/shortcuts.desktop:10
+#: modules/shortcuts/shortcuts.desktop:16
+msgid "Shortcuts"
+msgstr "Spartieji klavišai"
+
+#: modules/networkmanager/networkmanager.desktop:12
+msgid "Manage and change your network connection settings"
+msgstr "Tvarkykite ir keiskite savo tinklo ryšių nustatymus"
+
+#: modules/networkmanager/networkmanager.desktop:89
+msgid "preferences-system-network"
+msgstr "preferences-system-network"
+
+#: modules/networkmanager/networkmanager.desktop:103
+msgid "Network Connections"
+msgstr "Tinklo Ryšiai"
+
+#: modules/networkmanager/networkmanager.desktop:127
+msgid "Network;Connections;"
+msgstr "Tinklas;Ryšiai;"
+
+#: modules/locale/locale.desktop:3
+msgid "Language"
+msgstr "Kalba"
+
+#: modules/locale/locale.desktop:4
+msgid "preferences-desktop-locale"
+msgstr "preferences-desktop-locale"
+
+#: modules/locale/locale.desktop:10
+msgid "Change the default language and region"
+msgstr "Keisti numatytąją kalbą ir regioną"
+
+#: modules/locale/locale.desktop:16
+msgid "Region & language"
+msgstr "Regionas ir kalba"
+
+#: modules/keyboard/keyboard.desktop:3 modules/keyboard/keyboard.desktop:16
+msgid "Keyboard"
+msgstr "Klaviatūra"
+
+#: modules/keyboard/keyboard.desktop:4
+msgid "preferences-desktop-keyboard"
+msgstr "preferences-desktop-keyboard"
+
+#: modules/keyboard/keyboard.desktop:10
+msgid "Keyboard settings"
+msgstr "Klaviatūros nustatymai"
+
+#: modules/timedate/timedate.desktop:3
+msgid "Time;Date"
+msgstr "Laikas;Data"
+
+#: modules/timedate/timedate.desktop:4
+msgid "preferences-system-time"
+msgstr "preferences-system-time"
+
+#: modules/timedate/timedate.desktop:10
+msgid "Configures the time and the date"
+msgstr "Konfigūruoja laiką ir datą"
+
+#: modules/timedate/timedate.desktop:16
+msgid "Time & Date"
+msgstr "Laikas ir Data"
+
+#: modules/power/power.desktop:3
+msgid "Power;Batteries;Battery;"
+msgstr "Maitinimas;Akumuliatoriai;Akumuliatorius;"
+
+#: modules/power/power.desktop:4
+msgid "preferences-system-power"
+msgstr "preferences-system-power"
+
+#: modules/power/power.desktop:10
+msgid "Power settings"
+msgstr "Maitinimo nustatymai"
+
+#: modules/power/power.desktop:16
+msgid "Power"
+msgstr "Maitinimas"
+
+#: modules/usersadmin/usersadmin.desktop:3
+msgid "Users;Groups;Face"
+msgstr "Naudotojai;Grupės;Veidas"
+
+#: modules/usersadmin/usersadmin.desktop:4
+msgid "system-config-users"
+msgstr "system-config-users"
+
+#: modules/usersadmin/usersadmin.desktop:10
+msgid "Add, edit, remove users and groups"
+msgstr "Pridėti, keisti, šalinti naudotojus ir grupes"
+
+#: modules/usersadmin/usersadmin.desktop:16
+msgid "Users & Groups"
+msgstr "Naudotojai ir Grupės"
+
+#: modules/theme/theme.desktop:3
+msgid "Themes"
+msgstr "Temos"
+
+#: modules/theme/theme.desktop:4
+msgid "preferences-desktop-theme"
+msgstr "preferences-desktop-theme"
+
+#: modules/theme/theme.desktop:10
+msgid "Themes."
+msgstr "Temos."
+
+#: modules/theme/theme.desktop:16
+msgid "Appearance"
+msgstr "Išvaizda"
+
+#: modules/about/about.desktop:3
+msgid "Device;Informations;About"
+msgstr "Įrenginys;Informacija;Apie"
+
+#: modules/about/about.desktop:4
+msgid "info"
+msgstr "informacija"
+
+#: modules/about/about.desktop:10
+msgid "Shows informations on this system"
+msgstr "Rodo šios sistemos informaciją"
+
+#: modules/about/about.desktop:16
+msgid "Device details"
+msgstr "Apie"
+
+#: controlcenterui.glade.h:2
+msgid "Search"
+msgstr "Paieška"
+
+#: modules/autostart/autostart.glade.h:1 modules/desktop/desktop.glade.h:2
+msgid "Name"
+msgstr "Pavadinimas"
+
+#: modules/autostart/autostart.glade.h:2
+msgid "Command"
+msgstr "Komanda"
+
+#: modules/autostart/autostart.glade.h:3
+msgid "<b>Autostart applications</b>"
+msgstr "<b>Automatinis programų paleidimas</b>"
+
+#: modules/autostart/autostart.glade.h:4
+msgid "Add new"
+msgstr "Pridėti naują"
+
+#: modules/tint2/tint2.glade.h:1
+msgid "Top"
+msgstr "Viršus"
+
+#: modules/tint2/tint2.glade.h:2 modules/desktop/desktop.glade.h:14
+msgid "Center"
+msgstr "Centras"
+
+#: modules/tint2/tint2.glade.h:3
+msgid "Bottom"
+msgstr "Apačia"
+
+#: modules/tint2/tint2.glade.h:4
+msgid "Panel settings"
+msgstr "Skydelio nustatymai"
+
+#: modules/tint2/tint2.glade.h:5
+msgid "Enable launchers"
+msgstr "Įjungti leistukus"
+
+#: modules/tint2/tint2.glade.h:6
+msgid "<b>Launchers</b>"
+msgstr "<b>Leistukai</b>"
+
+#: modules/tint2/tint2.glade.h:7
+msgid "Use AM/PM format for the clock"
+msgstr "Naudoti laikrodyje AM/PM formatą"
+
+#: modules/tint2/tint2.glade.h:8
+msgid "Auto-hide panel"
+msgstr "Automatiškai slėpti skydelį"
+
+#: modules/tint2/tint2.glade.h:9
+msgid "Invert mouse scroll actions"
+msgstr ""
+
+#: modules/tint2/tint2.glade.h:10
+msgid "Panel position"
+msgstr "Skydelio vieta"
+
+#: modules/tint2/tint2.glade.h:11 modules/desktop/desktop.glade.h:24
+#: modules/locale/locale.glade.h:4
+msgid "<b>Other</b>"
+msgstr "<b>Kita</b>"
+
+#: modules/desktop/desktop.glade.h:1
+msgid "Background informations"
+msgstr "Fono informacija"
+
+#: modules/desktop/desktop.glade.h:3
+msgid "Description"
+msgstr "Aprašas"
+
+#: modules/desktop/desktop.glade.h:4
+msgid "Author"
+msgstr "Autorius"
+
+#: modules/desktop/desktop.glade.h:5
+msgid "License"
+msgstr "Licencija"
+
+#: modules/desktop/desktop.glade.h:6
+msgid "button"
+msgstr "mygtukas"
+
+#: modules/desktop/desktop.glade.h:7
+msgid "label"
+msgstr "etiketė"
+
+#: modules/desktop/desktop.glade.h:8
+msgid "Color"
+msgstr "Spalva"
+
+#: modules/desktop/desktop.glade.h:9
+msgid "Tile"
+msgstr "Iškloti"
+
+#: modules/desktop/desktop.glade.h:10
+msgid "Stretch"
+msgstr "Ištempti"
+
+#: modules/desktop/desktop.glade.h:11
+msgid "Screen"
+msgstr "Ekranas"
+
+#: modules/desktop/desktop.glade.h:12
+msgid "Fit"
+msgstr "Priderinti"
+
+#: modules/desktop/desktop.glade.h:13
+msgid "Crop"
+msgstr "Apkirpti"
+
+#: modules/desktop/desktop.glade.h:15
+msgid "Select entire directories"
+msgstr "Pasirinkti visą katalogą"
+
+#: modules/desktop/desktop.glade.h:16
+msgid "Add background"
+msgstr "Pridėti foną"
+
+#: modules/desktop/desktop.glade.h:17
+msgid "Remove background"
+msgstr "Šalinti foną"
+
+#: modules/desktop/desktop.glade.h:18
+msgid "Informations on this wallpaper"
+msgstr "Šio darbastalio fono informacija"
+
+#: modules/desktop/desktop.glade.h:19
+msgid "About this wallpaper"
+msgstr "Apie šį darbastalio foną"
+
+#: modules/desktop/desktop.glade.h:20
+msgid "Change background every"
+msgstr "Keisti darbastalio foną kas"
+
+#: modules/desktop/desktop.glade.h:21
+msgid "1"
+msgstr ""
+
+#: modules/desktop/desktop.glade.h:22
+msgid "minutes"
+msgstr "minučių"
+
+#: modules/desktop/desktop.glade.h:23
+msgid "Number of virtual desktops"
+msgstr ""
+
+#: modules/desktop/desktop.glade.h:25
+msgid "Add a new background"
+msgstr "Pridėti naują foną"
+
+#: modules/shortcuts/shortcuts.glade.h:1
+msgid "Last action"
+msgstr "Paskutinis veiksmas"
+
+#: modules/shortcuts/shortcuts.glade.h:2
+msgid "Power Off"
+msgstr "Išjungti"
+
+#: modules/shortcuts/shortcuts.glade.h:4 modules/power/power.glade.h:4
+msgid "Suspend"
+msgstr "Pristabdyti"
+
+#: modules/shortcuts/shortcuts.glade.h:5
+msgid "Logout"
+msgstr "Atsijungti"
+
+#: modules/shortcuts/shortcuts.glade.h:6
+msgid "Lock"
+msgstr "Užrakinti"
+
+#: modules/shortcuts/shortcuts.glade.h:7 modules/power/power.glade.h:5
+msgid "Hibernate"
+msgstr "Užmigdyti"
+
+#: modules/shortcuts/shortcuts.glade.h:8
+msgid "Switch user"
+msgstr "Keisti naudotoją"
+
+#: modules/shortcuts/shortcuts.glade.h:9
+msgid "Do not show confirmation window"
+msgstr "Nerodyti patvirtinimo lango"
+
+#: modules/shortcuts/shortcuts.glade.h:10
+msgid "Execute action after pressing Ctrl+Alt+Space"
+msgstr "Vykdyti veiksmą, nuspaudus Ctrl+Alt+Space"
+
+#: modules/shortcuts/shortcuts.glade.h:11
+msgid "Action to execute"
+msgstr "Veiksmas, kurį vykdyti"
+
+#: modules/shortcuts/shortcuts.glade.h:12
+msgid "<b>Exit actions</b>"
+msgstr "<b>Išėjimo veiksmai</b>"
+
+#: modules/shortcuts/shortcuts.glade.h:13
+msgid "Enable launcher"
+msgstr "Įjungti leistuką"
+
+#: modules/shortcuts/shortcuts.glade.h:15
+msgid "<b>Desktop</b>"
+msgstr "<b>Darbastalis</b>"
+
+#: modules/locale/locale.glade.h:1
+msgid "Display all available locales"
+msgstr "Rodyti visas prieinamas lokales"
+
+#: modules/locale/locale.glade.h:2
+msgid "<b>Region and language</b>"
+msgstr "<b>Regionas ir kalba</b>"
+
+#: modules/locale/locale.glade.h:3
+msgid "Save space by installing only translations of the selected language"
+msgstr "Taupyti vietą, įdiegiant tik pasirinktos kalbos vertimus"
+
+#: modules/locale/locale.glade.h:5
+msgid "Warning"
+msgstr "Įspėjimas"
+
+#: modules/locale/locale.glade.h:6
+msgid "<big><b>Some translations may haven't be installed!</b></big>"
+msgstr "<big><b>Gali būti, kad kai kurie vertimai nėra įdiegti!</b></big>"
+
+#: modules/locale/locale.glade.h:7
+msgid ""
+"As you have previously used the 'Save space' feature, translations of the newly selected locale may have not been installed.\n"
+"\n"
+"Do you want to continue?"
+msgstr "Kadangi anksčiau pasirinkote ypatybę 'Taupyti vietą', gali būti, kad naujai pasirinktos lokalės vertimai nebuvo įdiegti.\n\nAr norite tęsti?"
+
+#: modules/locale/locale.glade.h:10
+msgid "Question"
+msgstr "Klausimas"
+
+#: modules/locale/locale.glade.h:11
+msgid "<big><b>Remove already installed translations?</b></big>"
+msgstr "<big><b>Šalinti jau įdiegtus vertimus?</b></big>"
+
+#: modules/locale/locale.glade.h:12
+msgid ""
+"This feature has effect only on the future installed applications.\n"
+"\n"
+"It's possible to remove already installed translations though. This may take some time.\n"
+"\n"
+"Do you want to continue? (If you press <i>No</i>, the savespace feature will not be retroactive)"
+msgstr "Ši ypatybė turės įtakos tik ateityje įdiegiamoms programoms.\n\nTačiau yra įmanoma pašalinti jau įdiegtus vertimus. Tai gali užtrukti šiek tiek laiko.\n\nAr norite tęsti? (Jei nuspausite <i>Ne</i>, vietos taupymo ypatybė nebus taikoma atgaline data)"
+
+#: modules/keyboard/keyboard.glade.h:1
+msgid "<b>Layout</b>"
+msgstr "<b>Išdėstymas</b>"
+
+#: modules/keyboard/keyboard.glade.h:2
+msgid "<b>Variant</b>"
+msgstr "<b>Variantas</b>"
+
+#: modules/keyboard/keyboard.glade.h:3
+msgid "<b>Model</b>"
+msgstr "<b>Modelis</b>"
+
+#: modules/timedate/timedate.glade.h:1
+msgid "0"
+msgstr "0"
+
+#: modules/timedate/timedate.glade.h:2
+msgid ":"
+msgstr ":"
+
+#: modules/timedate/timedate.glade.h:3
+msgid "Keep syncronized with internet services"
+msgstr "Sinchronizuoti su interneto tarnybomis"
+
+#: modules/timedate/timedate.glade.h:4
+msgid "Select a city"
+msgstr "Pasirinkite miestą"
+
+#: modules/timedate/timedate.glade.h:5
+msgid "Select"
+msgstr "Pasirinkti"
+
+#: modules/power/power.glade.h:1
+msgid "Do nothing"
+msgstr "Nieko nedaryti"
+
+#: modules/power/power.glade.h:2
+msgid "Power off"
+msgstr "Išjungti"
+
+#: modules/power/power.glade.h:6
+msgid "Lock screen"
+msgstr "Užrakinti ekraną"
+
+#: modules/power/power.glade.h:7
+msgid "<b>Battery</b>"
+msgstr "<b>Akumuliatorius</b>"
+
+#: modules/power/power.glade.h:8
+msgid "<b>Display brightness</b>"
+msgstr "<b>Ekrano ryškumas</b>"
+
+#: modules/power/power.glade.h:9
+msgid "When the power button has been pressed"
+msgstr "Nuspaudus maitinimo mygtuką"
+
+#: modules/power/power.glade.h:10
+msgid "When the laptop has been closed"
+msgstr "Uždarius nešiojamojo kompiuterio dangtį"
+
+#: modules/power/power.glade.h:11
+msgid ""
+"The specified action is triggered only when the device is discharging, and "
+"only if there aren't any external displays connected."
+msgstr "Nurodytas veiksmas yra vykdomas tik tuomet, kai įrenginys išsikrauna ir tik tuo atveju, jei nėra prijungta jokių išorinių ekranų."
+
+#: modules/power/power.glade.h:12
+msgid "<b>Buttons</b>"
+msgstr "<b>Mygtukai</b>"
+
+#: modules/usersadmin/usersadmin.glade.h:1
+msgid "Delete user"
+msgstr "Ištrinti naudotoją"
+
+#: modules/usersadmin/usersadmin.glade.h:2
+msgid "<big><b>Do you really want to continue?</b></big>"
+msgstr "<big><b>Ar tikrai norite tęsti?</b></big>"
+
+#: modules/usersadmin/usersadmin.glade.h:3
+msgid "By continuing, the user will be permanently deleted."
+msgstr "Tęsiant, šis naudotojas bus ištrintas visam laikui."
+
+#: modules/usersadmin/usersadmin.glade.h:4
+msgid "Remove also personal files (the \"Home directory\")"
+msgstr "Šalinti tuo pačiu ir asmeninius failus (\"Namų katalogą\")"
+
+#: modules/usersadmin/usersadmin.glade.h:5
+msgid "Click to edit the full name"
+msgstr "Spustelėkite, norėdami keisti vardą"
+
+#: modules/usersadmin/usersadmin.glade.h:6
+msgid "Groups and permissions"
+msgstr "Grupės ir leidimai"
+
+#: modules/usersadmin/usersadmin.glade.h:7
+msgid "User Name"
+msgstr "Naudotojo Vardas"
+
+#: modules/usersadmin/usersadmin.glade.h:8
+msgid "user"
+msgstr "naudotojas"
+
+#: modules/usersadmin/usersadmin.glade.h:9
+msgid "Click to delete this user"
+msgstr "Spustelėkite, norėdami ištrinti šį naudotoją"
+
+#: modules/usersadmin/usersadmin.glade.h:10
+msgid "Administrator"
+msgstr "Administratorius"
+
+#: modules/usersadmin/usersadmin.glade.h:11
+msgid "Password"
+msgstr "Slaptažodis"
+
+#: modules/usersadmin/usersadmin.glade.h:12
+msgid "Autologin"
+msgstr "Automatinis prisijungimas"
+
+#: modules/usersadmin/usersadmin.glade.h:13
+msgid "Click to change"
+msgstr "Spustelėkite, norėdami keisti"
+
+#: modules/usersadmin/usersadmin.glade.h:14
+msgid "Unable to load the user list."
+msgstr "Negalima įkelti naudotojų sąrašą."
+
+#: modules/about/about.glade.h:1
+msgid "Semplice"
+msgstr "Semplice"
+
+#: modules/about/about.glade.h:2
+msgid "Device name"
+msgstr "Įrenginio pavadinimas"
+
+#: modules/about/about.glade.h:3
+msgid "System memory"
+msgstr "Sistemos atmintis"
+
+#: modules/about/about.glade.h:4
+msgid "CPU"
+msgstr "Procesorius"
+
+#: modules/about/about.glade.h:5
+msgid "Edition"
+msgstr "Laida"
+
+#: modules/about/about.glade.h:6
+msgid "Made with ♥ in Italy, enjoyed everywhere."
+msgstr "Sukurta su ♥ Italijoje, mėgaujamasi visur."
+
+#: modules/about/about.glade.h:7
+msgid "Check for updates"
+msgstr "Tikrinti naujinimus"

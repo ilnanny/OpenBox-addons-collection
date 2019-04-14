@@ -1,0 +1,58 @@
+0.22 2015-12-10
+ - Fix issue on Windows with File URIs
+ - Correctly state runtime dependencies
+
+0.21 2015-11-25
+ - Documentation changes only.
+
+0.20 2015-11-23
+ - Fix opening files with special characters
+    RT 93168 - fix provided by Romain Vavassori.
+
+0.12 2015-06-20
+ - Remove spurious Module::Build from test. Reported by gregor herrmann,
+   Debian team, https://bugs.debian.org/789210
+
+0.11 2015-06-11
+ - Explicitly state minimum perl version as 5.8 in Makefile.PL.
+
+0.10 2015-06-09
+ - Include new test in MANIFEST
+    RT 105112 - SREZIC
+
+0.09 2015-06-09
+ - Exclude newlines from whitespace on either side of '='
+    RT 65394, fix by sdme.
+
+0.08 2013-10-07
+ - Corrected build instructions.
+
+0.07 2013-10-03
+ - Fixed dependency on Win32 module.
+
+0.06 2013-10-03
+ - Switched to EU::MM
+ - POD fix - RT 89116 - GWOLF
+
+0.05 2013-06-05 
+ - Fixed tests on Windows - RT 45669
+ - Set perl 5.8.6 as minimum version - RT 42770 - ANDK
+ - Fixed link to freedesktop.org - RT 37320 - GWOLF
+
+0.04 2007-11-04
+Hot fix release - POSIX does not export LC_MESSAGES on all platforms
+  - Removed POSIX dependency
+
+0.03 2007-11-04
+ - Added support for writing Desktop Entry files
+ - Updated to version 1.0 of the specification
+ - Added much more sanity checks while handling data
+ - Extended unit tests to almost full coverage
+ - Added support for basic functions on Windows
+
+0.02 2005-10-08
+ - Fixed proper conversion between paths and uris
+ - Added wants_list() and wants_uris()
+
+0.01 2005-10-03
+ - Initial Release

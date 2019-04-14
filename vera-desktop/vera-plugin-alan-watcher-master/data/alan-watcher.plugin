@@ -1,0 +1,7 @@
+[Plugin]
+Module=libalan-watcher.so
+Name=alan-watcher
+Description=Vera alan-watcher plugin
+Authors=Eugenio Paolantonio
+Copyright=Copyright (C) 2014 Eugenio "g7" Paolantonio
+Website=http://semplice-linux.org

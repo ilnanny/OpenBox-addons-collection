@@ -1,0 +1,214 @@
+#!/usr/bin/perl
+
+# Copyright (C) 2010-2014 Trizen <echo dHJpemVueEBnbWFpbC5jb20K | base64 -d>.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+#-------------------------------------------------------
+#  Appname: wimp-viewer
+#  License: GPLv3
+#  Created on: 24 August 2010
+#  Latest edit on: 01 January 2018
+#  https://github.com/trizen
+#-------------------------------------------------------
+
+# Requires 'youtube-viewer' and 'mpv'
+
+use 5.010;
+use strict;
+use warnings;
+
+use LWP::Simple qw(get);
+use XML::Fast qw(xml2hash);
+use Term::ANSIColor qw(colored);
+use Getopt::Std qw(getopts);
+
+my $appname = 'wimp-viewer';
+my $version = '0.32';
+
+my $BASE_URL = 'https://www.wimp.com';
+
+require Term::ReadLine;
+my $term = Term::ReadLine->new($appname);
+
+require WWW::Mechanize;
+my $mech = WWW::Mechanize->new(
+              autocheck => 1,
+              env_proxy => 1,
+              agent => 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1941.0 Safari/537.36',
+);
+
+$mech->get($BASE_URL . '/?old=1/');
+
+sub output_usage {
+    print <<"HELP";
+usage: $0 [options] [url]
+
+options:
+        -f       : fullscreen mode
+        -r <i>   : play i of random videos and exit
+
+        -v       : print the version number and exit
+        -h       : print this help message and exit
+HELP
+}
+
+sub output_version {
+    say "$appname $version";
+}
+
+my %opt;
+if (@ARGV) {
+    getopts('r:fvh', \%opt);
+}
+
+if ($opt{h}) {
+    output_usage();
+    exit 0;
+}
+
+if ($opt{v}) {
+    output_version();
+    exit 0;
+}
+
+if (exists $opt{r}) {
+
+    if (defined($opt{r}) and $opt{r} > 0) {
+        for my $i (1 .. $opt{r}) {
+            play_random_video();
+        }
+    }
+    else {
+        die "error: option '-r' requires a positive integer!\n";
+    }
+
+    exit;
+}
+
+# Play the command-line URIs
+foreach my $url (@ARGV) {
+    play($url);
+    exit;
+}
+
+sub play {
+    my ($url) = @_;
+
+    my $req     = $mech->get($url);
+    my $content = $req->decoded_content // $req->content;
+
+    my $real_url = $mech->uri;
+
+    if (   $content =~ m{\byoutube\.com/watch\?v=([\w-]{11})"}
+        or $content =~ m{<div data-autoplay='1' data-start='0' data-id='([\w-]{11})'}) {
+        system 'youtube-viewer', "--no-interactive", "--id=$1", ($opt{f} ? '-fs' : ());
+    }
+    elsif ($content =~ /"file"\h*,\h*"(.*?)"/) {
+        system('mpv', ($opt{f} ? '--fullscreen' : ()), $1);
+    }
+    else {
+        warn "error: can't find any streaming URL for: $real_url\n";
+        return;
+    }
+
+    return 1;
+}
+
+my $hash_xml = xml2hash(get("$BASE_URL/rss"));
+my @results  = @{$hash_xml->{rss}{channel}{item}};
+
+sub play_picked_videos {
+    my (@list) = @_;
+
+    $#list >= 0 or return;
+    foreach my $num (@list) {
+        play($results[$num - 1]->{link});
+    }
+
+    return 1;
+}
+
+sub play_random_video {
+    play("$BASE_URL/random/");
+    return 1;
+}
+
+sub parse_date {
+    my ($date) = @_;
+
+    # Turns "Mon, 06 Feb 2012 00:00:00 -0600" into "Feb 06"
+    if ($date =~ /^\S+ (\d+) (\S+)/) {
+        return "$2 $1";
+    }
+
+    return $date // '';
+}
+
+{
+    print "\n";
+    my $num = 0;
+    foreach my $video (@results) {
+        $video->{title} =~ s/\s*\[VIDEO\]//;
+        printf "%s. %s [%s]\n", colored(sprintf("%2d", ++$num), 'bold'), $video->{title}, parse_date($video->{pubDate});
+    }
+
+    {
+        my $line = $term->readline(colored("\n=>> Insert a number ('?' for help)", 'bold') . "\n> ");
+        if ($line eq 'help' or $line eq '?') {
+            print "\n", <<'STDIN_HELP';
+i               : play the corresponding video
+all             : play all the video results
+3-8, 3..8       : same as 3 4 5 6 7 8
+http://URL      : play a specific video by URL
+/my?[regex]*$/  : play videos matched by a regex (/i)
+q, quit, exit   : exit application
+STDIN_HELP
+            redo;
+        }
+        elsif ($line =~ /^(?:q|quit|exit)\z/) {
+            exit 0;
+        }
+        elsif ($line eq 'all') {
+            play_picked_videos(1 .. @results);
+        }
+        elsif ($line =~ m{^/(.*?)/\h*$}) {
+            my $match = eval { qr/$1/i };
+
+            if ($@) {
+                warn "\nError in regex: $@\n";
+                redo;
+            }
+
+            play_picked_videos(grep { $results[$_ - 1]->{'title'} =~ /$match/ } 1 .. @results) || do {
+                warn "\n(X_X) No video matched by the regex: /$match/\n";
+                redo;
+            };
+        }
+
+        elsif ($line =~ /\d/ and not $line =~ /(?>\s|^)[^\d-]/) {
+            $line =~ s/(\d+)(?>-|\.\.)(\d+)/join q{ }, $1 .. $2;/eg;    # '2..5' or '2-5' to '2 3 4 5'
+            play_picked_videos(grep { $_ > 0 and $_ <= @results if /^\d+$/ } split(/[\s[:punct:]]+/, $line));
+        }
+
+        elsif ($line =~ /^(?:r|random)\z/) {
+            play_random_video();
+        }
+
+        elsif ($line =~ m{^https?://.}) {
+            play($_);
+        }
+    }
+    redo;
+}

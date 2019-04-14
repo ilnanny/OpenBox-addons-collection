@@ -1,0 +1,89 @@
+#!/usr/bin/env python
+#    bl-sshconfig-pipemenu - an Openbox pipemenu for Graphics applications
+#    Copyright (C) 2012 Philip Newborough   <corenominal@corenominal.org>
+#    Copyright (C) 2015  Ankur Khanna
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+import os
+import warnings
+with warnings.catch_warnings():
+    warnings.simplefilter("ignore")
+    from paramiko.config import SSHConfig
+
+cfgdir = os.getenv("HOME")+"/.ssh"
+cfgfile = cfgdir+"/config"
+
+try:
+    config_file = file(cfgfile)
+except IOError:
+    if not os.path.exists(cfgdir):
+        os.makedirs(cfgdir, 0700)
+    f = open(cfgfile, 'w')
+    o = '# SSH config file, \'man ssh_config\' for more details.\n\n'
+    o += '#Host example\n'
+    o += '#    hostname example.com\n'
+    o += '#    user joebloggs\n'
+    f.write(o)
+    f.close()
+    os.chmod(cfgfile, 0600)
+    config_file = file(cfgfile)
+    config = SSHConfig()
+    config.parse(config_file)
+    hosts = config._config
+else:
+    config = SSHConfig()
+    config.parse(config_file)
+    hosts = config._config
+
+print '<openbox_pipe_menu>\n'
+
+if len(hosts) >= 2:
+    for h in hosts[1:]:
+        if 'host' in h and 'hostname' in h['config']:
+            conf = h['config']
+            user = ''
+            if 'user' in conf:
+                user = '-l ' + conf['user'] + ' '
+            port = ['', '']
+            if 'port' in conf:
+                port[0] = '-p ' + conf['port'] + ' '
+                port[1] = ':' + conf['port']
+            print '<menu id="ssh-'+h['host'][0]+'" label="'+h['host'][0]+'">'
+            print '    <item label="Start terminal session">'
+            print '        <action name="Execute">'
+            print '            <command>'
+            print '                x-terminal-emulator -e ssh ' + user + port[0] + conf['hostname']
+            print '            </command>'
+            print '        </action>'
+            print '    </item>\n'
+            print '    <item label="Browse with File Manager">'
+            print '        <action name="Execute">'
+            print '            <command>'
+            print '                bl-file-manager ssh://' + conf['hostname'] + port[1]
+            print '            </command>'
+            print '        </action>'
+            print '    </item>\n'
+            print '</menu>\n'
+    print '<separator/>\n'
+
+print '<item label="Edit ~/.ssh/config">'
+print '    <action name="Execute">'
+print '        <command>'
+print '            bl-text-editor ~/.ssh/config'
+print '        </command>'
+print '    </action>'
+print '</item>\n'
+
+print '</openbox_pipe_menu>'

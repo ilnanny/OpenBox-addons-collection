@@ -1,0 +1,369 @@
+MadeBits
+Custom PcManFM Context Menu Actions
+ 17 MARCH 2014
+
+Lubuntu 14.04 comes bundled with PcManFm 1.2.0 which contains several new features. It is now possible to customize PcManFm context-menu with own actions for selected files and folders. Before that is was possible to add custom context-menu for single files and folders using associated application desktop shortcuts and that still works.
+
+ Contents
+Custom PcManFM Context Menu Actions
+› Download Sample Custom PcManFm Actions
+› Preparing to Test
+› PcManFm Custom Menu Actions
+› DES-EMA Primer
+› Using Nautilus-Actions
+› Tips and Tricks
+› Using New Document Templates
+› Sample Custom Actions
+Download Sample Custom PcManFm Actions
+I have put all sample PManFm custom actions in one easy to install Debian package (for both x86 and x64). It installs the actions globally available for all users on the machine. I created this .deb package for myself, to test and to easy deploy the actions in all machines with Lubuntu that I own. It could be also useful to others too, thought you may need to edit the actions to fit your needs.
+
+Download madebits-pca.deb sample PCManFm custom menu actions.
+
+
+
+Due to a bug in original Lubuntu 14.04, GDebi will not install package dependencies and you need to run sudo apt-get -f install in command-line after using GDebi. Alternatively, install it from command-line using these two commands (the second will install the missing dependencies):
+
+sudo dpkg -i madebits-pca_1.0.0-1.deb
+sudo apt-get -f install
+Update: GDebi bug has now been fixed. With the latest GDebi version it should be able to install the package by double-clicking.
+
+Preparing To Test
+I used Lubuntu 14.04 Beta 1 desktop ISO. Following grub2 instructions, I downloaded the ISO in my Desktop folder and then:
+
+mkdir /iso/
+sudo mv ~/Desktop/lubuntu-14.04-beta1-desktop-amd64.iso /iso/
+I edited gksu leafpad /etc/grub.d/40_custom to add:
+
+menuentry "Test 14.04" {
+    set root=(hd0,2)        
+    set isofile="/iso/lubuntu-14.04-beta1-desktop-amd64.iso"
+        loopback loop $isofile
+        linux (loop)/casper/vmlinuz boot=casper iso-scan/filename=$isofile noprompt noeject
+        initrd (loop)/casper/initrd.lz
+}
+Finally, used sudo update-grub to update the grub2 boot menu, so I could boot to Lubuntu 14.04.
+
+PcManFm Custom Menu Actions
+According to PcManFm Wiki, custom actions follow DES-EMA notation, that extends the normal *.desktop files. Latest PcManFm version has removed the [Tools / Open Current Folder as Root] menu, but it can be easily added via custom actions. The example given in PcManFm Wiki to restore the Open Folder as Root menu at the time of this writing is wrong. It uses %s that cannot work in that context. A fixed example with %u follows:
+
+[Desktop Entry]
+Type=Action
+Tooltip=Open Folder As Root
+Name=Open Folder As Root
+Profiles=profile-zero;
+
+[X-Action-Profile profile-zero]
+MimeTypes=inode/directory;
+Exec=/usr/bin/gksu /usr/bin/pcmanfm %u
+Name=Default profile
+Save this in a file with any name you like (it has to end with .desktop), for example, open-as-root.desktop and place it in ~/.local/share/file-manager/actions/ folder. The ~/.local/share/file-manager/actions/ folder does not exist by default in Lubuntu 14.04, you have to create the file-manager/actions/ part on your own. You have to kill all PCManFM instances for the new context-menu to show up when you right-click on folders (pkill pcmanfm). If unsure, logout and login again.
+
+Strictly speaking the above custom action is NOT a replacement for the old menu functionality: (a) the old menu worked on current shown folder - the custom action one works on a selected child folder; (b) the old menu worked also when the current folder was empty - the custom action does not work unless a folder is selected. Once can fix issue (a) by using the following modified version, but (b) cannot be addressed currently:
+
+[Desktop Entry]
+Type=Action
+Tooltip=Open Current Folder As Root
+Name=Open Current Folder As Root
+Profiles=profile-zero;
+
+[X-Action-Profile profile-zero]
+Exec=/usr/bin/gksu /usr/bin/pcmanfm %o %d
+Name=Default profile
+This version works on any selected file or folder (but at least one has to be selected, so it will not work on empty folders) and it opens the CURRENT folder (not the selected item) as root. Imo, this is nearer to the removed functionality.
+
+DES-EMA Primer
+DES-EMA web site seems to be down at the moment since a while, so I found a copy. The spec is nice to have as reference. I will only touch on main concepts here. You should read the specification on your own for more details.
+
+Desktop Entry Specification Extension for Menus and Actions (DES-EMA) extends the normal FreeDesktop *.desktop file format with a specification how define custom context menu actions. A DES-EMA somefile.desktop file defines either a menu, or an action. The base part of the file name is the file id (e.g., somefile in somefile.desktop).
+
+A menu file is used to organize actions. It contains an ItemsList made of ids of actions or other (sub) menu .desktop files.
+An action file (single menu) defines one or more actions that are applied to selected items. More than one action can be defined in an action file using profiles. For example, there can be a profile for files and one for folders in the same action file. A profile action contains an Exec line where the action to invoke is defined.
+Menus, actions, and profiles within an action can be conditioned on several criteria, such as, the mime type of selected items, or item count. Various data about the select file or files are available to the action Exec command in the form or predefined % variables, such as %f - first selected absolute file path, or %m - mime type of first selected file.
+
+DES-EMA actions are defined to work with different file managers and PcManFm is one of them. This means most of actions written for other file managers should work for PcManFm with minor modifications. I am not sure as of now how compatible PcManFm implementation is with all of DES-EMA, but it looks to be doing ok for all the basic actions that I tried out.
+
+Using Nautilus-Actions
+Creating DES-EMA compatible .desktop files manually for PcManFm can be fun, but it is often not worth it as the DES-EMA actions can get complex. You can use a nice GUI tool in Lubuntu for this purpose by installing:
+
+sudo apt-get install nautilus-actions
+Apart of its alien name, this package (~30MB) works perfectly well in Lubuntu and it will not install anything from Nautilus.
+
+Once installed, nautilus-actions will show up in [System Tools] menu as [Nautilus-Actions Configuration Tool]. When run, it will list all PcManFm custom actions you may have created manually and will allow you to add new ones or to modify existing ones. If you use nautilus-actions to edit manually created custom actions, it will add some more noise to them as it adds names in proper locales. Other than this the tool works really nice.
+
+nautilus-actions creates actions and menus with uuid names, such as, 44c437e3-6d88-482b-a193-eabcb4c5df5a.desktop (which you can rename manually if you like). nautilus-actions can organize actions (and menus) by creating menus. Creating some menu(s) is usually a good idea as having too many custom actions can make the context-menu too big.
+
+Creating simple custom actions via nautilus-actions is easy, but DES-EMA supports much more. Reading the specification and using nautilus-actions GUI tool helps manage some of the complexity.
+
+Tips And Tricks
+If you write action .desktop files manually, it may help to right-click as use [Create New ... / Shortcut] context-menu to create an starting .desktop file, which you then modify them in text editor as shown. .desktop files have to be in UTF8 format, and [Create New ... / Shortcut] context-menu creates them properly (thought leafpad text editor should also work).
+
+To be really sure whether your action is called and what the arguments are, you can use for example, zenity command, that comes with Lubuntu. For example, using as Exec value the following command will show a GUI dialog with the content of some of DES-EMA variables, such as %b and %f:
+
+Exec=zenity --info --text="%b %f %w"
+PcManFm sends arguments of most path related arguments such as %b and %f surrounded in single quotes, for example, 'file.txt'. This works well if you use them as they are, but it will not work as you expect if you want to join such strings on the fly on the command path. A better way to handle such cases is to create a shell (bash) script. When an argument with single quotes, such as 'file.txt', is passed to a shell script, then inside the script the argument comes without quotes as: file.txt.
+
+Using New Document Templates
+Thought not directly related to custom menu actions, document templates offer a rudimentary way to extend [Create New ...] context menu of PcManFm. I never managed to get templates work on previous PcManFm versions, but they seem to work fine in this version.
+
+Any file you place in ~/Templates folder will be available as template [Create New ...] context menu of PcManFm. When you select it from the menu, PcManFm will ask you to enter the name for the new file to be created.
+
+You can easy add empty LibreOffice documents, or HTML files, and so on, to serve as templates for [Create New ...] menu. I will show next how you can create an Application Shortcut template, given the old [Create Shortcut] context menu has been removed in this PcManFm version.
+
+Application Shortcut: Create a file called ApplicationShortcut.desktop in ~/Templates (use leafpad ~/Templates/ApplicationShortcut.desktop) folder with this content:
+
+[Desktop Entry]
+Version=1.0
+Name=Application Shortcut
+Exec=
+Terminal=false
+Type=Application
+Now after a re-login, you can create new shortcuts using the [Create New ...] context menu of PcManFm - you will see ApplicationShortcut listed there. You can choose a name for the desktop file (leave the .desktop suffix). Once the new file is created, right-click on it and select [Properties] from PcManFm context menu. You can configure in the properties the icon and the application command to use for the new shortcut.
+
+Sample Custom Actions
+Custom menu actions shown next extend PcManFm in basic ways. Most of them add functionality that could have been part of PcManFm itself. Consider the actions below as samples to get you started. I usually check all the errors in the shown scripts, but some of the scripts could benefit by being a bit more robust and by saving state between runs. Improve them as needed to fit your needs.
+
+Set As Wallpaper: Right-click on an image file to directly set it as desktop wallpaper using set-as-wallpaper.desktop action:
+
+[Desktop Entry]
+Type=Action
+ToolbarLabel[en_US]=Set As Wallpaper
+ToolbarLabel[en]=Set As Wallpaper
+ToolbarLabel[C]=Set As Wallpaper
+Name[en_US]=Set As Wallpaper
+Name[en]=Set As Wallpaper
+Name[C]=Set As Wallpaper
+Profiles=profile-zero;
+
+[X-Action-Profile profile-zero]
+MimeTypes=image/*;
+Exec=pcmanfm -w %f
+Name[en_US]=Default profile
+Name[en]=Default profile
+Name[C]=Default profile
+SelectionCount==1
+I am using here a condition SelectionCount==1 (note the double == sign, second one belongs to the condition =1). This means this action should show only when there is exactly one image file selected, not when there is more than one. Without this condition, when there is more than one file in the selection, the command will be applied to all of them one by one. This condition did not work in my first tests, but works with latest Lubuntu daily builds.
+
+Open As Root: I showed before "Open Folder As Root" action as an example. Here we go a bit further and use two profiles on the same action. One profile works if we right-click on a folder - it will open the folder as root on PcManFm as before. The other profile works if we right-click on text files - it will edit the text file in leafpad text editor as root (you can replace it with your editor of choice). The action file is named open-as-root.desktop:
+
+[Desktop Entry]
+Type=Action
+Profiles=profile-zero;profile-1;profile-2;
+Name[en_US]=Open As Root
+Name[en]=Open As Root
+Name[C]=Open As Root
+Tooltip[en_US]=Open As Root
+Tooltip[en]=Open As Root
+Tooltip[C]=Open As Root
+ToolbarLabel[en_US]=Open As Root
+ToolbarLabel[en]=Open As Root
+ToolbarLabel[C]=Open As Root
+
+Icon[en_US]=stop
+Icon[en]=stop
+Icon[C]=stop
+
+[X-Action-Profile profile-zero]
+MimeTypes=inode/directory;
+Exec=/usr/bin/gksu /usr/bin/pcmanfm %u
+Name[en_US]=Open Folder As Root
+Name[en]=Open Folder As Root
+Name[C]=Open Folder As Root
+
+[X-Action-Profile profile-1]
+MimeTypes=all/allfiles;!text/plain;
+Exec=/usr/bin/gksu /usr/bin/pcmanfm %d
+Name[en_US]=Open Folder As Root
+Name[en]=Open Folder As Root
+Name[C]=Open Folder As Root
+
+[X-Action-Profile profile-2]
+MimeTypes=text/plain;
+Exec=/usr/bin/gksu /usr/bin/leafpad %f
+Name[en_US]=Edit File As Root
+Name[en]=Edit File As Root
+Name[C]=Edit File As Root
+Rename Shortcut: The new PcManFm version has a kind of bug - you cannot rename anymore *.desktop files. This custom action remedies that. Create a new action rename-shortcut.desktop as usual with the following content:
+
+[Desktop Entry]
+Type=Action
+ToolbarLabel[en_US]=Rename Shortcut
+ToolbarLabel[en]=Rename Shortcut
+ToolbarLabel[C]=Rename Shortcut
+Name[en_US]=Rename Shortcut
+Name[en]=Rename Shortcut
+Name[C]=Rename Shortcut
+Profiles=profile-zero;
+
+[X-Action-Profile profile-zero]
+MimeTypes=application/x-desktop;
+Exec=/home/user/bin/renameshortcut.sh %d %b
+Name[en_US]=Default profile
+Name[en]=Default profile
+Name[C]=Default profile
+SelectionCount==1
+I am using here a custom shell script renameshortcut.sh to rename the file. Replace 'user' in Exec path with your user name. To create renameshortcut.sh script use:
+
+mkdir -p $HOME/bin
+touch $HOME/bin/renameshortcut.sh
+chmod +x $HOME/bin/renameshortcut.sh
+Then edit $HOME/bin/renameshortcut.sh file to look as follows:
+
+#!/bin/bash
+
+newName=$(zenity --width 480 --height 160 --entry --title="Rename File"  --text="Please enter a new name:" --entry-text "$2")
+if [[ -n "$newName" && ( "$newName" != "$2" ) ]]; then
+    cd "$1" && mv "$2" "$newName"
+    res=$?
+    if [[ $res != 0 ]] ; then
+            zenity --error --text="Failed in $1 to rename $2 => $newName"
+    fi
+fi
+Now after a restart of PcManFm (or re-login), you can rename *.desktop files using this action.
+
+Backup File Here: I will create a backup-here script for files and use it as custom action. The script will create a copy of the file in same folder with a date time stamp appended to the original file name. Unlike the other actions above, I will make this action globally available to all users, because sometimes we want to backup files in other folders (like etc) where the logged user has no rights and we may need to use root user. In those cases, first use "Open As Root" action above on a folder, then on the root PcManFm instance the "Backup File Here" custom menu action will be available also to the root user. DES-EMA uses $XDG_DATA_DIRS folders to look for custom actions. We will add the custom action to a shared location accessible by all (/usr/local/share/file-manager/actions). As the steps to do this are a bit more evolved than those of the examples above, I am listing them in full here to type in, as bash commands:
+
+cd ~
+leafpad backupfilehere.sh # add text of example 1 below
+chmod +x backupfilehere.sh
+echo $XDG_DATA_DIRS
+sudo mkdir -p /usr/local/share/file-manager/actions
+sudo install backupfilehere.sh /usr/local/bin/
+rm backupfilehere.sh
+sudo leafpad /usr/local/share/file-manager/actions/backup-here.desktop # add text of example 2 below
+Text to add to backupfilehere.sh (#example 1 above) is:
+
+#!/bin/bash
+
+/bin/cp "$1" "$1.$(date +%Y%m%d-%H%M%S).bak"
+
+res=$?
+if [[ $res != 0 ]] ; then
+    zenity --error --text="Failed $1 (not root?)"
+fi
+As we plan to call this script from the UI actions, I am using zenity here to show any possible error message to the user.
+
+The custom action text to use for #example 2 text above is (I created this in nautilus-actions and copied out the text):
+
+[Desktop Entry]
+Type=Action
+Tooltip[en_US]=Backup File Here
+Tooltip[en]=Backup File Here
+Tooltip[C]=Backup File Here
+ToolbarLabel[en_US]=Backup File Here
+ToolbarLabel[en]=Backup File Here
+ToolbarLabel[C]=Backup File Here
+Name[en_US]=Backup File Here
+Name[en]=Backup File Here
+Name[C]=Backup File Here
+Profiles=profile-zero;
+Icon[en_US]=document-save-as
+Icon[en]=document-save-as
+Icon[C]=document-save-as
+
+[X-Action-Profile profile-zero]
+MimeTypes=all/allfiles;
+Exec=/usr/local/bin/backupfilehere.sh %f
+Name[en_US]=Default profile
+Name[en]=Default profile
+Name[C]=Default profile
+This global custom action is now available to all users.
+
+Copy To Folder: The following local action (you can make it global, if wished, using same method shown before), copies the selected file or folder to another folder selected graphically via zenity. First, create a bash script called copytofolder.sh in your ~/bin folder with the following content and make that file executable:
+
+#!/bin/bash
+
+folder=$(zenity --file-selection --directory --title="Copy To Folder")
+if [[ $folder ]]; then
+    # cp -r $@ "$folder"
+    for var in "$@"
+    do
+        cp -r "$var" "$folder"
+    done
+fi
+Then create the following copy-to-folder.desktop custom menu action:
+
+[Desktop Entry]
+Type=Action
+ToolbarLabel[en_US]=Copy To Folder
+ToolbarLabel[en]=Copy To Folder
+ToolbarLabel[C]=Copy To Folder
+Name[en_US]=Copy To Folder
+Name[en]=Copy To Folder
+Name[C]=Copy To Folder
+Profiles=profile-zero;
+
+[X-Action-Profile profile-zero]
+Exec=/home/username/bin/copytofolder.sh %F
+Name[en_US]=Default profile
+Name[en]=Default profile
+Name[C]=Default profile
+Replace username with your user name. This action will copy all selected files and folder (hence %F) to another folder of choice. You can define a similar action "Move To Folder" by having a similar script using the mv command rather than the cp -r one.
+
+Using a Menu: I grouped some of the local above actions on a menu using nautilus-actions. The end menu file looks as follows:
+
+[Desktop Entry]
+Type=Menu
+Name[en_US]=Custom Menu
+Name[en]=Custom Menu
+Name[C]=Custom Menu
+ItemsList=set-as-wallpaper;open-as-root;
+Actions menus used (and the whole menu) is shown only when needed (based on MimeTypes conditions I have already set in the above actions).
+
+Empty Trash: PcMan added a new option in this version of the PcManFm to show the trash icon on desktop, but he forgot to add an "Empty Trash" context menu to it, making it completely useless. To fix that, we will install first:
+
+sudo apt-get install trash-cli
+This installs a set of utilities starting with trash- to help work with desktop trash. One of then is trash-empty. Once trash-cli is installed, we can create a custom action named: empty-trash.desktop with the following content:
+
+[Desktop Entry]
+Type=Action
+Profiles=profile-zero;
+Name[en_US]=Empty Trash
+Name[en]=Empty Trash
+Name[C]=Empty Trash
+
+[X-Action-Profile profile-zero]
+MimeTypes=inode/directory;
+Basenames=trash:///
+Exec=/usr/bin/trash-empty
+Name[en_US]=Empty Trash
+Name[en]=Empty Trash
+Name[C]=Empty Trash
+I am using here a condition based on Basenames. I match every folder that is called trash:/// and this applies only to the PcManFm new Trash folder icon.
+
+Create Shortcut: The manipulation of desktop files has some improvements in PcManFm 1.2.0 as their settings are integrated in file properties. There are also some setbacks: (a) it is not possible to rename desktop files, which I fixed above with the "Rename Shortcut" action, and (b) the "Create Shortcut" option that used to be there in older versions is missing. This action fixes that. I do not want to make 100% clone of the old "Create Shortcut" menu. I want to go where no one has gone before :) and offer to create a shortcut in Desktop for any file if you right click on the file. As a desktop shortcut may not make sense raw for every file, I offer to edit the shortcut after creation - in case you want to modify the command that will be run and the rest of the settings. Let create first create-desktop-shortcut.desktop with the following:
+
+[Desktop Entry]
+Type=Action
+ToolbarLabel[en_US]=Create Desktop Shortcut
+ToolbarLabel[en]=Create Desktop Shortcut
+ToolbarLabel[C]=Create Desktop Shortcut
+Name[en_US]=Create Desktop Shortcut
+Name[en]=Create Desktop Shortcut
+Name[C]=Create Desktop Shortcut
+Profiles=profile-zero;
+Icon[en_US]=add
+Icon[en]=add
+Icon[C]=add
+
+[X-Action-Profile profile-zero]
+MimeTypes=all/allfiles;
+Exec=/opt/madebits-pca_1.0.0/createshortcut.sh %f %w
+Name[en_US]=Default profile
+Name[en]=Default profile
+Name[C]=Default profile
+This action works on all files and runs a global command createshortcut.sh, that I will create as root in /opt/madebits-pca_1.0.0/. The executable file createshortcut.sh may look as follows:
+
+#!/bin/bash
+
+# %f %w
+file=$1
+fileName=$2
+desktopDir=${XDG_DESKTOP_DIR:-$HOME/Desktop}
+desktopFileName="${desktopDir}/${fileName}.desktop"
+if [ ! -f "$desktopFileName" ]; then
+    echo -e "[Desktop Entry]nVersion=1.0nName=${fileName}nExec=${file}nTerminal=falsenType=Applicationn" > "${desktopFileName}"
+    lxshortcut -i ${desktopFileName}
+else
+     zenity --error --text="File exists ${desktopFileName}"
+fi
+In the action, I create first a desktop file in Desktop folder named same as the file, and then I offer to edit it further via lxshortcut.

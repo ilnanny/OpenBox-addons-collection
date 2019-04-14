@@ -1,0 +1,31 @@
+Source: vera-plugin-openbox
+Section: x11
+Priority: optional
+Maintainer: Eugenio Paolantonio (g7) <me@medesimo.eu>
+Build-Depends: debhelper (>= 8.0.0), build-essential, bake, libvera-dev,
+ libvera-vapi, libconfig-dev, libconfig-vapi, libpeas-dev, libgtk-3-dev, valac,
+ dh-python, python3-all (>= 3.1.2-7~)
+X-Python3-Version: >= 3.2
+Standards-Version: 3.9.5
+Homepage: https://semplice-linux.org/
+Vcs-Git: https://github.com/vera-desktop/vera-plugin-openbox.git
+Vcs-Browser: https://github.com/vera-desktop/vera-plugin-openbox
+
+Package: vera-plugin-openbox
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, vera-desktop (>= 1.10.1), openbox
+Recommends: compton
+Description: vera openbox plugin
+ vera-openbox-plugin is a vera-desktop plugin that handles communication
+ with the openbox window manager.
+
+Package: vera-plugin-openbox-vera-color
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${python3:Depends},
+ python3-gi, gir1.2-glib-2.0, gir1.2-gtk-3.0
+Recommends: vera-plugin-openbox, vera-plugin-alan-watcher, vera-plugin-desktop
+Description: vera openbox plugin - vera-color support
+ vera-openbox-plugin is a vera-desktop plugin that handles communication
+ with the openbox window manager.
+ .
+ This packages contains the vera-color support for Openbox.

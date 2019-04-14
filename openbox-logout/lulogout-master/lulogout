@@ -1,0 +1,81 @@
+#!/usr/bin/env lua
+
+local lgi = require 'lgi'
+local os = require('os')
+local Gtk = lgi.require('Gtk', '3.0')
+local cairo = lgi.cairo
+local Gdk = lgi.Gdk
+package.path = '*.lua;' .. package.path
+require "config"
+
+local window = Gtk.Window {
+    title = 'LuLogout',
+    width_request = 620,
+    height_request = 200,
+    decorated = false,
+    position = Gtk.WIN_POS_CENTER,
+    app_paintable = true,
+    on_destroy = Gtk.main_quit,
+    Gtk.ButtonBox {
+        id = 'buttonbox',
+        orientation = Gtk.Orientation.HORIZONTAL,
+        layout_style = Gtk.ButtonBoxStyle.CENTER,
+        width_request = 100,
+        height_request = 100,
+        border_width = 50,
+        spacing = 10,
+    }
+}
+
+function new_button(label, icon, shortcut, command)
+    return Gtk.Button {
+        label = label,
+        image = Gtk.Image {
+            file = "./themes/".. style.theme .."/".. icon..".png",
+        },
+        always_show_image = true,
+        image_position = Gtk.PositionType.TOP,
+        on_clicked = function()
+            if command == ":cancel" then
+                Gtk.main_quit()
+            else
+                os.execute(command)
+            end
+        end
+    }
+end
+
+function window:on_key_press_event(event)
+    for i, v in ipairs(style.buttons) do
+        local label, icon, shortcut, command = v:match("([^,]+),([^,]+),([^,]+),([^,]+)")
+        if shortcut == Gdk.keyval_name(event.keyval) then
+            if command == ":cancel" then
+                Gtk.main_quit()
+            else
+                os.execute(command)
+            end
+        end
+    end
+end
+
+-- function window:on_window_state_event(w, widget, old_screen)
+--     screen = window.screen
+--     print(screen)
+-- end
+
+-- local r, g, b = style.bgcolor:match("([^,]+),([^,]+),([^,]+)")
+-- window:over(0, Gdk.RGBA { red = tonumber(r), green = tonumber(g), blue = tonumber(b), alpha = tonumber(style.opacity)})
+
+
+local buttonbox = window.child.buttonbox
+for i, v in ipairs(style.buttons) do
+    local label, icon, shortcut, command = v:match("([^,]+),([^,]+),([^,]+),([^,]+)")
+    buttonbox:add(new_button(label, icon, shortcut, command))
+end
+
+window:fullscreen()
+window:set_keep_above(true)
+window:resize(Gdk.Screen.width(), Gdk.Screen.height())
+window:show_all()
+
+Gtk:main()

@@ -1,0 +1,195 @@
+#!/usr/bin/perl
+# A pipe menu for openbox to control Audacious.
+# Depends on wmctrl and an additional script audctrl.
+# All the functionality of audctrl can be incorporated into this script (as is done with the playlist submenu),
+# but this way, it can be used independently of this menu in a complementary way to audtool.
+# audctrl should be in your PATH
+use Cwd 'abs_path';
+
+use subs print_plst, separator, end_menu;
+sub item ($$);
+sub say { print @_, "\n"; }
+
+# path to this script needed because it calls itself to create the playlist submenu
+my $path = abs_path $0;
+
+chomp (our $pid = `pidof audacious`);
+our $status;
+our $curr_song;
+our $curr_song_lgth;
+our $curr_song_elapsed;
+our $curr_song_pos;
+our $plst_lgth;
+
+# print playback status
+if ( $pid ) {
+    chomp ($status = `audtool --playback-status`);
+    $status =~ s/(\w)(\w*)/\U$1\L$2/;
+    chomp ($curr_song = `audtool --current-song`);
+    $curr_song = "" if $curr_song eq "No song playing.";
+    chomp ($curr_song_lgth = `audtool --current-song-length`) if $curr_song;
+    chomp ($curr_song_elapsed = `audtool --current-song-output-length`) if $curr_song;
+    chomp ($curr_song_pos = `audtool --playlist-position`) if $curr_song;
+    chomp ($plst_lgth = `audtool --playlist-length`);
+} else {
+    $status = 'Off';
+}
+
+# print playlist submenu and exit if arg 1 is pls
+print_plst if "$ARGV[0]" eq 'pls';
+
+# otherwise, start printing the main menu
+say "<openbox_pipe_menu>";
+
+# if audacious is not running, print "start" option and exit; else determine status and set playlist menu label
+if ( $status eq 'Off' ) {
+    item 'Start audacious', 'audacious';
+    end_menu;
+}
+
+# print playback status
+{
+    my $title;
+    if ( $status eq 'Stopped' ) {
+	$title = $status . ( $curr_song ? " $curr_song_pos/$plst_lgth: $curr_song ($curr_song_lgth)" : "" );
+    } else {
+	$title = "$status $curr_song_pos/$plst_lgth: $curr_song ($curr_song_elapsed)";
+    }
+    
+# unless playlist is empty, print it as menu, otherwise - just put a separator with the status
+    if ( $plst_lgth == 0 ) {
+	separator $title;
+    } else {
+	say "<menu id=\"pls\" label=\"$title\" execute=\"$path pls\" />";
+	separator;
+    }
+}
+
+# play/pause song
+if ( $status eq 'Playing') {
+    item 'Pause', 'audtool --playback-playpause';
+} else {
+    item 'Play', 'audtool --playback-playpause';
+}
+
+# stop playback
+item 'Stop', 'audtool --playback-stop' unless $status eq 'Stopped';
+
+# play song/playlist from the beginning
+item 'Play song from beginning', 'audtool --playback-seek 0';
+item 'Restart playlist', 'audtool --playlist-jump 1';
+
+# play next/previous song; 'audctrl prev' accounts for the case where repeat is on and current song is number 1
+unless ( $status eq 'Stopped' ) {
+    item 'Next', 'audtool --playlist-advance';
+    item 'Previous', 'audctrl prev';
+}
+separator;
+
+# toggle "stop after current song"
+if ( `audtool --playlist-stop-after-status` eq "off\n" ) {
+    item 'Stop after current song', 'audtool --playlist-stop-after-toggle';
+} else {
+    item 'Continue after current song', 'audtool --playlist-stop-after-toggle';
+}
+
+# toggle "repeat playlist"
+if ( `audtool --playlist-repeat-status` eq "off\n" ) {
+    item 'Repeat playlist', 'audtool --playlist-repeat-toggle';
+} else {
+    item 'Do not repeat playlist', 'audtool --playlist-repeat-toggle';
+}
+
+# toggle "shuffle playlist"
+if ( `audtool --playlist-shuffle-status` eq "off\n" ) {
+    item 'Shuffle playlist', 'audtool --playlist-shuffle-toggle';
+} else {
+    item 'Do not shuffle playlist', 'audtool --playlist-shuffle-toggle';
+}
+separator;
+
+# import/export playlist
+item 'Import playlist', 'audctrl import';
+item 'Export playlist', 'audctrl export';
+
+# add files to playlist
+item 'Append files to playlist', 'audctrl add';
+item 'Insert files at current position', 'audctrl ins';
+
+# remove songs from playlist
+item 'Remove current song from playlist', "audtool --playlist-delete $curr_song_pos";
+item 'Remove songs from playlist', 'audctrl del';
+
+# clear playlist
+item 'Clear playlist', 'audtool --playlist-clear';
+item 'Clear all but the current song', 'audctrl clear';
+separator;
+
+# show hide main window
+if ( `wmctrl -lp | tr -s ' ' | cut -d' ' -f3` =~ /^$pid$/m ) {
+    item 'Hide main window', 'audtool --mainwin-show off';
+} else {
+    item 'Show main window', 'audtool --mainwin-show on';
+}
+
+# shutdown audacious
+item 'Shutdown Audacious', 'audtool --shutdown';
+end_menu;
+
+##################################################################################################
+########################################### SUBROUTINES ##########################################
+##################################################################################################
+
+# playlist submenu (called by passing a 'pls' argument to this script)
+sub print_plst {
+    say "<openbox_pipe_menu>";
+    for my $song ( 1 .. $plst_lgth ) {
+	chomp (my $title = `audtool --playlist-song $song`);
+	chomp (my $lgth = `audtool --playlist-song-length $song`);
+	
+# replace some special characters by their html codes	
+	$title =~ s/&/&/g;
+	$title =~ s/"/"/g;
+	$title =~ s/\$/$/g;
+	$title =~ s/</</g;
+	$title =~ s/=/=/g;
+	$title =~ s/>/>/g;
+	$title =~ s/\\/\/g;
+# replace the underscore with a double underscore in the label to prevent openbox from interpreting it as a keyboard accelerator
+	$title =~ s/_/__/g;
+	
+	item "$song. $title ($lgth)", "audtool --playlist-jump $song";
+    }
+    end_menu;
+}
+
+# print a separator
+sub separator {
+    if ( @_ ) {
+	my $label = shift;
+	say "<separator label=\"$label\" />";
+    } else {
+	say "<separator />";
+    }
+    return 1;
+}
+
+# print an item
+sub item ($$) {
+    my $label = shift;
+    my $cmd = shift;
+    say "  <item label=\"$label\">";
+    say "    <action name=\"Execute\">";
+    say "      <execute>";
+    say "        $cmd";
+    say "      </execute>";
+    say "    </action>";
+    say "  </item>";
+    return 1;
+}
+
+# end the main menu
+sub end_menu {
+    say "</openbox_pipe_menu>";
+    exit 0;
+}

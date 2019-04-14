@@ -1,0 +1,41 @@
+#!/bin/bash
+
+#put your 10 day weather.com address here
+addr_today="http://www.weather.com/weather/today/$1"
+
+systemdir=$( conky-colors --systemdir )
+
+[[ ! -d $HOME/.conkycolors/weather/Today/ ]] && mkdir -p $HOME/.conkycolors/weather/Today;
+
+wget --user-agent="Firefox" -O $HOME/.conkycolors/weather/Today/raw_td $addr_today
+
+if [[ -s $HOME/.conkycolors/weather/Today/raw_td ]]; then
+  #############################
+  # Right now, Today, Tonight #
+  #############################
+  grep Updated $HOME/.conkycolors/weather/Today/raw_td > $HOME/.conkycolors/weather/updated
+  sed -i -e '/Right Now$/,/Close Weather Details/!d' -e '/wx-social/d' $HOME/.conkycolors/weather/Today/raw_td
+  sed -i '/\/wxicon\/\|&deg;\|wx-phrase\|wx-label\|"wx-data"\|wx-wind-label\|wx-text\|in$\|am\|pm\|wx-moonphase-label/!d' $HOME/.conkycolors/weather/Today/raw_td
+  sed -i -e 's/\r//g' -e 's/^.*\/wxicon\/120\///g' -e 's/\.png.*$/\.png/g' -e 's/^.*fahrenheit">//g' -e 's/^.*temperature">//g' $HOME/.conkycolors/weather/Today/raw_td
+  sed -i -e 's/^.*wx-label">//g' -e 's/<\/h6>.*$//g' -e '/wx-data">$/d' -e 's/^.*wx-data">//g' -e 's/^.*wx-text">//g' $HOME/.conkycolors/weather/Today/raw_td
+  sed -i -e '/barometric-pressure\|wx-astro-title/d' -e 's/^.*wx-moonphase-label">//g' -e 's/^.*wx-wind-label">//g' $HOME/.conkycolors/weather/Today/raw_td
+  sed -i -e 's/^.*wx-phrase ">//g' -e 's/^.*<dd>//g' -e 's/<.*&deg;.*$//g' -e "s/<span class=.*'>//g" -e 's/<span class=.*">//g' $HOME/.conkycolors/weather/Today/raw_td
+  sed -i -e 's/^<\/span>//g' -e 's/<\/span>$//g' -e 's/<\/div>$//g' -e 's/<\/p>$//g' -e 's/<\/dd>$//g' -e 's/<\/span>$//g' -e 's/&deg;$//g' $HOME/.conkycolors/weather/Today/raw_td
+  sed -i -e '/Snowfall:/,+1d' -e '/Past 24 Hours Snow:/,+1d' $HOME/.conkycolors/weather/Today/raw_td
+
+  image=$(sed -n 1p $HOME/.conkycolors/weather/Today/raw_td)
+  cp $systemdir/icons/Weather/$image $HOME/.conkycolors/weather/now.png
+
+  image=$(sed -n 2p $HOME/.conkycolors/weather/Today/raw_td)
+  cp $systemdir/icons/Weather/$image $HOME/.conkycolors/weather/TD.png
+
+  image=$(sed -n 3p $HOME/.conkycolors/weather/Today/raw_td)
+  cp $systemdir/icons/Weather/$image $HOME/.conkycolors/weather/TN.png
+fi
+
+if [[ -s $HOME/.conkycolors/weather/updated ]]; then
+  ##################
+  #  Update times  #
+  ##################
+  sed -i -e 's/^.*last-updated">//g' -e 's/^.*Updated: //g' -e 's/<.*$//g' $HOME/.conkycolors/weather/updated
+fi

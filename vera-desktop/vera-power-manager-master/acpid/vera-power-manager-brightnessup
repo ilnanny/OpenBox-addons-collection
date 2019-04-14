@@ -1,0 +1,4 @@
+# acpid rule for brightnessup
+
+event=video/brightnessup
+action=dbus-send --system --print-reply --dest="org.semplicelinux.vera.powermanager" /org/semplicelinux/vera/powermanager org.semplicelinux.vera.powermanager.IncreaseBrightness

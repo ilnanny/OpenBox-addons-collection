@@ -1,0 +1,5 @@
+[nala]
+application = openbox-vera-color
+gsettings = org.semplicelinux.vera.desktop:vera-color org.semplicelinux.vera.desktop:vera-color-enabled
+custom_command = /usr/bin/openbox-vera-color
+no_theme_triggers = true

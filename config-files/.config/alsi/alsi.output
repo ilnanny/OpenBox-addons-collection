@@ -1,0 +1,44 @@
+#!/usr/bin/perl
+
+# '%sTitle:%s %s'
+#  |    \   \  ` Value
+#  \     \   `-- End of BC (or start of NC)
+#   BC    ` Label
+
+# NC = normal color (color1)
+# BC = bold color   (color2)
+
+#-- Other valid options are:
+# USERNAME   - ex: {USERNAME => '%sUsername:%s %s'},
+# CPU_LOAD   - ex: {CPU_LOAD => '%sCPU load average:%s %s'},
+# OTHER      - ex: {OTHER => '%sResolution:%s 1024x768'},
+# COMMAND    - ex: {COMMAND => ['%sBinaries:%s %s', 'ls /usr/bin | wc -l']},
+# HARDCODED  - ex: {HARDCODED => "\e[1;37m\e[41mTHIS IS ALSI\e[0m"},
+
+# GTK3_THEME      - ex: {GTK3_THEME      => '%sGTK3 theme:%s %s'},
+# GTK3_ICON_THEME - ex: {GTK3_ICON_THEME => '%sGTK3 icon theme:%s %s'},
+# GTK3_FONT_NAME  - ex: {GTK3_FONT_NAME  => '%sGTK3 font name:%s %s'},
+
+my $b = "\b\b\b\b";
+[{HARDCODED => "\b\e[1;37m\e[41mTHIS IS ALSI\e[0m"},
+ {OS        => $b . '%13sOS:%s %s'},                   # Operating system
+ #{HOSTNAME  => $b . '%4sHostname:%s %s'},              # Hostname
+ {UPTIME    => $b . '%9sUptime:%s %s'},                # Uptime
+ {KERNEL    => $b . '%9sKernel:%s %s'},                # Kernel version
+ {SHELL     => $b . '%10sShell:%s %s'},                # Shell
+ {PACKAGES  => $b . '%sPackages:%s %s'},               # Number of installed packages
+ {WM_DE     => $b . "%13s%s:%s %s"},               # Window Manager or Desktop Enviroment
+
+ #{OTHER => ""},
+
+ {GTK2_THEME      => $b . '%10sTheme:%s %s'},          # Gtk2 theme
+ {GTK2_ICON_THEME => $b . '%11sIcon:%s %s'},           # Gtk2 icon theme
+ {GTK2_FONT_NAME  => $b . '%11sFont:%s %s'},           # Gtk2 font name
+
+ {OTHER  => $b . "%12sCPU:%s Intel(R) Celeron(R) CPU G1820\n"},    # CPU name
+ {SWAP => $b . '%11sSWAP:%s %s'},                             # SWAP usage
+ {RAM  => $b . '%12sRAM:%s %s'},                              # RAM usage
+
+ ## {OTHER  => "    =>>>> %sPartitions%s <<<<="},
+ {PARTITIONS => '...'},                                       # Partitions goes here
+]

@@ -1,0 +1,47 @@
+/*
+ * vera-plugin-power - power plugin for vera
+ * Copyright (C) 2014  Eugenio "g7" Paolantonio and the Semplice Project
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * Authors:
+ *     Eugenio "g7" Paolantonio <me@medesimo.eu>
+*/
+
+namespace PowerPlugin {
+
+	public class PowerPreferencesMenu : Gtk.Menu {
+		/**
+		 * The Preferences menu, that will be shown when the user
+		 * right-clicks on the tray icon.
+		*/
+		
+		public PowerPreferencesMenu() {
+			/**
+			 * Construct the object.
+			*/
+			
+			Object();
+			
+			Gtk.ImageMenuItem preferences = new Gtk.ImageMenuItem.with_label("Preferences");
+			preferences.set_image(new Gtk.Image.from_icon_name("preferences-system", Gtk.IconSize.MENU));
+			this.append(preferences);
+			
+			
+			this.show_all();
+		}
+		
+	}
+
+}

@@ -1,0 +1,10 @@
+Package: madebits-pca
+Version: 1.0.0
+Architecture: all
+Maintainer: Vasian <no@email.com>
+Section: utils
+Priority: optional
+Depends: zenity (>= 3.8.0), trash-cli (>=0.12.7)
+Homepage: http://madebits.com
+Description: PcManFm Custom Actions
+ http://madebits.com

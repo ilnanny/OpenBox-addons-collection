@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: python-distutils-extra
+Version: 2.39
+Summary: Add support for i18n, documentation and icons to distutils
+Home-page: UNKNOWN
+Author: Sebastian Heinlein, Martin Pitt
+Author-email: sebi@glatzor.de, martin.pitt@ubuntu.com
+License: GNU GPL
+Description: UNKNOWN
+Platform: posix

@@ -1,0 +1,27 @@
+Source: vera-plugin-power
+Section: x11
+Priority: optional
+Maintainer: Eugenio Paolantonio (g7) <me@medesimo.eu>
+Build-Depends: debhelper (>= 8.0.0), build-essential, bake, libvera-dev,
+ libvera-vapi, libgee-dev, libpeas-dev, libgtk-3-dev, libupower-glib-dev, libnotify-dev, valac-0.28
+Standards-Version: 3.9.5
+Homepage: https://semplice-linux.org/
+Vcs-Git: https://github.com/vera-desktop/vera-plugin-power.git
+Vcs-Browser: https://github.com/vera-desktop/vera-plugin-power
+
+Package: vera-plugin-power
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, vera-desktop, vera-power-manager (>= 1.0.4)
+Description: vera power plugin
+ vera-plugin-power is the vera plugin that shows the informations
+ of the currently plugged batteries.
+ .
+ It uses UPower, so every device supported by it is also supported
+ by this plugin.  
+ This includes some wireless mice and keyboards, as well as UPS
+ and phones.
+ .
+ This plugin also handles the power-related settings in the user
+ session (e.g brightness).  
+ The global settings (handled directly by logind) will not be touched
+ by vera-plugin-power.

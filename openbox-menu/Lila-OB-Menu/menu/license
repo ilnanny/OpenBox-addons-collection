@@ -1,0 +1,25 @@
+#!/bin/bash
+export MAIN_DIALOG='
+<window title="License">
+<vbox> 
+   <frame>
+<text><label>Lila Control Center version 1.0.12</label></text>
+<text><label>""</label></text>     
+<text><label>This program is free software; you can redistribute it and-or </label></text>
+<text><label>modify it under the terms of the GNU General Public License</label></text>
+<text><label>as published by the Free Software Foundation; either version 2</label></text>
+<text><label>of the License, or (at your option) any later version.</label></text>
+<text><label>This program is distributed in the hope that it will be useful,</label></text>
+<text><label>but WITHOUT ANY WARRANTY; without even the implied warranty of</label></text>
+<text><label>MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</label></text>
+<text><label>GNU General Public License for more details.</label></text>
+<text><label>You should have received a copy of the GNU General Public License</label></text>
+<text><label>along with this program; if not, write to the Free Software</label></text>
+<text><label>Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.</label></text>
+       
+   </frame>
+ </vbox>
+</window>
+'
+
+gtkdialog --program=MAIN_DIALOG

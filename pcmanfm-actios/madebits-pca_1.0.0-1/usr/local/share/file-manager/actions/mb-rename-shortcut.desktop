@@ -1,0 +1,21 @@
+[Desktop Entry]
+Type=Action
+ToolbarLabel[en_US]=Rename Shortcut
+ToolbarLabel[en]=Rename Shortcut
+ToolbarLabel[C]=Rename Shortcut
+Name[en_US]=Rename Shortcut
+Name[en]=Rename Shortcut
+Name[C]=Rename Shortcut
+Profiles=profile-zero;
+
+Icon[en_US]=stock_spellcheck
+Icon[en]=stock_spellcheck
+Icon[C]=stock_spellcheck
+
+[X-Action-Profile profile-zero]
+MimeTypes=application/x-desktop;
+Exec=/opt/madebits-pca_1.0.0/renameshortcut.sh %d %b
+Name[en_US]=Default profile
+Name[en]=Default profile
+Name[C]=Default profile
+SelectionCount==1

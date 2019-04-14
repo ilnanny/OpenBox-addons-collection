@@ -1,0 +1,19 @@
+[Desktop Entry]
+Type=Action
+Icon[en_US]=text-editor
+Icon[en]=text-editor
+Icon[C]=text-editor
+ToolbarLabel[en_US]=Edit As Text
+ToolbarLabel[en]=Edit As Text
+ToolbarLabel[C]=Edit As Text
+Name[en_US]=Edit As Text
+Name[en]=Edit As Text
+Name[C]=Edit As Text
+Profiles=profile-zero;
+
+[X-Action-Profile profile-zero]
+Exec=/usr/bin/leafpad %f
+Name[en_US]=Default profile
+Name[en]=Default profile
+Name[C]=Default profile
+SelectionCount==1

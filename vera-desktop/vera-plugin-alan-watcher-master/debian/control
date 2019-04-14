@@ -1,0 +1,18 @@
+Source: vera-plugin-alan-watcher
+Section: utils
+Priority: optional
+Maintainer: Eugenio Paolantonio (g7) <me@medesimo.eu>
+Build-Depends: debhelper (>= 8.0.0), build-essential, bake, libvera-dev,
+ libvera-vapi, libgee-0.8-dev, libpeas-dev, nala-dev, nala-vapi, valac
+Standards-Version: 3.9.5
+Homepage: https://semplice-linux.org/
+Vcs-Git: https://github.com/vera-desktop/vera-plugin-alan-watcher.git
+Vcs-Browser: https://github.com/vera-desktop/vera-plugin-alan-watcher
+
+Package: vera-plugin-alan-watcher
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, vera-desktop
+Recommends: compton
+Description: vera alan-watcher plugin
+ vera-plugin-alan-watcher is a vera-desktop plugin that watches (using
+ the nala library) alan2's triggers.

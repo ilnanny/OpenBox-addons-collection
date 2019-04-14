@@ -1,0 +1,5 @@
+usr/bin
+usr/share/vera-plugin-openbox/__pycache__
+usr/share/vera-plugin-openbox/*.py
+etc/alan
+etc/skel

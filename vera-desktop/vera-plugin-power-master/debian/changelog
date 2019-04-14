@@ -1,0 +1,115 @@
+vera-plugin-power (1.0.3-1) unstable; urgency=medium
+
+  * [power, powermanagerInterface] Get the new brightness level directly from the BrightnessChanged() signal.
+  * [packaging] debian/control: require vera-power-manager >= 1.0.4.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Wed, 10 Jun 2015 10:50:06 +0200
+
+vera-plugin-power (1.0.2-1) unstable; urgency=medium
+
+  * [power] Don't react when the battery level goes to 0% (Contributes to #1).
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Fri, 05 Jun 2015 16:56:03 +0200
+
+vera-plugin-power (1.0.1-1) unstable; urgency=medium
+
+  * power: react to vera-power-manager's BrightnessChanged() signal with a notification.
+  * Updated translations.
+  * 1.0.1
+  * debian/control: depend on vera-power-manager.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sat, 02 May 2015 23:31:50 +0200
+
+vera-plugin-power (1.0.0-1) unstable; urgency=medium
+
+  * vera-plugin-power 1.0.0
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sat, 04 Apr 2015 20:24:48 +0200
+
+vera-plugin-power (0.28-2) devel; urgency=medium
+
+  * debian/vera-plugin-power.install: install translations.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Thu, 02 Apr 2015 17:55:01 +0200
+
+vera-plugin-power (0.28-1) devel; urgency=medium
+
+  * Translation support.
+  * batterymenu: plural/singular handling for the time left part is not good: added a comment to reflect this.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Thu, 02 Apr 2015 16:11:01 +0200
+
+vera-plugin-power (0.27-1) devel; urgency=medium
+
+  * tray: use the PowerMenu for both left and right button clicks.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Fri, 20 Feb 2015 11:33:00 +0100
+
+vera-plugin-power (0.26-1) devel; urgency=medium
+
+  * Store last_state for every subscribed battery, and ensure we do that also at first start.
+  * Common: do not output the minutes part if time_ is 0. Also properly handle singulars.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sun, 01 Feb 2015 11:45:02 +0100
+
+vera-plugin-power (0.25-1) devel; urgency=medium
+
+  * power: do not display the same power supply state change notification more than one time.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sat, 20 Dec 2014 22:22:30 +0100
+
+vera-plugin-power (0.24-1) devel; urgency=medium
+
+  * power: send a notification when the main battery is reaching the EMPTY_THRESHOLD.
+  * common: raise the EMPTY_THRESHOLD from 2 to 5.
+  * common: add SAFE_HIBERNATE_THRESHOLD.
+  * power: force the hibernation when the battery level reaches the SAFE_HIBERNATE_THRESHOLD.
+  * power: send notifications on battery state changes
+  * debian/control: build-depend on libnotify-dev.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sun, 14 Dec 2014 18:15:15 +0100
+
+vera-plugin-power (0.23-1) devel; urgency=medium
+
+  * Updated bindings
+  * debian/control: switch to valac-0.26
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sat, 08 Nov 2014 20:38:22 +0100
+
+vera-plugin-power (0.22-1) devel; urgency=medium
+
+  * batterymenu: store devices in device_table using object_path
+    strings instead of device objects.
+  * Do not create the tray icon if the system doesn't need it.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Wed, 03 Sep 2014 17:07:09 +0200
+
+vera-plugin-power (0.21-1) devel; urgency=medium
+
+  * Pretty fast, somewhat-hackish port to UPower 0.99.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Mon, 21 Jul 2014 01:26:47 +0200
+
+vera-plugin-power (0.20-4) devel; urgency=medium
+
+  * Fixed for real.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Fri, 11 Jul 2014 02:52:06 +0200
+
+vera-plugin-power (0.20-3) devel; urgency=medium
+
+  * Fixed build issues (?)
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Thu, 10 Jul 2014 20:12:37 +0200
+
+vera-plugin-power (0.20-2) devel; urgency=medium
+
+  * Uh oh...
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Thu, 10 Jul 2014 19:58:25 +0200
+
+vera-plugin-power (0.20-1) devel; urgency=medium
+
+  * Initial release.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Thu, 10 Jul 2014 19:40:32 +0200

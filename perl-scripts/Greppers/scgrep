@@ -1,0 +1,172 @@
+#!/usr/bin/perl
+
+# Daniel "Trizen" Șuteu
+# License: GPLv3
+# Date: 04 February 2013
+# Latest edit on: 16 July 2015
+# https://github.com/trizen
+
+# Perl source code extractor.
+
+use utf8;
+use 5.018;
+use strict;
+use warnings;
+
+use open IO => ':utf8', ':std';
+
+#use lib qw(../lib);
+use Perl::Tokenizer qw(perl_tokens);
+
+use List::Util qw(any);
+use Getopt::Std qw(getopts);
+use Term::ANSIColor qw(color);
+
+my %opts;
+getopts('hnlpcNb:a:t', \%opts);
+
+sub usage {
+    my ($code) = @_;
+    print <<"HELP";
+usage: $0 [options] [types] [files]
+
+options:
+        -b [i]  : before characters
+        -a [i]  : after characters
+        -l      : print the full line
+        -c      : highlight the token (with -l)
+        -p      : print the name and position
+        -n      : print non-matching tokens
+        -t      : print the token names only
+        -N      : don't print a newline after the token
+
+types:
+        Types are regular expressions.
+        Example: ^operator
+                 ^keyword
+                 ^heredoc
+                 ^comment
+                 ^format
+                 ^backtick
+
+usage example: $0 -l -c regex /perl/script.pl
+               $0 -l -c -n -p /perl/script.pl
+
+uncomment and unpod a perl script:
+    $0 -N -n '^(?:pod|comment)\$' script.pl > clean_script.pl
+HELP
+    exit $code;
+}
+
+usage(0) if $opts{h};
+
+my @types;
+while (@ARGV and not -f $ARGV[0]) {
+    push @types, map { qr{$_} } shift @ARGV;
+}
+
+my $code = (
+    do { local $/; <> }
+      // die "usage: $0 [file]\n"
+);
+
+my $reset_color = color('reset');
+my $color       = color('bold red on_black');
+
+perl_tokens {
+    my ($token, $from, $to) = @_;
+
+    if ($opts{t}) {
+        say $token;
+        return;
+    }
+
+    my $matches = any { $token =~ $_ } @types;
+
+    if ($opts{n} ? !$matches : $matches) {
+
+        if ($opts{p}) {
+            print "[$token] pos($from, $to): ";
+        }
+
+        if ($opts{l} and not $token eq 'vertical_space') {
+            my $beg = rindex($code, "\n", $from) + 1;
+            my $end = index($code, "\n", $to);
+            my $line = substr($code, $beg, ($end - $beg));
+
+            if ($opts{c}) {
+                substr($line, ($from - $beg), 0, $color);
+                substr($line, ($from - $beg) + ($to - $from) + length($color), 0, $reset_color);
+            }
+            print $line;
+
+        }
+        else {
+            if ($opts{b}) {
+                print substr($code, $from - $opts{b}, $opts{b});
+            }
+            print substr($code, $from, ($to - $from));
+            if ($opts{a}) {
+                print substr($code, $to, $opts{a});
+            }
+        }
+        print "\n" unless $opts{N};
+    }
+}
+$code;
+
+=encoding utf8
+
+=head1 NAME
+
+pfilter - a simple token extractor.
+
+=head1 SYNOPSIS
+
+    pfilter [options] [types] < [script.pl]
+
+Options:
+
+        -b [i]  : before characters
+        -a [i]  : after characters
+        -l      : print the full line
+        -c      : highlight the token (with -l)
+        -p      : print the name and position
+        -n      : print non-matching tokens
+        -t      : print the token names only
+        -N      : don't print a newline after the token
+
+Types:
+
+        Types are regular expressions.
+        Example: ^operator
+                 ^keyword
+                 ^heredoc
+                 ^comment
+                 ^format
+                 ^backtick
+
+        For more types, see: C<perldoc Perl::Tokenizer>
+
+Example:
+
+        # uncomment and unpod a Perl script:
+        pfilter -N -n '^(?:pod|comment)\z' script.pl > clean_script.pl
+
+=head1 DESCRIPTION
+
+pfilter extracts tokens from a Perl script that match a given regular expression.
+
+=head1 AUTHOR
+
+Daniel "Trizen" Șuteu, E<lt>trizen@protonmail.comE<gt>
+
+=head1 COPYRIGHT AND LICENSE
+
+Copyright (C) 2015
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself, either Perl version 5.22.0 or,
+at your option, any later version of Perl 5 you may have available.
+
+=cut

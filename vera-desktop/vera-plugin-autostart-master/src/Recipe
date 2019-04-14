@@ -1,0 +1,11 @@
+libraries.autostartplugin {
+	sources = \
+		autostart.vala \
+		Application.vala
+	so-version = 0
+	compile-flags = -fPIC
+	
+	vala-packages = gee-1.0 libpeas-1.0 vera
+	packages = gee-1.0 libpeas-1.0
+
+}
