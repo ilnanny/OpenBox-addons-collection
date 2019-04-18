@@ -1,0 +1,141 @@
+#!/usr/bin/env bash
+
+# al-conky-pipemenu - an Openbox pipemenu for manipulating conky
+# Copyright (C) 2015 damo <damo@bunsenlabs.org>
+
+readonly CZEN="al-conkyzen"
+readonly CSESSION="al-conky-session"
+readonly CONKYPATH="$HOME/.config/conky"
+readonly SESSIONS="$CONKYPATH/saved-sessions"
+readonly CONKYDEFAULT="$CONKYPATH/ArchLabs.conkyrc"
+readonly CSESSIONFILE="$CONKYPATH/conky-sessionfile"
+
+for arg in "$@"; do
+	case $arg in
+		-h|--help)
+			cat << EOF
+al-conky-pipemenu - an openbox pipe menu for use with conky
+
+options:
+        -h --help   show this message
+
+
+If al-conky-pipemenu is called with no options (the usual method),
+it will output an xml openbox pipemenu for handling conky sessions.
+
+See /usr/share/archlabs/docs/helpfile-conkyzen.txt and conky(1) for more information
+EOF
+			exit 0
+			;;
+	esac
+done
+
+if ! . /usr/lib/archlabs/common/al-include 2>/dev/null; then
+	echo "error: failed to source /usr/lib/archlabs/common/al-include" >&2
+	exit 1
+fi
+
+if ! [[ -e $CSESSIONFILE ]]; then
+	echo "error: failed to locate conky-sessionfile in $CONKYPATH" >&2
+	echo "conky -c $CONKYPATH/ArchLabs.conkyrc & sleep 1" > "$CSESSIONFILE"
+fi
+
+if ! [[ -e $SESSIONS ]]; then
+	echo "error: failed to locate saved-sessions in $CONKYPATH" >&2
+fi
+
+declareDependencies zenity
+
+getSessions(){
+	menuItem "Default" "$CSESSION $CSESSIONFILE"
+	if [[ -e "$SESSIONS" ]]; then
+		while read -r session ; do
+			[[ -z $session ]] && continue
+			menuItem "$session" "$CSESSION $session"
+		done < "$SESSIONS"
+	fi
+}
+
+loadChooserMenu(){
+	if hash "$CZEN" >/dev/null 2>&1; then
+		menuItem "Conky Chooser" "$CZEN"
+	fi
+}
+
+loadNewsessionMenu(){
+	if hash "$CZEN" >/dev/null 2>&1; then
+		menuItem "New Conky Session" "$CZEN -z"
+	fi
+}
+
+loadReloadMenu(){
+	if hash "$CSESSION" >/dev/null 2>&1; then
+		menuItem "Reload Conkys" "$CSESSION"
+	fi
+}
+
+loadSavedsessionSubmenu(){
+	if hash "$CSESSION" >/dev/null 2>&1; then
+		menuSubmenu "Sessions" "Saved Sessions"
+		getSessions
+		menuSubmenuEnd
+	fi
+}
+
+loadPinMenu(){
+	if hash al-conkypin >/dev/null 2>&1; then
+		menuItem "Pin moveable Conkys" "al-conkypin"
+		menuSeparator
+	fi
+}
+
+loadEditMenu(){
+	if hash exo-open >/dev/null 2>&1; then
+		menuItem "Default conkyrc" "exo-open $CONKYDEFAULT"
+	fi
+	if pidof conky >/dev/null 2>&1; then
+		menuSubmenu "RunningConky" "Running Conkys"
+		while read -r session; do
+			[[ -z $session ]] && continue
+			CPATH=$(awk '{print $3}' <<< "$session")
+			CONKY=$(awk -F"/" '{print $(NF-1)"/"$NF }' <<< "$CPATH")
+			if hash exo-open &>/dev/null; then
+				menuItem "$CONKY" "exo-open $CPATH"
+			else
+				menuItem "$CONKY" "termite -e '$EDITOR $CPATH'"
+			fi
+		done < "$CSESSIONFILE"
+		menuSubmenuEnd
+	else
+		menuItem "No Running Conkys"
+	fi
+}
+
+getConkys(){
+	menuSubmenu "EditConky" "Edit Conkys"
+	if type al-conkyedit &>/dev/null;then
+		menuItem "Conky Editor" "al-conkyedit"
+		loadEditMenu
+	else
+		loadEditMenu
+	fi
+	menuSubmenuEnd
+}
+
+checkHelpfile(){
+	if [[ -e /usr/share/archlabs/docs/helpfile-conkyzen.txt ]];then
+		menuItem "Conky Help" "zenity --text-info --title='ArchLabs Conky Help' --filename=/usr/share/archlabs/docs/helpfile-conkyzen.txt --width=650 --height=700"
+	fi
+}
+
+menuStart "Conkymenu" "Conky"
+loadChooserMenu
+loadReloadMenu
+getConkys
+menuSeparator
+loadPinMenu
+loadNewsessionMenu
+loadSavedsessionSubmenu
+menuSeparator
+checkHelpfile
+menuEnd

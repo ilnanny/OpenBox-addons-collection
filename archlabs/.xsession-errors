@@ -1,0 +1,45 @@
+[ 17/04/2019 21:12:07.746 parse_config_libconfig WARN ] vsync option will take a boolean from now on. "none" is interpreted as "false" for compatibility, but this will stop working soon
+Failed to connect to session manager: Impossibile connettersi al gestore della sessione: SESSION_MANAGER environment variable not defined
+
+(xfsettingsd:562): GLib-CRITICAL **: 21:12:08.108: g_str_has_prefix: assertion 'prefix != NULL' failed
+
+(xfsettingsd:562): GLib-GObject-CRITICAL **: 21:12:08.111: g_value_get_string: assertion 'G_VALUE_HOLDS_STRING (value)' failed
+
+(xfsettingsd:562): GLib-GObject-CRITICAL **: 21:12:08.112: g_value_get_string: assertion 'G_VALUE_HOLDS_STRING (value)' failed
+polybar|warn:  No monitor specified, using "VGA-0"
+polybar|error: Disabling module "temperature" (reason: The file '/sys/class/thermal/thermal_zone0/temp' does not exist)
+
+(Thunar:1872): thunar-WARNING **: 21:26:31.541: Content type loading failed for .viminfo.tmp: Errore nel recuperare informazioni per il file «/home/ilnanny/.viminfo.tmp»: File o directory non esistente
+
+(Thunar:1872): thunar-WARNING **: 21:27:34.272: Content type loading failed for .viminfo.tmp: Errore nel recuperare informazioni per il file «/home/ilnanny/.viminfo.tmp»: File o directory non esistente
+
+(Thunar:1872): thunar-WARNING **: 21:27:41.458: Content type loading failed for .viminfo.tmp: Errore nel recuperare informazioni per il file «/home/ilnanny/.viminfo.tmp»: File o directory non esistente
+
+(Thunar:1872): thunar-WARNING **: 21:27:48.563: Content type loading failed for .viminfo.tmp: Errore nel recuperare informazioni per il file «/home/ilnanny/.viminfo.tmp»: File o directory non esistente
+
+(Thunar:1872): thunar-WARNING **: 21:30:44.168: Content type loading failed for .viminfo.tmp: Errore nel recuperare informazioni per il file «/home/ilnanny/.viminfo.tmp»: File o directory non esistente
+
+(Thunar:1872): thunar-WARNING **: 21:30:56.008: Content type loading failed for .viminfo.tmp: Errore nel recuperare informazioni per il file «/home/ilnanny/.viminfo.tmp»: File o directory non esistente
+Impossibile connettersi al session manager: Impossibile connettersi al gestore della sessione: SESSION_MANAGER environment variable not defined
+ObRender-Message: 22:40:41.601: Unable to parse color '8FA1B3'
+ObRender-Message: 22:40:41.602: Unable to parse color '2B303B'
+ObRender-Message: 22:40:41.693: Unable to parse color '8FA1B3'
+ObRender-Message: 22:40:41.693: Unable to parse color '2B303B'
+find: ‘’: File o directory non esistente
+
+(zenity:4309): GLib-WARNING **: 22:42:16.130: ../glib/glib/giounix.c:410Error while getting flags for FD: Descrittore di file errato (9)
+polybar|warn:  Termination signal received, shutting down...
+find: ‘’: File o directory non esistente
+
+(zenity:4374): GLib-WARNING **: 22:42:33.978: ../glib/glib/giounix.c:410Error while getting flags for FD: Descrittore di file errato (9)
+[Parent 4602, Gecko_IOThread] WARNING: pipe error (130): Connessione interrotta dal corrispondente: file /build/firefox/src/mozilla-unified/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x1B0011,name=PBackgroundStorage::Msg_Observe) Channel error: cannot send/recv
+
+
+(Thunar:4585): Gtk-WARNING **: 22:50:05.937: no trigger event for menu popup
+
+(Thunar:4585): Gtk-CRITICAL **: 22:50:05.937: gtk_menu_popup_at_rect: assertion 'GDK_IS_WINDOW (rect_window)' failed
+
+(Thunar:4585): Gdk-CRITICAL **: 22:50:05.937: gdk_event_free: assertion 'event != NULL' failed
+polkit-agent-helper-1: pam_authenticate failed: Authentication failure

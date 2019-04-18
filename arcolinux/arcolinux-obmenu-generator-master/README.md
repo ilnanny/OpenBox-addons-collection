@@ -1,0 +1,1 @@
+# ArcoLinux Obmenu-Generator configs

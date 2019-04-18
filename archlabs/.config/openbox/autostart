@@ -1,0 +1,20 @@
+# compton
+al-compositor --start &
+
+# enable numlock, commented out for laptop users
+# numlockx &
+
+# restore wallpaper
+nitrogen --restore &
+
+# required for xfce settings to work
+xfsettingsd &
+
+# fancy window switcher
+skippy-xd --config ~/.config/skippy-xd/skippy-xd.rc --start-daemon &
+
+# start the panel
+al-polybar-session &
+
+# start conky
+# al-conky-session --autostart &

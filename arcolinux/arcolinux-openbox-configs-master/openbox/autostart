@@ -1,0 +1,58 @@
+#
+# These things are run when an Openbox X Session is started.
+# You may place a similar script in $HOME/.config/openbox/autostart
+# to run user-specific things.
+#
+# You can set compton to use either xrender or glx
+# Change if issues
+compton -b --config ~/.config/compton.conf &
+
+# Set background image
+#nitrogen --restore
+
+tint2 &
+#sh ~/.config/polybar/launch.sh &
+
+(am-conky-session --autostart) &
+
+#bluetooth#
+#(blueberry-tray) &
+
+# install xcape - press super to get menu
+xcape -e 'Super_L=Super_L|space'
+
+#on laptops without seperate numeric keyboard put hashtag in front
+numlockx &
+
+## GNOME PolicyKit authentication
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+## Volume control for systray
+(volumeicon) &
+
+
+## Turn off/on System Beep
+xset b off
+
+## Enable power management
+xfce4-power-manager &
+
+##Clipboard Manager
+(xfce4-clipman) &
+
+## XFCE4 Settings
+xfsettingsd &
+
+(nm-applet) &
+
+(plank) &
+
+#(temps) &
+
+#redshift-gtk &
+
+#discord &
+
+#insync start &
+
+#dropbox &

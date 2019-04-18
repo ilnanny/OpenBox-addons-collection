@@ -1,0 +1,79 @@
+#!/usr/bin/env bash
+
+# al-tint2-session: a script to read a saved Tint2 session file
+
+# Copyright (C) 2018 nate <natemaia10@gmail.com>
+# Copyright (C) 2015 damo <damo@bunsenlabs.org>
+
+if ! hash tint2 read &>/dev/null; then
+    echo "[ERROR]: Missing Commands. It is required to install 'tint2' 'readline'"
+    exit 1
+fi
+
+if [[ $DISPLAY && ! $WM ]]; then
+    ID="$(xprop -root -notype _NET_SUPPORTING_WM_CHECK)"
+    WM="$(xprop -id "${ID##* }" -notype -len 100 -f _NET_WM_NAME 8t)"
+    WM="${WM/*WM_NAME = }"
+    WM="${WM/\"}"
+    WM="${WM/\"*}"
+    WM="${WM,,}"
+fi
+
+readonly CONFPATH="$HOME/.config/tint2"
+
+# as always SESSIONFILE is mutable
+if [[ $WM ]]; then
+    SESSIONFILE="$CONFPATH/sessions/$WM-sessionfile"
+else
+    SESSIONFILE="$CONFPATH/sessions/sessionfile"
+fi
+
+usage() {
+    cat <<EOF
+
+USAGE:
+        al-tint2-session [OPTIONS] [SESSIONFILE]
+
+OPTIONS:
+
+        -z, --session   Use entered SESSIONFILE rather than default
+        -h, --help      Print this usage message and exit
+
+
+        With no command argument, the script uses the default session file
+
+        '$SESSIONFILE'
+
+
+        To start session at login, add the following line to autostart:
+
+        al-tint2-session &
+EOF
+}
+start_Session() {
+    if [[ -e $SESSIONFILE ]]; then
+
+        [[ $(pidof tint2) ]] && pkill tint2
+
+        while read -r config; do
+            if [[ -z $config || ! -e $config ]]; then
+                continue
+            else
+                tint2 -c "$config" &
+            fi
+        done <<< "$(grep -v "^#.*" $SESSIONFILE)"
+
+    else
+        echo -e "No suitable sessions found\n\nTry running al-tint2zen or al-panel-chooser to setup a session"
+        exit 1
+    fi
+}
+
+case $1 in
+    -h|-H|--help) usage && exit 0 ;;
+    -z|*session) [[ -f $2 ]] && SESSIONFILE="$2" || { echo "Invalid Sessionfile.."; exit 2; }
+esac
+
+start_Session
+
+exit 0

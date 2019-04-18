@@ -1,0 +1,310 @@
+# Questo file viminfo è stato generato da Vim 8.1.
+# File modificabile, attento a quel che fai!
+
+# Viminfo version
+|1,4
+
+# Valore di 'encoding' al momento della scrittura di questo file
+*encoding=utf-8
+
+
+# hlsearch on (H) or off (h):
+~h
+# Riga di Comando Storia (da più recente a meno recente):
+:wq
+|2,0,1555529377,,"wq"
+
+# Stringa di Ricerca Storia (da più recente a meno recente):
+
+# Espressione Storia (da più recente a meno recente):
+
+# Riga di Input Storia (da più recente a meno recente):
+
+# Riga di Debug Storia (da più recente a meno recente):
+
+# Registri:
+
+# File mark:
+'0  376  0  ~/.config/polybar/modules.conf
+|4,48,376,0,1555533882,"~/.config/polybar/modules.conf"
+'1  33  0  ~/.config/compton.conf
+|4,49,33,0,1555533550,"~/.config/compton.conf"
+'2  52  0  ~/.config/conky/ArchLabs.conkyrc
+|4,50,52,0,1555529473,"~/.config/conky/ArchLabs.conkyrc"
+'3  33  0  ~/.Xresources
+|4,51,33,0,1555529455,"~/.Xresources"
+'4  4  0  ~/.xprofile
+|4,52,4,0,1555529449,"~/.xprofile"
+'5  4  0  ~/.xprofile
+|4,53,4,0,1555529444,"~/.xprofile"
+'6  90  0  ~/.Xresources
+|4,54,90,0,1555529378,"~/.Xresources"
+'7  90  0  ~/.Xresources
+|4,55,90,0,1555529378,"~/.Xresources"
+'8  265  0  ~/.viminfo
+|4,56,265,0,1555529304,"~/.viminfo"
+'9  1  0  ~/.bash_logout
+|4,57,1,0,1555529268,"~/.bash_logout"
+
+# Jumplist (dai più recenti):
+-'  376  0  ~/.config/polybar/modules.conf
+|4,39,376,0,1555533882,"~/.config/polybar/modules.conf"
+-'  1  0  ~/.config/polybar/modules.conf
+|4,39,1,0,1555533790,"~/.config/polybar/modules.conf"
+-'  33  0  ~/.config/compton.conf
+|4,39,33,0,1555533550,"~/.config/compton.conf"
+-'  33  0  ~/.config/compton.conf
+|4,39,33,0,1555533550,"~/.config/compton.conf"
+-'  1  0  ~/.config/compton.conf
+|4,39,1,0,1555530420,"~/.config/compton.conf"
+-'  1  0  ~/.config/compton.conf
+|4,39,1,0,1555530420,"~/.config/compton.conf"
+-'  52  0  ~/.config/conky/ArchLabs.conkyrc
+|4,39,52,0,1555529473,"~/.config/conky/ArchLabs.conkyrc"
+-'  52  0  ~/.config/conky/ArchLabs.conkyrc
+|4,39,52,0,1555529473,"~/.config/conky/ArchLabs.conkyrc"
+-'  52  0  ~/.config/conky/ArchLabs.conkyrc
+|4,39,52,0,1555529473,"~/.config/conky/ArchLabs.conkyrc"
+-'  52  0  ~/.config/conky/ArchLabs.conkyrc
+|4,39,52,0,1555529473,"~/.config/conky/ArchLabs.conkyrc"
+-'  1  0  ~/.config/conky/ArchLabs.conkyrc
+|4,39,1,0,1555529469,"~/.config/conky/ArchLabs.conkyrc"
+-'  1  0  ~/.config/conky/ArchLabs.conkyrc
+|4,39,1,0,1555529469,"~/.config/conky/ArchLabs.conkyrc"
+-'  1  0  ~/.config/conky/ArchLabs.conkyrc
+|4,39,1,0,1555529469,"~/.config/conky/ArchLabs.conkyrc"
+-'  1  0  ~/.config/conky/ArchLabs.conkyrc
+|4,39,1,0,1555529469,"~/.config/conky/ArchLabs.conkyrc"
+-'  33  0  ~/.Xresources
+|4,39,33,0,1555529455,"~/.Xresources"
+-'  33  0  ~/.Xresources
+|4,39,33,0,1555529455,"~/.Xresources"
+-'  33  0  ~/.Xresources
+|4,39,33,0,1555529455,"~/.Xresources"
+-'  33  0  ~/.Xresources
+|4,39,33,0,1555529455,"~/.Xresources"
+-'  33  0  ~/.Xresources
+|4,39,33,0,1555529455,"~/.Xresources"
+-'  33  0  ~/.Xresources
+|4,39,33,0,1555529455,"~/.Xresources"
+-'  33  0  ~/.Xresources
+|4,39,33,0,1555529455,"~/.Xresources"
+-'  33  0  ~/.Xresources
+|4,39,33,0,1555529455,"~/.Xresources"
+-'  90  0  ~/.Xresources
+|4,39,90,0,1555529451,"~/.Xresources"
+-'  90  0  ~/.Xresources
+|4,39,90,0,1555529451,"~/.Xresources"
+-'  90  0  ~/.Xresources
+|4,39,90,0,1555529451,"~/.Xresources"
+-'  90  0  ~/.Xresources
+|4,39,90,0,1555529451,"~/.Xresources"
+-'  90  0  ~/.Xresources
+|4,39,90,0,1555529451,"~/.Xresources"
+-'  90  0  ~/.Xresources
+|4,39,90,0,1555529451,"~/.Xresources"
+-'  90  0  ~/.Xresources
+|4,39,90,0,1555529451,"~/.Xresources"
+-'  90  0  ~/.Xresources
+|4,39,90,0,1555529451,"~/.Xresources"
+-'  4  0  ~/.xprofile
+|4,39,4,0,1555529449,"~/.xprofile"
+-'  4  0  ~/.xprofile
+|4,39,4,0,1555529449,"~/.xprofile"
+-'  4  0  ~/.xprofile
+|4,39,4,0,1555529449,"~/.xprofile"
+-'  4  0  ~/.xprofile
+|4,39,4,0,1555529449,"~/.xprofile"
+-'  4  0  ~/.xprofile
+|4,39,4,0,1555529449,"~/.xprofile"
+-'  4  0  ~/.xprofile
+|4,39,4,0,1555529449,"~/.xprofile"
+-'  4  0  ~/.xprofile
+|4,39,4,0,1555529449,"~/.xprofile"
+-'  4  0  ~/.xprofile
+|4,39,4,0,1555529449,"~/.xprofile"
+-'  4  0  ~/.xprofile
+|4,39,4,0,1555529449,"~/.xprofile"
+-'  4  0  ~/.xprofile
+|4,39,4,0,1555529449,"~/.xprofile"
+-'  4  0  ~/.xprofile
+|4,39,4,0,1555529449,"~/.xprofile"
+-'  4  0  ~/.xprofile
+|4,39,4,0,1555529449,"~/.xprofile"
+-'  4  0  ~/.xprofile
+|4,39,4,0,1555529449,"~/.xprofile"
+-'  4  0  ~/.xprofile
+|4,39,4,0,1555529449,"~/.xprofile"
+-'  4  0  ~/.xprofile
+|4,39,4,0,1555529449,"~/.xprofile"
+-'  4  0  ~/.xprofile
+|4,39,4,0,1555529449,"~/.xprofile"
+-'  4  0  ~/.xprofile
+|4,39,4,0,1555529444,"~/.xprofile"
+-'  4  0  ~/.xprofile
+|4,39,4,0,1555529444,"~/.xprofile"
+-'  4  0  ~/.xprofile
+|4,39,4,0,1555529444,"~/.xprofile"
+-'  4  0  ~/.xprofile
+|4,39,4,0,1555529444,"~/.xprofile"
+-'  4  0  ~/.xprofile
+|4,39,4,0,1555529444,"~/.xprofile"
+-'  4  0  ~/.xprofile
+|4,39,4,0,1555529444,"~/.xprofile"
+-'  4  0  ~/.xprofile
+|4,39,4,0,1555529444,"~/.xprofile"
+-'  4  0  ~/.xprofile
+|4,39,4,0,1555529444,"~/.xprofile"
+-'  4  0  ~/.xprofile
+|4,39,4,0,1555529444,"~/.xprofile"
+-'  4  0  ~/.xprofile
+|4,39,4,0,1555529444,"~/.xprofile"
+-'  4  0  ~/.xprofile
+|4,39,4,0,1555529444,"~/.xprofile"
+-'  4  0  ~/.xprofile
+|4,39,4,0,1555529444,"~/.xprofile"
+-'  4  0  ~/.xprofile
+|4,39,4,0,1555529444,"~/.xprofile"
+-'  4  0  ~/.xprofile
+|4,39,4,0,1555529444,"~/.xprofile"
+-'  4  0  ~/.xprofile
+|4,39,4,0,1555529444,"~/.xprofile"
+-'  4  0  ~/.xprofile
+|4,39,4,0,1555529444,"~/.xprofile"
+-'  1  0  ~/.xprofile
+|4,39,1,0,1555529381,"~/.xprofile"
+-'  1  0  ~/.xprofile
+|4,39,1,0,1555529381,"~/.xprofile"
+-'  1  0  ~/.xprofile
+|4,39,1,0,1555529381,"~/.xprofile"
+-'  1  0  ~/.xprofile
+|4,39,1,0,1555529381,"~/.xprofile"
+-'  1  0  ~/.xprofile
+|4,39,1,0,1555529381,"~/.xprofile"
+-'  1  0  ~/.xprofile
+|4,39,1,0,1555529381,"~/.xprofile"
+-'  1  0  ~/.xprofile
+|4,39,1,0,1555529381,"~/.xprofile"
+-'  1  0  ~/.xprofile
+|4,39,1,0,1555529381,"~/.xprofile"
+-'  1  0  ~/.xprofile
+|4,39,1,0,1555529381,"~/.xprofile"
+-'  1  0  ~/.xprofile
+|4,39,1,0,1555529381,"~/.xprofile"
+-'  1  0  ~/.xprofile
+|4,39,1,0,1555529381,"~/.xprofile"
+-'  1  0  ~/.xprofile
+|4,39,1,0,1555529381,"~/.xprofile"
+-'  1  0  ~/.xprofile
+|4,39,1,0,1555529381,"~/.xprofile"
+-'  1  0  ~/.xprofile
+|4,39,1,0,1555529381,"~/.xprofile"
+-'  1  0  ~/.xprofile
+|4,39,1,0,1555529381,"~/.xprofile"
+-'  1  0  ~/.xprofile
+|4,39,1,0,1555529381,"~/.xprofile"
+-'  1  0  ~/.xprofile
+|4,39,1,0,1555529381,"~/.xprofile"
+-'  1  0  ~/.xprofile
+|4,39,1,0,1555529381,"~/.xprofile"
+-'  1  0  ~/.xprofile
+|4,39,1,0,1555529381,"~/.xprofile"
+-'  1  0  ~/.xprofile
+|4,39,1,0,1555529381,"~/.xprofile"
+-'  1  0  ~/.xprofile
+|4,39,1,0,1555529381,"~/.xprofile"
+-'  1  0  ~/.xprofile
+|4,39,1,0,1555529381,"~/.xprofile"
+-'  1  0  ~/.xprofile
+|4,39,1,0,1555529381,"~/.xprofile"
+-'  1  0  ~/.xprofile
+|4,39,1,0,1555529381,"~/.xprofile"
+-'  1  0  ~/.xprofile
+|4,39,1,0,1555529381,"~/.xprofile"
+-'  1  0  ~/.xprofile
+|4,39,1,0,1555529381,"~/.xprofile"
+-'  1  0  ~/.xprofile
+|4,39,1,0,1555529381,"~/.xprofile"
+-'  1  0  ~/.xprofile
+|4,39,1,0,1555529381,"~/.xprofile"
+-'  1  0  ~/.xprofile
+|4,39,1,0,1555529381,"~/.xprofile"
+-'  1  0  ~/.xprofile
+|4,39,1,0,1555529381,"~/.xprofile"
+-'  1  0  ~/.xprofile
+|4,39,1,0,1555529381,"~/.xprofile"
+-'  1  0  ~/.xprofile
+|4,39,1,0,1555529381,"~/.xprofile"
+-'  90  0  ~/.Xresources
+|4,39,90,0,1555529378,"~/.Xresources"
+-'  90  0  ~/.Xresources
+|4,39,90,0,1555529378,"~/.Xresources"
+-'  90  0  ~/.Xresources
+|4,39,90,0,1555529378,"~/.Xresources"
+-'  90  0  ~/.Xresources
+|4,39,90,0,1555529378,"~/.Xresources"
+-'  90  0  ~/.Xresources
+|4,39,90,0,1555529378,"~/.Xresources"
+-'  90  0  ~/.Xresources
+|4,39,90,0,1555529378,"~/.Xresources"
+
+# Storia dei mark all'interno dei file (dai più recenti ai meno recenti):
+
+> ~/.config/polybar/modules.conf
+	*	1555533878	0
+	"	376	0
+
+> ~/.config/compton.conf
+	*	1555533548	0
+	"	33	0
+
+> ~/.config/conky/ArchLabs.conkyrc
+	*	1555529472	0
+	"	52	0
+
+> ~/.Xresources
+	*	1555529454	0
+	"	33	0
+	^	90	0
+	.	39	32
+	+	39	32
+
+> ~/.xprofile
+	*	1555529447	0
+	"	4	0
+
+> ~/.viminfo
+	*	1555529302	0
+	"	265	0
+
+> ~/.bash_logout
+	*	1555529263	0
+	"	1	0
+
+> ~/.jgmenu-lockfile
+	*	1555529259	0
+	"	1	0
+
+> ~/.inputrc
+	*	1555529255	0
+	"	40	0
+
+> ~/.hushlogin
+	*	1555529252	0
+	"	1	0
+
+> ~/.gtkrc-2.0
+	*	1555529242	0
+	"	7	0
+
+> ~/.dmrc
+	*	1555529127	0
+	"	1	0
+
+> ~/.bashrc
+	*	1555529118	0
+	"	31	0
+
+> ~/.vim/after/syntax/c.vim
+	*	1555529038	0
+	"	256	0

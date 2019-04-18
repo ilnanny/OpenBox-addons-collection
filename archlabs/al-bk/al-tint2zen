@@ -1,0 +1,173 @@
+#!/usr/bin/env bash
+
+# al-tint2zen: a ArchLabs tint2 selection and switcher script
+# Copyright (C) 2015 damo <damo@bunsenlabs.org>
+# Copyright (C) 2017 Nathaniel Maia <natemaia10@gmail.com>
+
+
+if ! hash tint2 zenity read find &>/dev/null; then
+    echo "[ERROR]: Missing commands required: 'tint2' 'zenity' 'findutils' 'readline'"
+    exit 1
+fi
+
+if [[ $DISPLAY && ! $WM ]]; then
+    ID="$(xprop -root -notype _NET_SUPPORTING_WM_CHECK)"
+    WM="$(xprop -id "${ID##* }" -notype -len 100 -f _NET_WM_NAME 8t)"
+    WM="${WM/*WM_NAME = }"
+    WM="${WM/\"}"
+    WM="${WM/\"*}"
+    WM="${WM,,}"
+fi
+
+readonly TITLE="ArchLabs Tint2 Manager"
+readonly ICON="--window-icon=/usr/share/icons/ArchLabs-Light/64x64/places/distributor-logo-archlabs.png"
+readonly CHECKLIST="zenity --width=400 --height=500 $ICON --list --checklist --multiple"
+readonly QUESTION="zenity --question $ICON --width=300"
+
+readonly CONFPATH="$HOME/.config/tint2"
+readonly START="$HOME/.config/openbox/autostart"
+readonly FILES=($(find -L "$CONFPATH" -maxdepth 4 -type f))
+
+if [[ $WM ]]; then
+    SESSIONFILE="$CONFPATH/sessions/$WM-sessionfile"
+else
+    SESSIONFILE="$CONFPATH/sessions/sessionfile"
+fi
+
+if [[ ! -d $CONFPATH && -d /etc/skel/.config/tint2 ]]; then
+    cp -rf /etc/skel/.config/tint2 "$HOME/.config/"
+elif ! [[ -d $CONFPATH ]]; then
+    mkdir -p "$CONFPATH"
+fi
+
+
+usage() {
+    cat <<EOF
+
+USAGE: al-tint2zen [OPTIONS] [SESSIONFILE]
+
+OPTIONS:
+
+     -z, --session   Use SESSIONFILE rather than default
+     -h, --help      Print this usage message and exit
+
+
+With no command line options, the script uses the default session file
+
+    '$SESSIONFILE'
+
+
+To start session at login, add the following line to autostart:
+
+    sleep 1; al-tint2-session &
+
+EOF
+}
+
+running_tints() {
+    if [[ $(pidof tint2) ]]; then
+        TEMPFILE=$(mktemp --tmpdir polybars.XXXX)
+        pgrep -a tint2 > "$TEMPFILE"
+    fi
+}
+
+find_tints() {
+    LIST=""
+    for f in "${FILES[@]}"; do
+        NAME="$(basename "$f")"
+        if [[ $NAME = *tintrc || $NAME == 'tint2rc' || $NAME = *tint2rc ]] || grep -q 'panel_monitor' "$f"; then
+            if [[ -e $TEMPFILE ]] && grep -q "$f" "$TEMPFILE"; then
+                LIST="$LIST TRUE $NAME"
+            else
+                LIST="$LIST FALSE $NAME"
+            fi
+        fi
+    done
+}
+
+setup_Session() {
+    mkdir -p $CONFPATH/sessions
+    cat > "$SESSIONFILE" <<EOF
+# DO NO edit this file, it will be overwritten by al-tint2zen
+# Make a custom sessionfile instead and use -z or --session FILE option
+# To load session at startup use the following line
+#    al-tint2-session &
+
+EOF
+
+    [[ $(pidof tint2) ]] && pkill tint2
+
+    for name in $ANSWER; do
+        for file in "${FILES[@]}"; do
+            if [[ $(basename "$file") == "$name" ]] && ! grep -q "$file" "$SESSIONFILE"; then
+                echo -e "$file" >> "$SESSIONFILE"
+                tint2 -c "$file" &
+                break
+            fi
+        done
+    done
+
+    hash al-compositor &>/dev/null && al-compositor --restart
+
+    sleep 0.5
+
+    if [[ $(pidof tint2) ]]; then
+        if [[ -f $START ]] && ! grep -q "al-tint2-session" "$START"; then
+            if grep -q "tint2" "$START"; then
+                sed -i '/tint2/ a sleep 1; al-tint2-session &' "$START"
+                sed -i '/tint2/d' "$START"
+            elif grep -q "polybar" "$START"; then
+                sed -i '/polybar/ a sleep 1; al-tint2-session &' "$START"
+                sed -i '/polybar/d' "$START"
+            elif grep -q "nitrogen" "$START"; then
+                sed -i '/nitrogen/ a sleep 1; al-tint2-session &' "$START"
+            else
+                sed -i '1s/^/al-tint2-session & \n/' "$START"
+            fi
+        fi
+    fi
+}
+
+
+main() {
+    while ! [[ $ANSWER ]]; do
+        running_tints
+        find_tints
+
+        MSG="<big><b>Select tint2 panels to launch</b></big>\n\nRunning panels will be check marked\n\nTo disable a panel:"
+        MSG="$MSG <b>uncheck and click Ok</b>\n\nSession will be saved to: <b>$(basename "$SESSIONFILE")</b>\n"
+
+        ANSWER=$($CHECKLIST --title="$TITLE" --text="$MSG" --column="Select" --column="Tint2" $LIST --separator=" ")
+
+        if [[ $? == 1 ]]; then
+            ANSWER=NONE
+        elif ! [[ $ANSWER ]]; then
+            if [[ $(pidof tint2) ]]; then
+                MSG="<big><b>No Panels Selected</b></big>\n\nWhat would you like to do?"
+                if $QUESTION --title="$TITLE" --ok-label="Go Back" --cancel-label="Stop Panels" --text="$MSG" &>/dev/null; then
+                    ANSWER=""
+                    continue
+                else
+                    pkill tint2
+                    echo "" > "$SESSIONFILE"
+                    ANSWER=NONE
+                fi
+            else
+                ANSWER=NONE
+            fi
+        else
+            setup_Session
+        fi
+
+        [[ -e $TEMPFILE ]] && rm -f "$TEMPFILE"
+    done
+}
+
+case $1 in
+    -h|-H|--help) usage && exit 0 ;;
+    -z|--session) [[ $2 ]] && SESSIONFILE="$2" || { echo "Invalid Sessionfile.."; exit 2; }
+esac
+
+main
+
+exit 0

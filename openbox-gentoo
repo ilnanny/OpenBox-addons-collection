@@ -1,7 +1,0 @@
-
-
-USE="nls session startup-notification svg branding -debug -imlib -static-libs xdg" PYTHON_TARGETS="python2_7"  emerge --ask --ask x11-wm/openbox   
-emerge --ask x11-misc/obmenu
-emerge --ask x11-misc/obtheme
-emerge --ask x11-misc/obconf
-emerge --ask media-gfx/feh

@@ -1,0 +1,86 @@
+#!/usr/bin/env bash
+
+#  Read saved ArchLabs Conky session file(s) and start the conkys
+#  Written by damo <damo@bunsenlabs.org> for BunsenLabs Linux, April 2015
+#  Renamed and Rewritten for ArchLabs and zenity
+#
+#  To start the default conky session at login, add the following line
+#  to config/openbox/autostart:
+#     (sleep 2s && al-conky-session --autostart) &
+
+readonly CPATH="$HOME/.config/conky"
+readonly DLG="zenity --question --width=220 --height=120 --window-icon=/usr/share/icons/ArchLabs-Light/64x64/places/distributor-logo-archlabs.png"
+
+NOKILL=0
+SESSIONFILE="$CPATH/conky-sessionfile"
+
+killConkys() {
+	if pidof conky >/dev/null 2>&1 && $DLG --title="ArchLabs Conky Session" --text="<big>Kill all running conky first?</big>" >/dev/null 2>&1; then
+		killall conky
+		sleep 0.2s
+	fi
+}
+
+if [[ $# -eq 0 ]]; then
+	killConkys
+	if [[ ! -f "$SESSIONFILE" ]]; then
+		echo -e "al-conky-session: error: sessionfile \"$SESSIONFILE\" not found, falling back to the default" >&2
+		conky -c "$CPATH/ArchLabs.conkyrc" &
+	else
+		source "$SESSIONFILE"
+	fi
+elif [[ $1 =~ (-h|--help) ]]; then
+	cat << EOF
+USAGE:  al-conky-session [OPTION(S)]...FILES
+
+        With no command argument, the script uses the default
+        "$CONKYPATH/conky-session" sessionfile
+
+OPTIONS:
+        --default       : specify default sessionfile
+        --autostart     : no "kill conky" option asked for
+        path/to/sessionfile1  /path/to/sessionfile2 etc
+
+EXAMPLES:
+
+    Run specified sessionfile at login:
+
+        al-conky-session --autostart /path/to/sessionfile
+
+    Run default sessionfile, without killing running conkys:
+
+        al-conky-session --autostart
+
+    Run several conky sessionfiles (option to kill conkys first):
+
+        al-conky-session --default sessionfile1 sessionfile2 etc
+
+EOF
+else
+	i=0
+	for arg in "$@";do
+		if [[ $arg = "--default" ]]; then
+			arg=$SESSIONFILE
+		elif [[ $arg = "--autostart" ]]; then
+			NOKILL=1
+		fi
+		if [[ -f $arg ]]; then
+			rawArr[$i]=$arg
+			(( i++ ))
+		fi
+	done
+
+	if [[ ${#rawArr[@]} -gt 0 ]]; then
+		(( NOKILL )) || killConkys
+		for SESSION in $(printf "%s\n" "${rawArr[@]}" | sort -u); do
+			source "$SESSION"
+		done
+	else
+		if [[ -f $SESSIONFILE && $NOKILL -eq 1 ]]; then
+			source "$SESSIONFILE"
+		else
+			echo -e "al-conky-session: error: sessionfile \"$SESSIONFILE\" not found, falling back to the default" >&2
+			conky -c "$CPATH/ArchLabs.conkyrc" &
+		fi
+	fi
+fi

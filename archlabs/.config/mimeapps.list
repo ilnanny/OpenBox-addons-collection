@@ -1,0 +1,4 @@
+[Added Associations]
+text/plain=vim.desktop;
+application/x-shellscript=vim.desktop;
+text/html=firefox.desktop;

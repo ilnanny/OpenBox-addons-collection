@@ -1,0 +1,57 @@
+
+##openbox session
+USE="nls session startup-notification svg branding -debug -imlib -static-libs xdg" PYTHON_TARGETS="python2_7"  emerge --ask --ask x11-wm/openbox   
+emerge --ask x11-misc/obmenu
+emerge --ask x11-misc/obtheme
+emerge --ask x11-misc/obconf
+USE="icons svg" emerge --ask x11-misc/openbox-menu
+
+##addons
+emerge --ask media-gfx/feh 
+USE="dbus drm opengl xinerama pcre" emerge --ask x11-misc/compton
+emerge --ask media-sound/volumeicon
+emerge --ask x11-apps/xclock
+USE="X curl iconv ipv6 ncurses portmon truetype wifi hddtemp imlib lua-cairo lua-imlib lua-rsvg math mpd nano-syntax pulseaudio rss -systemd vim-syntax weather-metar webserver xmms2" emerge --ask app-admin/conky 
+USE="xinerama nls" emerge --ask x11-misc/nitrogen
+USE="windowmode" emerge --ask x11-misc/rofi
+emerge --ask x11-misc/i3lock
+USE="gtk3 nls pam consolekit" emerge --ask lxde-base/lxdm
+
+#system 
+USE="archive fuse google gnome-keyring gphoto2 mtp nfs samba zeroconf" emerge --ask gnome-base/gvfs
+USE="caps ssh-agent pam" emerge --ask gnome-base/gnome-keyring
+
+
+## Terminal
+USE="xinerama unicode truetype" emerge --ask xterm
+x11-terms/xfce4-terminal
+app-misc/terminal-colors
+dev-scheme/termite
+x11-misc/xtermcontrol
+
+##menu generator
+emerge --ask x11-misc/obmenu-generator
+emerge --ask x11-misc/menumaker
+emerge --ask x11-misc/openbox-menu
+
+## file-manager 
+emerge --ask xfce-base/thunar
+emerge --ask xfce-extra/thunar-archive-plugin
+emerge --ask xfce-extra/thunar-volman
+
+
+##panel
+USE="tint2-conf" emerge --ask x11-misc/tint2
+USE="curl ipc mpd network pulseaudio" emerge --ask =x11-misc/polybar
+xfce-base/xfce4-panel
+xfce-extra/xfce4-whiskermenu-plugin
+
+
+
+
+
+
+
+
+
+
